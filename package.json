@@ -9,7 +9,11 @@
     "preview": "astro preview",
     "astro": "astro",
     "prepare": "husky",
-    "commitlint": "commitlint --edit"
+    "commitlint": "commitlint --edit",
+    "lint:js": "eslint \"**/*.{js,jsx,ts,tsx,astro}\" --fix",
+    "lint:css": "stylelint \"**/*.{css,scss,sass,less,postcss,astro}\" --fix",
+    "lint:style": "prettier --write .",
+    "lint:all": "npm run lint:js && npm run lint:css && npm run lint:style"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
