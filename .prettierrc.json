@@ -3,7 +3,7 @@
   "endOfLine": "lf",
   "tabWidth": 2,
   "useTabs": false,
-  "printWidth": 120,
+  "printWidth": 80,
   "singleQuote": true,
   "jsxSingleQuote": false,
   "quoteProps": "consistent",
@@ -13,5 +13,14 @@
   "arrowParens": "avoid",
   "htmlWhitespaceSensitivity": "strict",
   "vueIndentScriptAndStyle": false,
-  "singleAttributePerLine": false
+  "singleAttributePerLine": false,
+  "plugins": ["prettier-plugin-astro"],
+  "overrides": [
+    {
+      "files": "*.astro",
+      "options": {
+        "parser": "astro"
+      }
+    }
+  ]
 }
