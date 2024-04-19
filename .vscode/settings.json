@@ -20,7 +20,8 @@
     "typescript",
     "typescriptreact",
     "vue",
-    "html"
+    "html",
+    "astro"
   ],
   "eslint.workingDirectories": [{ "mode": "auto" }],
 
