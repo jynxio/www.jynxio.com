@@ -1,0 +1,82 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-family: '霞鹜文楷', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+code,
+code::before,
+code::after {
+  font-size: 1rem;
+  font-family: 'Fira Code', '霞鹜文楷等宽', monospace;
+  font-weight: 400;
+  font-feature-settings: 'liga' 1;
+  word-break: break-all;
+}
+
+code *,
+code *::before,
+code *::after {
+  font: inherit;
+  word-break: inherit;
+}
+
+strong,
+strong::before,
+strong::after,
+b,
+b::before,
+b::after,
+strong *,
+strong *::before,
+strong *::after,
+b *,
+b *::before,
+b *::after {
+  font-weight: 700;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
