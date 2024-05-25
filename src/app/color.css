@@ -1,0 +1,17 @@
+:root {
+    /* 字体颜色 */
+    --color-text-primary: #ededed; /* 主色 */
+    --color-text-primary-accent: #bef853; /* 主强调色 */
+    --color-text-secondary: #a1a1a1; /* 次色 */
+    --color-text-secondary-accent: #ededed; /* 次强调色 */
+
+    /* 背景颜色 */
+    --color-bg-primary: #000; /* 主色 */
+    --color-bg-primary-accent: #ededed; /* 主强调色 */
+    --color-bg-secondary: #111; /* 次色 */
+    --color-bg-secondary-accent: #1f1f1f; /* 次强调色 */
+
+    /* 边框颜色 */
+    --color-border-primary: #27272a; /* 主色 */
+    --color-border-primary-accent: #fafafa; /* 主强调色 */
+}
