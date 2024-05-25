@@ -1,7 +1,7 @@
-import css from './page.module.css';
+import css from './App.module.css';
 import React from 'react';
 
-async function Home() {
+function Home() {
     return <h1 className={css.container}>{"✨ Jynxio's brand new blog ✨"}</h1>;
 }
 
