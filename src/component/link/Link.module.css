@@ -1,0 +1,7 @@
+a:where(.container) {
+    display: inline-block;
+    block-size: fit-content;
+    color: inherit;
+    font: inherit;
+    text-decoration: none;
+}
