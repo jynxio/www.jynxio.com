@@ -1,0 +1,9 @@
+button:where(.container) {
+    display: inline-block;
+    block-size: fit-content;
+    border: initial;
+    color: inherit;
+    background-color: initial;
+    user-select: none;
+    cursor: pointer;
+}
