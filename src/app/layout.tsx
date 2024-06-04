@@ -1,11 +1,12 @@
 import './reset.css';
-import './color.css';
+import './variable.css';
 import './index.css';
-
-import type { Metadata } from 'next';
+import css from './layout.module.css';
 
 import React from 'react';
+import Header from '@/component/header';
 import { baseUrl } from './sitemap';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     metadataBase: new URL(baseUrl),
@@ -59,7 +60,15 @@ export const metadata: Metadata = {
 function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="zh-cmn-Hans">
-            <body id="root">{children}</body>
+            <body>
+                <div id="root" className={css.container}>
+                    <header className={css.header}>
+                        <Header />
+                    </header>
+
+                    <main className={css.main}>{children}</main>
+                </div>
+            </body>
         </html>
     );
 }

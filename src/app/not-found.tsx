@@ -1,5 +1,5 @@
-import css from './App.module.css';
+import css from './page.module.css';
 
 export default function NotFound() {
-    return <h1 className={css.container}>{'🥀 404 | Page Not Found 🥀'}</h1>;
+    return <h1 className={css.text}>{'🥀 404 | Page Not Found 🥀'}</h1>;
 }
