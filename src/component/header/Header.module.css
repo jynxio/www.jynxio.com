@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    padding-block: 1rem;
+    margin-inline: 2rem;
+    border-block-end: 1px solid var(--color-border-primary);
+}
+
+.chapter {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.control {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-inline-start: auto;
+}
