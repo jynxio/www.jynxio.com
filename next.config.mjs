@@ -5,6 +5,7 @@ const nextConfig = {
             '/*': ['./content/**/*'],
         },
     },
+    reactStrictMode: true,
 };
 
 export default nextConfig;
