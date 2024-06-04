@@ -1,0 +1,93 @@
+.trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    inline-size: 13rem;
+    padding: 0.2rem 0.2rem 0.2rem 0.65rem;
+    border-radius: var(--border-radius-base);
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    line-height: 1;
+    background-color: var(--color-bg-secondary);
+
+    & > .kbd {
+        padding: 0.2rem;
+        border: 1px solid var(--color-border-primary);
+        border-radius: var(--border-radius-base);
+        color: var(--color-text-primary);
+        font: inherit;
+        font-size: var(--font-size-sx);
+        line-height: 1;
+        background-color: var(--color-bg-primary);
+    }
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    position: fixed;
+    z-index: 2;
+    inset: 10rem 0 auto;
+    block-size: fit-content;
+    max-block-size: 26rem;
+    inline-size: 40rem;
+    margin-inline: auto;
+    padding: 1rem;
+    border: 1px solid var(--color-border-primary);
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-bg-primary);
+
+    & > .search {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+
+        & > .input {
+            flex: 1 0 auto;
+            border: none;
+            outline: none;
+            color: inherit;
+            font: inherit;
+            background-color: transparent;
+
+            &::placeholder {
+                color: var(--color-text-secondary);
+            }
+        }
+
+        & > .close {
+            padding: 0.1rem;
+            border: 1px solid var(--color-border-primary);
+            border-radius: var(--border-radius-base);
+            background-color: var(--color-bg-primary);
+        }
+    }
+
+    & > .hr {
+        block-size: 1px;
+        border: none;
+        background-color: var(--color-border-primary);
+    }
+
+    & > .result {
+        & > ul {
+            display: flex;
+            flex-direction: column;
+
+            & > li {
+                font-size: var(--font-size-sm);
+                list-style: none;
+
+                &.selected {
+                    background-color: var(--color-bg-secondary);
+                }
+
+                & > .link {
+                    display: block;
+                    padding-block: 0.25rem;
+                }
+            }
+        }
+    }
+}
