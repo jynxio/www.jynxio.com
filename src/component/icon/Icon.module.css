@@ -1,0 +1,10 @@
+.container {
+    position: relative;
+    display: block;
+    block-size: fit-content;
+
+    & > svg {
+        aspect-ratio: 1 / 1;
+        block-size: 100%;
+    }
+}
