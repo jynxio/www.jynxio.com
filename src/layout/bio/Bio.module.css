@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    gap: 1.25rem;
+    position: absolute;
+    z-index: 1;
+    inset: 20% 0 auto;
+    margin-inline: auto;
+    inline-size: fit-content;
+    color: transparent;
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.5;
+    align-items: center;
+    background-clip: text;
+    background-image: linear-gradient(to bottom, var(--color-text-primary), #000);
+}
