@@ -1,9 +1,11 @@
-import clsx from 'clsx';
-import css from './Button.module.css';
-import React from 'react';
-import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
+import clsx from "clsx";
+import css from "./Button.module.css";
+import React from "react";
+import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 
-type Props = { label: string } & React.ButtonHTMLAttributes<HTMLButtonElement>;
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    label: string;
+}
 
 const Button = React.forwardRef<HTMLButtonElement, Props>(
     ({ label, className, children, ...rest }: Props, ref) => {
