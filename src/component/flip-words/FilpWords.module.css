@@ -1,0 +1,8 @@
+.motion {
+    position: relative;
+    z-index: 10;
+    display: inline-block;
+    padding-inline: 0.5rem;
+    color: rgb(245 245 245);
+    text-align: left;
+}
