@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import css from './Avatar.module.css';
-import React from 'react';
-import NextImage from 'next/image';
-import clsx from 'clsx';
-import * as AvatarPrimitive from '@radix-ui/react-avatar';
+import css from "./Avatar.module.css";
+import React from "react";
+import NextImage from "next/image";
+import clsx from "clsx";
+import * as AvatarPrimitive from "@radix-ui/react-avatar";
 
 const Root = React.forwardRef<
     React.ElementRef<typeof AvatarPrimitive.Root>,
