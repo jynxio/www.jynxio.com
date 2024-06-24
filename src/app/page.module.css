@@ -1,15 +1,6 @@
-.text {
-    position: fixed;
-    inset: 0;
-    block-size: fit-content;
-    inline-size: fit-content;
-    margin: auto;
-    color: var(--color-text-primary);
-    font-size: 2.5rem;
-    font-family: monospace;
-    font-weight: 100;
-
-    @media (width <= 500px) {
-        font-size: 1.25rem;
-    }
+.container {
+    isolation: isolate;
+    position: relative;
+    block-size: 100%;
+    inline-size: 100%;
 }

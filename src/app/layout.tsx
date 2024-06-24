@@ -1,76 +1,39 @@
-import './reset.css';
-import './variable.css';
-import './index.css';
-import css from './layout.module.css';
+import "./reset.css";
+import "./variable.css";
+import "./index.css";
 
-import React from 'react';
-import Header from '@/component/header';
-import { baseUrl } from './sitemap';
-import type { Metadata } from 'next';
+import css from "./layout.module.css";
+import type React from "react";
+import createMetadata from "./createMetadata";
+import Nav from "@/layout/nav";
+import Copyright from "@/layout/copyright";
+import { GoogleAnalytics } from "./GoogleAnalytics";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
-export const metadata: Metadata = {
-    metadataBase: new URL(baseUrl),
-    title: {
-        default: 'Jynxio',
-        template: '%s | Jynxio',
-    },
-    description: "Jynxio's personal website.",
-    keywords: 'Jynxio, personal website, portfolio, technology',
-    alternates: {
-        canonical: new URL(baseUrl).toString(),
-    },
-    openGraph: {
-        title: 'Jynxio',
-        description: "Jynxio's personal website.",
-        url: baseUrl,
-        siteName: 'Jynxio',
-        locale: 'zh-cmn-Hans',
-        type: 'website',
-        images: [
-            {
-                url: 'https://example.com/image.jpg', // FIXME: 替换为实际的图片 URL
-                width: 1200,
-                height: 630,
-                alt: 'Jynxio',
-            },
-        ],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        site: '@Jynxio',
-        title: 'Jynxio',
-        description: "Jynxio's personal website.",
-        images: 'https://example.com/image.jpg', // FIXME: 替换为实际的图片 URL
-    },
-    robots: {
-        index: true,
-        follow: true,
-        noarchive: true,
-        googleBot: {
-            'index': true,
-            'follow': true,
-            'max-video-preview': -1,
-            'max-image-preview': 'large',
-            'max-snippet': -1,
-            'noarchive': true,
-        },
-    },
-};
+const metadata = createMetadata();
 
 function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="zh-cmn-Hans">
+        <html lang="en">
             <body>
-                <div id="root" className={css.container}>
-                    <header className={css.header}>
-                        <Header />
-                    </header>
-
-                    <main className={css.main}>{children}</main>
+                <div className={css.container}>
+                    <Nav />
+                    <Copyright />
+                    {children}
                 </div>
+
+                {process.env.NODE_ENV === "development" && (
+                    <>
+                        <Analytics />
+                        <SpeedInsights />
+                        <GoogleAnalytics />
+                    </>
+                )}
             </body>
         </html>
     );
 }
 
+export { metadata };
 export default RootLayout;

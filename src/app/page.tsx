@@ -1,8 +1,14 @@
-import css from './page.module.css';
-import React from 'react';
+import css from "./page.module.css";
+import Bio from "@/layout/bio";
+import Hero from "@/layout/hero";
 
-function Home() {
-    return <h1 className={css.text}>{"✨ Jynxio's brand new blog ✨"}</h1>;
+function Page() {
+    return (
+        <main className={css.container}>
+            <Bio />
+            <Hero />
+        </main>
+    );
 }
 
-export default Home;
+export default Page;
