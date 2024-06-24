@@ -1,0 +1,23 @@
+.container {
+    inline-size: fit-content;
+    margin-inline: auto;
+    color: var(--color-text-secondary);
+
+    & > address {
+        font-style: normal;
+    }
+
+    & > nav {
+        display: flex;
+        gap: 1.25rem;
+        justify-content: center;
+        align-items: center;
+        margin-block-start: 0.5rem;
+
+        & > a:hover,
+        & > a:active,
+        & > a:focus {
+            color: var(--color-text-primary);
+        }
+    }
+}
