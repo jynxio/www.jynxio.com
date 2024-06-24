@@ -1,0 +1,27 @@
+.container {
+    position: absolute;
+    z-index: 1;
+    bottom: 1.25rem;
+    left: 1.25rem;
+}
+
+.container > nav {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+
+    & > .link {
+        display: flex;
+        gap: 0.625rem;
+        font-family: '霞鹜文楷等宽', monospace;
+        align-items: center;
+        color: var(--color-text-secondary);
+        letter-spacing: 0.0625rem;
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: var(--color-text-secondary-accent);
+        }
+    }
+}
