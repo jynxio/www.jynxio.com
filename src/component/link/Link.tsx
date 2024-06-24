@@ -1,7 +1,7 @@
-import css from './Link.module.css';
-import React from 'react';
-import NextLink from 'next/link';
-import clsx from 'clsx';
+import css from "./Link.module.css";
+import React from "react";
+import NextLink from "next/link";
+import clsx from "clsx";
 
 type Props = React.ComponentProps<typeof NextLink>;
 
