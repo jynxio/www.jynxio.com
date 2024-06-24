@@ -1,11 +1,22 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    reactStrictMode: true,
     experimental: {
         outputFileTracingIncludes: {
-            '/*': ['./content/**/*'],
+            "/*": ["./post/**/*"],
         },
     },
-    reactStrictMode: true,
+    images: {
+        formats: ["image/avif", "image/webp"],
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "jynxio.github.io",
+                port: "",
+                pathname: "/blog-image-hosting/**",
+            },
+        ],
+    },
 };
 
 export default nextConfig;

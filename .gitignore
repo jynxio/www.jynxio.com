@@ -16,8 +16,8 @@ package-lock.json
 /coverage
 
 # Production
-**/dist*/
-**/build*/
+**/dist/
+**/build/
 
 # Editor directories and files
 .idea
@@ -46,5 +46,13 @@ package-lock.json
 # Vercel
 .vercel
 
-# Mine
-post
+# My
+public/image-hosting
+**/*.png
+**/*.jpg
+**/*.jpeg
+**/*.otf
+**/*.ttf
+**/*.woff
+**/*.woff2
+**/GoogleAnalytics.tsx
