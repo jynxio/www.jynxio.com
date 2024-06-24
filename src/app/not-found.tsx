@@ -1,5 +1,7 @@
-import css from './page.module.css';
+import css from "./not-found.module.css";
 
-export default function NotFound() {
-    return <h1 className={css.text}>{'🥀 404 | Page Not Found 🥀'}</h1>;
+function NotFound() {
+    return <h1 className={css.container}>Oops! Nothing here</h1>;
 }
+
+export default NotFound;
