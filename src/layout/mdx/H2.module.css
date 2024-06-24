@@ -1,0 +1,13 @@
+.container {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-block-end: 2rem;
+
+    &::before {
+        content: '/ / /';
+        display: block;
+        margin-block: 2rem;
+        font-size: 1rem;
+        text-align: center;
+    }
+}

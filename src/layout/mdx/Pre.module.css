@@ -1,0 +1,6 @@
+.container {
+    margin-block: 1rem;
+    padding: calc(10 / 16 * 1rem);
+    border-radius: var(--border-radius-base);
+    background-color: var(--color-bg-secondary) !important;
+}
