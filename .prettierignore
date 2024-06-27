@@ -1,8 +1,11 @@
 # Development
 **/.git
+**/.next
+**/.vercel
 **/node_modules
 
 # Production
+**/out/
 **/dist/
 **/build/
 
