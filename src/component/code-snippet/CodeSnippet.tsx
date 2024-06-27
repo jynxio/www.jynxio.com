@@ -1,3 +1,4 @@
+import css from "./CodeSnippet.module.css";
 import { codeToHtml } from "shiki";
 
 type Props = React.DetailedHTMLProps<React.HTMLAttributes<HTMLPreElement>, HTMLPreElement> & {
@@ -11,7 +12,7 @@ async function CodeSnippet(props: Props) {
     const html = await codeToHtml(code, { lang, theme: "vitesse-dark" });
 
     // biome-ignore lint/security/noDangerouslySetInnerHtml: This happens on the server side, so it is secure.
-    return <div dangerouslySetInnerHTML={{ __html: html }} />;
+    return <div className={css.container} dangerouslySetInnerHTML={{ __html: html }} />;
 }
 
 export { CodeSnippet };

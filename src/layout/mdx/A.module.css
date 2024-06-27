@@ -1,3 +1,4 @@
 .container {
-    box-sizing: border-box;
+    color: var(--color-text-primary-accent);
+    text-decoration: none;
 }

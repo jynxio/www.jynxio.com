@@ -4,7 +4,7 @@ import css from "./page.module.css";
 import path from "node:path";
 import component from "@/layout/mdx";
 import CodeSnippet from "@/component/code-snippet";
-import { reqPost } from "@/helper/post";
+import { reqPost, reqList } from "@/helper/post";
 import { BASE_URL } from "@/constant/sitemap";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
@@ -22,6 +22,9 @@ async function Page(props: Props) {
                 source={content}
                 components={{
                     ...component,
+                    pre: CodeSnippet,
+                    CustomJsxInMdx: () => <></>,
+                    NativeJsxInMdx: () => <></>,
                     img: (args) => {
                         if (!args.src) return <></>;
 
@@ -33,11 +36,16 @@ async function Page(props: Props) {
 
                         return <component.img {...args} src={url} />;
                     },
-                    pre: CodeSnippet,
                 }}
             />
         </article>
     );
+}
+
+export async function generateStaticParams() {
+    const posts = await reqList();
+
+    return posts.map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

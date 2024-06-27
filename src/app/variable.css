@@ -23,6 +23,7 @@
     --color-border-primary-accent: #fafafa; /* 主强调色 */
 
     /* 其他 */
+    --border-radius-xs: calc(3 / 16 * 1rem);
     --border-radius-base: calc(4 / 16 * 1rem);
     --border-radius-md: calc(6 / 16 * 1rem);
     --border-radius-lg: calc(8 / 16 * 1rem);
