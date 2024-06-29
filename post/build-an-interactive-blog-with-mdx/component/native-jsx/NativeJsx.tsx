@@ -4,7 +4,9 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { readFile } from "@/helper/post";
 
 async function NativeJsx() {
-    const code = await readFile("post/build-blod-with-mdx/component/native-jsx/code.txt");
+    const code = await readFile(
+        "post/build-an-interactive-blog-with-mdx/component/native-jsx/code.txt",
+    );
     const html = await codeToHtml(code, { lang: "md", theme: "vitesse-dark" });
 
     return (
