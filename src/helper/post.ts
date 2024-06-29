@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import matter from "gray-matter";
-import { POST_DIR_PATH } from "@/constant/post";
+import { POST_PATH } from "@/constant";
 
 type Post = {
     slug: string;
@@ -16,11 +16,11 @@ type Item = Omit<Post, "content">;
 type List = Item[];
 
 async function reqList(): Promise<List> {
-    const dir = await readDir(POST_DIR_PATH);
+    const dir = await readDir(POST_PATH);
     const filteredDir = dir.filter((item) => item.isDirectory());
     const promises = filteredDir.map(async (item) => {
         const slug = item.name;
-        const mdPath = path.join(POST_DIR_PATH, slug, "index.md");
+        const mdPath = path.join(POST_PATH, slug, "index.md");
         const rawMdContent = await readFile(mdPath);
         const { data: metadata } = matter(rawMdContent);
         const listItem: Item = {
@@ -39,7 +39,7 @@ async function reqList(): Promise<List> {
 }
 
 async function reqPost(slug: string): Promise<Post> {
-    const rawMdContent = await readFile(path.join(POST_DIR_PATH, slug, "index.md"));
+    const rawMdContent = await readFile(path.join(POST_PATH, slug, "index.md"));
     const { data: metadata, content } = matter(rawMdContent);
     const post: Post = {
         slug,

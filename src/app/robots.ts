@@ -1,4 +1,4 @@
-import { BASE_URL } from "@/constant/sitemap";
+import { APP_URL } from "@/constant";
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
                 allow: "/",
             },
         ],
-        sitemap: `${BASE_URL}/sitemap.xml`,
+        sitemap: new URL("sitemap.xml", APP_URL).toString(),
     };
 }

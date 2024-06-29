@@ -1,15 +1,16 @@
+import path from "node:path";
 import { reqList } from "@/helper/post";
-import { BASE_URL } from "@/constant/sitemap";
+import { APP_URL } from "@/constant";
 
 export default async function sitemap() {
     const list = await reqList();
     const blogs = list.map((item) => ({
-        url: `${BASE_URL}/blog/${item.slug}`,
+        url: new URL(path.join("blog", item.slug), APP_URL),
         lastModified: new Date(item.date).toISOString().split("T")[0],
     }));
 
     const routes = ["", "/blog"].map((route) => ({
-        url: `${BASE_URL}${route}`,
+        url: new URL(route, APP_URL),
         lastModified: new Date().toISOString().split("T")[0],
     }));
 

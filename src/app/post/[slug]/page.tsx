@@ -7,7 +7,7 @@ import CodeSnippet from "@/component/code-snippet";
 import NativeJsx from "$/post/build-blod-with-mdx/component/native-jsx";
 import CustomJsx from "$/post/build-blod-with-mdx/component/custom-jsx";
 import { reqPost, reqList } from "@/helper/post";
-import { BASE_URL } from "@/constant/sitemap";
+import { APP_URL } from "@/constant";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 type Props = {
@@ -52,47 +52,46 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const { title, hero } = await reqPost(params.slug);
-    const url = path.join("/image-hosting", params.slug, hero);
-    const secureUrl = path.join(BASE_URL, "/image-hosting", params.slug, hero);
+    const { title, hero, abstract } = await reqPost(params.slug);
+    const ogRelativeUrl = path.join("image-hosting", params.slug, hero);
+    const ogSecureUrl = new URL(ogRelativeUrl, APP_URL);
+    const ogImgUrl = process.env.NODE_ENV === "production" ? ogSecureUrl : ogRelativeUrl;
+    const ogTitle = `${title} | Jynxio`;
+    const ogDes = abstract;
+    const ogImages = {
+        url: ogImgUrl,
+        secureUrl: ogSecureUrl,
+
+        width: 1200,
+        height: 675,
+
+        alt: `open graph for the post "${title}"`,
+        type: "image/png",
+    };
 
     return {
         title,
-        description: "",
+        description: ogTitle,
         openGraph: {
             determiner: "",
-            title,
-            description: "",
+            title: ogTitle,
+            description: ogDes,
             emails: "jinxiaomatrix@gmail.com",
-            url: path.join(BASE_URL, "post", params.slug),
-            siteName: `Jynxio's Website`,
+            url: ogImgUrl,
+            siteName: " ",
             locale: "zh_CN", // 默认区域设置为美国英语en_US
             alternateLocale: ["en_US"], // 备用区域设置为简体中文（中国大陆）
             type: "website",
-            images: {
-                url,
-                secureUrl,
-                alt: title,
-                type: "image/png",
-                width: 1200,
-                height: 675,
-            },
+            images: ogImages,
         },
         twitter: {
+            title: ogTitle,
+            description: ogDes,
+            images: ogImages,
             site: "Jynxio",
             siteId: "@jyn_xio",
             creator: "Jynxio",
             creatorId: "@jyn_xio",
-            description: "",
-            title,
-            images: {
-                url,
-                secureUrl,
-                alt: title,
-                type: "image/png",
-                width: 1200,
-                height: 675,
-            },
         },
     };
 }

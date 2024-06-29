@@ -1,56 +1,56 @@
 import type { Metadata } from "next";
 
-import path from "node:path";
-import { BASE_URL } from "@/constant/sitemap";
+import { APP_URL } from "@/constant";
 
 function createMetadata(): Metadata {
+    const ogImgUrl =
+        process.env.NODE_ENV === "production" ? new URL("og-img.png", APP_URL) : "/og-img.png";
+    const obTitle = "Hi, I'm Jynxio/金秀";
+    const ogDes = "This is a personal website that stores my posts and ideas.";
+    const ogImages = {
+        url: ogImgUrl,
+        secureUrl: new URL("og-img.png", APP_URL),
+
+        width: 1200,
+        height: 675,
+
+        type: "image/png",
+        alt: "open graph for the homepage",
+    };
+
     return {
         // Static info
         publisher: "Jynxio",
         generator: "Next.js",
         authors: [{ name: "Jynxio", url: "https://github.com/jynxio" }],
         applicationName: "Jynxio's Website",
-        metadataBase: new URL(BASE_URL),
-        keywords: "personal website, portfolio, technology",
-        alternates: { canonical: new URL(BASE_URL).toString() },
+        metadataBase: new URL(APP_URL),
+        keywords: "webdev, blog, profile",
+        alternates: { canonical: APP_URL },
 
         // Dynamic info
         title: { default: "Jynxio", template: "%s | Jynxio" },
         description: "Jynxio's Website",
         openGraph: {
+            title: obTitle,
             determiner: "",
-            title: "Jynxio",
-            description: "Jynxio's Website",
+            description: ogDes,
             emails: "jinxiaomatrix@gmail.com",
-            url: BASE_URL,
-            siteName: "Jynxio's Website",
+            url: ogImgUrl,
+            siteName: " ",
             locale: "en_US",
             alternateLocale: ["zh_CN"],
             type: "website",
-            images: {
-                url: "./opengraph-image.png",
-                alt: "Jynxio's Website",
-                secureUrl: path.join(BASE_URL, "/opengraph-image.png"),
-                type: "image/png",
-                width: 1200,
-                height: 675,
-            },
+            images: ogImages,
         },
         twitter: {
+            title: obTitle,
+            description: ogDes,
+            images: ogImages,
             site: "Jynxio",
             siteId: "@jyn_xio",
             creator: "Jynxio",
             creatorId: "@jyn_xio",
-            description: "Jynxio's Website",
-            title: "Jynxio's Website",
-            images: {
-                url: "./opengraph-image.png",
-                alt: "Jynxio's Website",
-                secureUrl: path.join(BASE_URL, "/opengraph-image.png"),
-                type: "image/png",
-                width: 1200,
-                height: 675,
-            },
         },
     };
 }
