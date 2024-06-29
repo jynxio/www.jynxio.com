@@ -25,11 +25,11 @@ async function reqList(): Promise<List> {
         const { data: metadata } = matter(rawMdContent);
         const listItem: Item = {
             slug,
+            tags: metadata.tags,
             hero: metadata.hero,
             date: metadata.date,
             title: metadata.title,
             abstract: metadata.abstract,
-            tags: metadata.tags.split(",").map((item: string) => item.trim()),
         };
 
         return listItem;
@@ -44,11 +44,11 @@ async function reqPost(slug: string): Promise<Post> {
     const post: Post = {
         slug,
         content,
+        tags: metadata.tags,
         hero: metadata.hero,
         date: metadata.date,
         title: metadata.title,
         abstract: metadata.abstract,
-        tags: metadata.tags.split(",").map((item: string) => item.trim()),
     };
 
     return post;
@@ -62,5 +62,5 @@ function readFile(targetPath: string) {
     return fs.readFile(path.join(process.cwd(), targetPath), "utf8");
 }
 
-export { reqList, reqPost };
-export default { reqList, reqPost };
+export { reqList, reqPost, readFile, readDir };
+export default { reqList, reqPost, readFile, readDir };
