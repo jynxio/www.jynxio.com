@@ -2,16 +2,18 @@
     "private": true,
     "scripts": {
         "dev": "next dev",
-        "predev": "bun ./src/prescript/post.ts",
         "start": "next dev",
+        "predev": "bun ./src/scaffold/createImgHosting.ts",
         "build": "next build",
-        "deploy": "vercel --prod",
+        "prebuild": "bun ./src/scaffold/createImgHosting.ts",
         "preview": "next start",
+
         "knip": "knip",
         "check:js": "biome lint --write",
         "check:css": "stylelint \"**/*.{css,scss,sass,less,postcss}\" --fix",
         "check:style": "prettier --write \"**/*.{html,vue,xml,yml,yaml,css,scss,sass,less,postcss}\" && biome format --write",
         "check:all": "npm run check:js && npm run check:css && npm run check:style",
+
         "prepare": "husky",
         "lintstaged": "lint-staged",
         "commitlint": "commitlint --edit"
