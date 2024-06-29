@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 
 import css from "./page.module.css";
 import path from "node:path";
-import component from "@/layout/mdx";
+import components from "@/layout/mdx";
 import CodeSnippet from "@/component/code-snippet";
+import NativeJsx from "$/post/build-blod-with-mdx/component/native-jsx";
+import CustomJsx from "$/post/build-blod-with-mdx/component/custom-jsx";
 import { reqPost, reqList } from "@/helper/post";
 import { BASE_URL } from "@/constant/sitemap";
 import { MDXRemote } from "next-mdx-remote/rsc";
@@ -14,17 +16,18 @@ type Props = {
 };
 
 async function Page(props: Props) {
-    const { content } = await reqPost(props.params.slug);
+    const { content, title } = await reqPost(props.params.slug);
 
     return (
         <article className={css.container}>
+            <components.h1>{title}</components.h1>
             <MDXRemote
                 source={content}
                 components={{
-                    ...component,
+                    ...components,
                     pre: CodeSnippet,
-                    CustomJsxInMdx: () => <></>,
-                    NativeJsxInMdx: () => <></>,
+                    NativeJsx,
+                    CustomJsx,
                     img: (args) => {
                         if (!args.src) return <></>;
 
@@ -34,7 +37,7 @@ async function Page(props: Props) {
 
                         const url = path.join("/image-hosting", props.params.slug, imgName);
 
-                        return <component.img {...args} src={url} />;
+                        return <components.img {...args} src={url} />;
                     },
                 }}
             />
