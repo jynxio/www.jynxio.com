@@ -1,5 +1,5 @@
 {
-    "$schema": "https://biomejs.dev/schemas/1.8.2/schema.json",
+    "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
 
     "organizeImports": {
         "enabled": true
@@ -29,9 +29,9 @@
             "**/.next",
             "**/.vercel",
             "**/node_modules",
-            "**/dist/",
-            "**/build/",
-            "**/out/",
+            "**/out",
+            "**/dist",
+            "**/build",
             "**/*.md",
             "**/*.mdx"
         ]
