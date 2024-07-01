@@ -6,12 +6,10 @@
     inset: 20% 0 auto;
     margin-inline: auto;
     inline-size: fit-content;
-    color: transparent;
-    font-size: 4rem;
+    color: var(--color-text-primary);
+    font-size: 5rem;
     font-weight: bold;
     text-align: center;
     line-height: 1.5;
     align-items: center;
-    background-clip: text;
-    background-image: linear-gradient(to bottom, var(--color-text-primary), #000);
 }
