@@ -15,3 +15,6 @@
 # Markdown
 **/*.md
 **/*.mdx
+
+# Temporary
+**/temporary
