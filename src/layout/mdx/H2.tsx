@@ -1,10 +1,11 @@
 import css from "./H2.module.css";
+import clsx from "clsx";
 
 type Props = React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>;
 
-function H2({ children, ...rest }: Props) {
+function H2({ children, className, ...rest }: Props) {
     return (
-        <h2 {...rest} className={css.container}>
+        <h2 className={clsx(css.container, className)} {...rest}>
             {children}
         </h2>
     );

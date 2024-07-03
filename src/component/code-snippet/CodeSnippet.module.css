@@ -2,6 +2,7 @@
     padding: calc(20 / 16 * 1rem) calc(10 / 16 * 1rem);
     border-radius: var(--border-radius-base);
     background-color: var(--color-bg-secondary);
+    font-family: '霞鹜文楷等宽', monospace;
 
     & > pre {
         background-color: transparent !important;

@@ -1,7 +1,14 @@
+import css from "./Em.module.css";
+import clsx from "clsx";
+
 type Props = React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
 
-function Em({ children, ...rest }: Props) {
-    return <em {...rest}>{children}</em>;
+function Em({ children, className, ...rest }: Props) {
+    return (
+        <em className={clsx(css.container, className)} {...rest}>
+            {children}
+        </em>
+    );
 }
 
 export { Em };

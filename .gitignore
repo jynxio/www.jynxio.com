@@ -49,6 +49,7 @@ package-lock.json
 
 # My
 public/image-hosting
+src/asset/temporary
 **/*.png
 **/*.jpg
 **/*.jpeg

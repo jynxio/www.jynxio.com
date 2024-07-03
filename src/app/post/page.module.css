@@ -21,7 +21,7 @@
             & > .title {
                 margin-block-end: 1.5rem;
                 font-size: 1.75rem;
-                font-weight: bold;
+                font-weight: 700;
 
                 &:hover,
                 &:active,
@@ -44,7 +44,7 @@
                 align-items: center;
                 inline-size: fit-content;
                 margin-block-start: 1.5rem;
-                font-weight: bold;
+                font-weight: 700;
 
                 &:hover,
                 &:active,

@@ -1,7 +1,14 @@
+import css from "./H5.module.css";
+import clsx from "clsx";
+
 type Props = React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>;
 
-function H5({ children, ...rest }: Props) {
-    return <h5 {...rest}>{children}</h5>;
+function H5({ children, className, ...rest }: Props) {
+    return (
+        <h5 className={clsx(css.container, className)} {...rest}>
+            {children}
+        </h5>
+    );
 }
 
 export { H5 };

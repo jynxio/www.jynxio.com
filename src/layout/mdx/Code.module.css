@@ -3,4 +3,5 @@
     padding-inline: calc(0.65em);
     border: 1px solid var(--color-bg-secondary-accent);
     border-radius: var(--border-radius-xs);
+    font-family: '霞鹜文楷等宽', monospace;
 }

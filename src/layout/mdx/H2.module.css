@@ -1,6 +1,6 @@
 .container {
     font-size: 2rem;
-    font-weight: bold;
+    font-weight: 700;
     margin-block-end: 2rem;
 
     &::before {

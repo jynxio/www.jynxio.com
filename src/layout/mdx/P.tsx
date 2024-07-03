@@ -1,13 +1,14 @@
 import css from "./P.module.css";
+import clsx from "clsx";
 
 type Props = React.DetailedHTMLProps<
     React.HTMLAttributes<HTMLParagraphElement>,
     HTMLParagraphElement
 >;
 
-function P({ children, ...rest }: Props) {
+function P({ children, className, ...rest }: Props) {
     return (
-        <p {...rest} className={css.container}>
+        <p className={clsx(css.container, className)} {...rest}>
             {children}
         </p>
     );

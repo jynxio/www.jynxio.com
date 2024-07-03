@@ -1,6 +1,12 @@
 import "./reset.css";
 import "./variable.css";
 import "./index.css";
+import "@/asset/temporary/LXGWWenKai-Bold/index.css";
+import "@/asset/temporary/LXGWWenKai-Light/index.css";
+import "@/asset/temporary/LXGWWenKai-Regular/index.css";
+import "@/asset/temporary/LXGWWenKaiMono-Bold/index.css";
+import "@/asset/temporary/LXGWWenKaiMono-Light/index.css";
+import "@/asset/temporary/LXGWWenKaiMono-Regular/index.css";
 
 import type React from "react";
 
@@ -14,7 +20,7 @@ const metadata = createMetadata();
 
 function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="en">
+        <html lang="en" className={css.font}>
             <body>
                 <div className={css.container}>
                     <Nav />
