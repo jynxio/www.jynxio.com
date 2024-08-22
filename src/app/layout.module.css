@@ -6,10 +6,31 @@
 }
 
 .container {
-    isolation: isolate;
-    position: relative;
     block-size: 100vh;
     block-size: 100dvh;
     inline-size: 100vw;
     inline-size: 100dvw;
+    overflow: clip;
+}
+
+.wrapper {
+    block-size: 100%;
+    inline-size: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    min-block-size: 100%;
+    min-inline-size: 100%;
+}
+
+.nav {
+    flex: 0 0 fit-content;
+    position: sticky;
+    inset: 0 auto auto 0;
+}
+
+.main {
+    flex: 1 0 0;
 }

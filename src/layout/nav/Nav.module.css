@@ -1,27 +1,38 @@
 .container {
-    position: absolute;
-    z-index: 1;
-    bottom: 1.25rem;
-    left: 1.25rem;
+    padding: 0.625rem 1.25rem;
+    color: var(--color-text-secondary);
+    font-family: '霞鹜文楷等宽', monospace;
+    font-size: 1.125rem;
+    background-color: var(--color-bg-primary);
 }
 
 .container > nav {
     display: flex;
-    gap: 1rem;
-    flex-direction: column;
+    justify-content: space-between;
 
-    & > .link {
+    & > section {
         display: flex;
-        gap: 0.625rem;
-        font-family: '霞鹜文楷等宽', monospace;
         align-items: center;
-        color: var(--color-text-secondary);
-        letter-spacing: 0.0625rem;
 
-        &:hover,
-        &:active,
-        &:focus {
-            color: var(--color-text-secondary-accent);
+        &.page {
+            gap: 2rem;
+        }
+
+        &.function {
+            gap: 1rem;
+        }
+
+        & > .link {
+            display: flex;
+            gap: 0.25rem;
+            align-items: center;
+            cursor: pointer;
+
+            &:hover,
+            &:active,
+            &:focus {
+                color: var(--color-text-secondary-accent);
+            }
         }
     }
 }

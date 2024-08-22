@@ -1,8 +1,15 @@
 import css from "./layout.module.css";
-import ScrollbarWrapper from "@/component/scrollbar-wrapper";
+import Copyright from "@/layout/copyright";
 
 function Layout({ children }: { children: React.ReactNode }) {
-    return <ScrollbarWrapper className={css.wrapper}>{children}</ScrollbarWrapper>;
+    return (
+        <div className={css.container}>
+            <section className={css.content}>{children}</section>
+            <section className={css.copyright}>
+                <Copyright />
+            </section>
+        </div>
+    );
 }
 
 export default Layout;

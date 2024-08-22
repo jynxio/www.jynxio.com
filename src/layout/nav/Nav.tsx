@@ -3,7 +3,8 @@ import clsx from "clsx";
 import React from "react";
 import Link from "@/component/link";
 import Icon from "@/component/icon";
-import { Tent, Library, DraftingCompass } from "lucide-react";
+import Theme from "./Theme";
+import { Tent, Library, DraftingCompass, Github } from "lucide-react";
 
 type Props = Omit<React.HTMLAttributes<HTMLHeadElement>, "children">;
 
@@ -11,26 +12,38 @@ const Nav = React.forwardRef<HTMLHeadElement, Props>(({ className, ...rest }, re
     return (
         <aside className={clsx(css.container, className)} ref={ref} {...rest}>
             <nav>
-                <Link href="/" className={css.link}>
-                    <Icon label="home" width={18}>
-                        <Tent />
-                    </Icon>
-                    Home
-                </Link>
+                <section className={css.page}>
+                    <Link href="/" className={css.link}>
+                        <Icon label="Home" width={19}>
+                            <Tent />
+                        </Icon>
+                        Home
+                    </Link>
 
-                <Link href="/post" className={css.link}>
-                    <Icon label="post" width={18}>
-                        <Library />
-                    </Icon>
-                    Post
-                </Link>
+                    <Link href="/post" className={css.link}>
+                        <Icon label="Post" width={19}>
+                            <Library />
+                        </Icon>
+                        Post
+                    </Link>
 
-                <Link href="/inder" className={css.link}>
-                    <Icon label="idea" width={18}>
-                        <DraftingCompass />
-                    </Icon>
-                    Idea
-                </Link>
+                    <Link href="/inder" className={css.link}>
+                        <Icon label="Idea" width={19}>
+                            <DraftingCompass />
+                        </Icon>
+                        Idea
+                    </Link>
+                </section>
+
+                <section className={css.function}>
+                    <Link href="https://github.com/jynxio" target="_blank" className={css.link}>
+                        <Icon label="Home" width={19}>
+                            <Github />
+                        </Icon>
+                    </Link>
+
+                    <Theme />
+                </section>
             </nav>
         </aside>
     );

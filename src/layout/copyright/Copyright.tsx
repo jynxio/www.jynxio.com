@@ -6,10 +6,10 @@ function Copyright() {
     return (
         <aside className={css.container}>
             <address>
-                <Icon label="copyright" width={12}>
+                <Icon label="copyright" width={15}>
                     <CopyrightIcon />
                 </Icon>
-                2022-2024 Jynxio | CC BY-NC-ND 4.0
+                2022-2024 JYNXIO | CC BY-NC-ND 4.0
             </address>
         </aside>
     );

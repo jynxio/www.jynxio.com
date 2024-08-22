@@ -1,0 +1,9 @@
+.os-scrollbar {
+    --os-handle-bg: var(--color-border-primary);
+    --os-handle-bg-hover: var(--color-border-primary-accent);
+    --os-handle-bg-active: var(--color-border-primary-accent);
+}
+
+.os-scrollbar-handle {
+    cursor: ns-resize;
+}

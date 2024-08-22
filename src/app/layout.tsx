@@ -9,24 +9,68 @@ import "@/asset/temporary/LXGWWenKaiMono-Light/index.css";
 import "@/asset/temporary/LXGWWenKaiMono-Regular/index.css";
 
 import type React from "react";
-
 import css from "./layout.module.css";
 import createMetadata from "./createMetadata";
 import Nav from "@/layout/nav";
-import Copyright from "@/layout/copyright";
+import ScrollbarWrapper from "@/layout/scrollbar-wrapper";
 import { GoogleAnalytics } from "./GoogleAnalytics";
 
 const metadata = createMetadata();
 
+// TODO: Need compile
+const syncThemeScriptHtml = `
+(function iife() {
+    const LOCALSTORAGE_KEY = "theme";
+    const theme = getTheme();
+
+    const root = document.documentElement;
+    const btnAuto = document.querySelector("button:nth-child(2)");
+
+    root.dataset.theme = theme;
+    checkPrefersColorSchemeSupport() || btnAuto?.setAttribute("disabled", "");
+
+    function getTheme() {
+        // Storage
+        const themeFromLocalStorage = globalThis.localStorage.getItem(LOCALSTORAGE_KEY);
+
+        if (themeFromLocalStorage) return themeFromLocalStorage;
+        if (checkPrefersColorSchemeSupport()) {
+            globalThis.localStorage.setItem(LOCALSTORAGE_KEY, "auto");
+            return "auto";
+        }
+
+        globalThis.localStorage.setItem(LOCALSTORAGE_KEY, "dark");
+        return "dark";
+    }
+
+    function checkPrefersColorSchemeSupport() {
+        return (
+            globalThis.matchMedia("(prefers-color-scheme: light)").matches ||
+            globalThis.matchMedia("(prefers-color-scheme: dark)").matches
+        );
+    }
+})();
+`.trim();
+
 function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="en" className={css.font}>
-            <body>
-                <div className={css.container}>
-                    <Nav />
-                    <Copyright />
-                    {children}
-                </div>
+        <html lang="en" className={css.font} suppressHydrationWarning>
+            <head>
+                <script
+                    id="sync-script"
+                    // biome-ignore lint/security/noDangerouslySetInnerHtml: This happens on the server side, so it is secure.
+                    dangerouslySetInnerHTML={{ __html: syncThemeScriptHtml }}
+                />
+            </head>
+            <body className={css.container}>
+                <ScrollbarWrapper className={css.wrapper}>
+                    <div className={css.content}>
+                        <section className={css.nav}>
+                            <Nav />
+                        </section>
+                        <section className={css.main}>{children}</section>
+                    </div>
+                </ScrollbarWrapper>
 
                 {process.env.NODE_ENV === "production" && <GoogleAnalytics />}
             </body>

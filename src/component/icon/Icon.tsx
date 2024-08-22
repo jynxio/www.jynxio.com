@@ -5,26 +5,47 @@ import React from "react";
 import * as AccessibleIcon from "@radix-ui/react-accessible-icon";
 import clsx from "clsx";
 
-// 代表仅作为占位符来使用
+/**
+ * 作为占位符来使用
+ */
 interface PlaceholderProps extends React.HTMLAttributes<HTMLDivElement> {
-    label: string;
-    width?: number;
-    height?: number;
-    children: React.ReactNode;
-}
-interface IconProps extends React.HTMLAttributes<HTMLDivElement> {
     label?: never;
     children?: never;
     width?: number;
     height?: number;
 }
 
+/**
+ * 作为图标来使用
+ */
+interface IconProps extends React.HTMLAttributes<HTMLDivElement> {
+    label: string;
+    width?: number;
+    height?: number;
+    children: React.ReactNode;
+}
+
 type Props = PlaceholderProps | IconProps;
 
 const Icon = React.forwardRef<HTMLDivElement, Props>(
     ({ label, width, height, children, className, style, ...rest }: Props, ref) => {
-        const blockSize = height === undefined ? "fit-content" : `calc(${height} / 16 * 1rem)`;
-        const inlineSize = width === undefined ? "fit-content" : `calc(${width}  / 16 * 1rem)`;
+        let blockSize: string;
+        let inlineSize: string;
+        const type = label || children ? "icon" : "placeholder";
+
+        if (type === "icon") {
+            blockSize = height === undefined ? "fit-content" : `calc(${height} / 16 * 1rem)`;
+            inlineSize = width === undefined ? "fit-content" : `calc(${width}  / 16 * 1rem)`;
+        } else {
+            blockSize = height === undefined ? "fit-content" : `calc(${height} / 16 * 1rem)`;
+            inlineSize = width === undefined ? "fit-content" : `calc(${width}  / 16 * 1rem)`;
+
+            if (blockSize === "fit-content" && inlineSize === "fit-content")
+                throw new Error("Icon that use to be placeholder must have a width or height");
+
+            if (blockSize === "fit-content") blockSize = inlineSize;
+            if (inlineSize === "fit-content") inlineSize = blockSize;
+        }
 
         return (
             <div

@@ -1,3 +1,99 @@
+[data-theme='dark'] {
+    /* 字体颜色 */
+    --color-text-primary: #ededed;
+    --color-text-primary-accent: #276df5;
+    --color-text-secondary: #a1a1a1;
+    --color-text-secondary-accent: var(--color-text-primary);
+
+    /* 背景颜色 */
+    --color-bg-primary: #000;
+    --color-bg-primary-accent: var(--color-text-primary);
+    --color-bg-secondary: #131313;
+    --color-bg-secondary-accent: #1f1f1f;
+
+    /* 边框颜色 */
+    --color-border-primary: #333;
+    --color-border-primary-accent: var(--color-text-primary);
+
+    /* 代码高亮 */
+    .shiki,
+    .shiki span {
+        color: var(--shiki-dark) !important;
+    }
+
+    color-scheme: dark;
+}
+
+[data-theme='light'] {
+    /* 字体颜色 */
+    --color-text-primary: #171717;
+    --color-text-primary-accent: #1a69ff;
+    --color-text-secondary: #666;
+    --color-text-secondary-accent: var(--color-text-primary);
+
+    /* 背景颜色 */
+    --color-bg-primary: #fff;
+    --color-bg-primary-accent: #1a69ff;
+    --color-bg-secondary: #f2f2f2;
+    --color-bg-secondary-accent: #ebebeb;
+
+    /* 边框颜色 */
+    --color-border-primary: #c7c7c7;
+    --color-border-primary-accent: var(--color-text-primary);
+
+    color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+    [data-theme='auto'] {
+        /* 字体颜色 */
+        --color-text-primary: #ededed;
+        --color-text-primary-accent: #276df5;
+        --color-text-secondary: #a1a1a1;
+        --color-text-secondary-accent: var(--color-text-primary);
+
+        /* 背景颜色 */
+        --color-bg-primary: #000;
+        --color-bg-primary-accent: var(--color-text-primary);
+        --color-bg-secondary: #131313;
+        --color-bg-secondary-accent: #1f1f1f;
+
+        /* 边框颜色 */
+        --color-border-primary: #333;
+        --color-border-primary-accent: var(--color-text-primary);
+
+        /* 代码高亮 */
+        .shiki,
+        .shiki span {
+            color: var(--shiki-dark) !important;
+        }
+
+        color-scheme: dark;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    [data-theme='auto'] {
+        /* 字体颜色 */
+        --color-text-primary: #171717;
+        --color-text-primary-accent: #1a69ff;
+        --color-text-secondary: #666;
+        --color-text-secondary-accent: var(--color-text-primary);
+
+        /* 背景颜色 */
+        --color-bg-primary: #fff;
+        --color-bg-primary-accent: #1a69ff;
+        --color-bg-secondary: #f2f2f2;
+        --color-bg-secondary-accent: #ebebeb;
+
+        /* 边框颜色 */
+        --color-border-primary: #c7c7c7;
+        --color-border-primary-accent: var(--color-text-primary);
+
+        color-scheme: light;
+    }
+}
+
 :root {
     /* 字体尺寸 */
     --font-size-sx: calc(12 / 16 * 1rem);
@@ -6,27 +102,11 @@
     --font-size-lg: calc(18 / 16 * 1rem);
     --font-size-xl: calc(20 / 16 * 1rem);
 
-    /* 字体颜色 */
-    --color-text-primary: #ededed; /* 主色 */
-    --color-text-primary-accent: #3f8ef7; /* 主强调色 */
-    --color-text-secondary: #a1a1a1; /* 次色 */
-    --color-text-secondary-accent: #ededed; /* 次强调色 */
-
-    /* 背景颜色 */
-    --color-bg-primary: #000; /* 主色 */
-    --color-bg-primary-accent: #ededed; /* 主强调色 */
-    --color-bg-secondary: #131313; /* 次色 */
-    --color-bg-secondary-accent: #1f1f1f; /* 次强调色 */
-
-    /* 边框颜色 */
-    --color-border-primary: #333; /* 主色 */
-    --color-border-primary-accent: #fafafa; /* 主强调色 */
-
     /* 其他 */
+    --icon-size: calc(18 / 16 * 1rem);
     --border-radius-xs: calc(3 / 16 * 1rem);
     --border-radius-base: calc(4 / 16 * 1rem);
     --border-radius-md: calc(6 / 16 * 1rem);
     --border-radius-lg: calc(8 / 16 * 1rem);
     --border-radius-xl: calc(10 / 16 * 1rem);
-    --icon-size: calc(18 / 16 * 1rem);
 }

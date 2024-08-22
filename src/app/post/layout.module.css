@@ -1,7 +1,13 @@
-.wrapper {
-    isolation: isolate;
-    overflow-y: auto;
-    position: relative;
+.container {
+    display: flex;
+    flex-direction: column;
     block-size: 100%;
-    inline-size: 100%;
+}
+
+.content {
+    flex: 1 0 fit-content;
+}
+
+.copyright {
+    flex: 0 0 fit-content;
 }

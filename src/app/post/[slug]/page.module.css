@@ -1,4 +1,5 @@
 .container {
+    display: flow-root;
     inline-size: calc(800 / 16 * 1rem);
     margin-block: calc(80 / 16 * 1rem);
     margin-inline: auto;

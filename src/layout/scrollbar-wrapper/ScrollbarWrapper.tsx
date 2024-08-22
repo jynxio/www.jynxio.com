@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
 import "overlayscrollbars/overlayscrollbars.css";
+import "./custom.css";
+import React from "react";
 import { OverlayScrollbarsComponent } from "overlayscrollbars-react";
 import type { OverlayScrollbarsComponentRef } from "overlayscrollbars-react";
 
