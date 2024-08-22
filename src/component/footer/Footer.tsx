@@ -1,7 +1,5 @@
 import "@/util/font";
 import css from "./Footer.module.css";
-import Search from "@/component/search";
-import Theme from "@/component/theme";
 import Link from "@/component/link";
 import Icon from "@/component/icon";
 import { Github, Twitter, Rss } from "lucide-react";
