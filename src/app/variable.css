@@ -44,6 +44,7 @@
     color-scheme: light;
 }
 
+/* 💡 light-dark()语法可以简化该媒体查询，但其兼容性很差。 */
 @media (prefers-color-scheme: dark) {
     [data-theme='auto'] {
         /* 字体颜色 */
