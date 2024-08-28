@@ -33,7 +33,7 @@
 
     /* 背景颜色 */
     --color-bg-primary: #fff;
-    --color-bg-primary-accent: #1a69ff;
+    --color-bg-primary-accent: var(--color-text-primary);
     --color-bg-secondary: #f2f2f2;
     --color-bg-secondary-accent: #ebebeb;
 
@@ -44,54 +44,30 @@
     color-scheme: light;
 }
 
-/* 💡 light-dark()语法可以简化该媒体查询，但其兼容性很差。 */
-@media (prefers-color-scheme: dark) {
-    [data-theme='auto'] {
-        /* 字体颜色 */
-        --color-text-primary: #ededed;
-        --color-text-primary-accent: #276df5;
-        --color-text-secondary: #a1a1a1;
-        --color-text-secondary-accent: var(--color-text-primary);
+[data-theme='auto'] {
+    /* 字体颜色 */
+    --color-text-primary: light-dark(#171717, #ededed);
+    --color-text-primary-accent: light-dark(#1a69ff, #276df5);
+    --color-text-secondary: light-dark(#666, #a1a1a1);
+    --color-text-secondary-accent: var(--color-text-primary);
 
-        /* 背景颜色 */
-        --color-bg-primary: #000;
-        --color-bg-primary-accent: var(--color-text-primary);
-        --color-bg-secondary: #131313;
-        --color-bg-secondary-accent: #1f1f1f;
+    /* 背景颜色 */
+    --color-bg-primary: light-dark(#fff, #000);
+    --color-bg-primary-accent: var(--color-text-primary);
+    --color-bg-secondary: light-dark(#f2f2f2, #131313);
+    --color-bg-secondary-accent: light-dark(#ebebeb, #1f1f1f);
 
-        /* 边框颜色 */
-        --color-border-primary: #333;
-        --color-border-primary-accent: var(--color-text-primary);
+    /* 边框颜色 */
+    --color-border-primary: light-dark(#c7c7c7, #333);
+    --color-border-primary-accent: var(--color-text-primary);
 
-        /* 代码高亮 */
+    color-scheme: light dark;
+
+    @media (prefers-color-scheme: dark) {
         .shiki,
         .shiki span {
             color: var(--shiki-dark) !important;
         }
-
-        color-scheme: dark;
-    }
-}
-
-@media (prefers-color-scheme: light) {
-    [data-theme='auto'] {
-        /* 字体颜色 */
-        --color-text-primary: #171717;
-        --color-text-primary-accent: #1a69ff;
-        --color-text-secondary: #666;
-        --color-text-secondary-accent: var(--color-text-primary);
-
-        /* 背景颜色 */
-        --color-bg-primary: #fff;
-        --color-bg-primary-accent: #1a69ff;
-        --color-bg-secondary: #f2f2f2;
-        --color-bg-secondary-accent: #ebebeb;
-
-        /* 边框颜色 */
-        --color-border-primary: #c7c7c7;
-        --color-border-primary-accent: var(--color-text-primary);
-
-        color-scheme: light;
     }
 }
 
