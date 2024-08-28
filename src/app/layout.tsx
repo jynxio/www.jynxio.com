@@ -22,12 +22,9 @@ const syncThemeScriptHtml = `
 (function iife() {
     const LOCALSTORAGE_KEY = "theme";
     const theme = getTheme();
-
     const root = document.documentElement;
-    const btnAuto = document.querySelector("button:nth-child(2)");
 
     root.dataset.theme = theme;
-    checkPrefersColorSchemeSupport() || btnAuto?.setAttribute("disabled", "");
 
     function getTheme() {
         // Storage
@@ -56,11 +53,8 @@ function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en" className={css.font} suppressHydrationWarning>
             <head>
-                <script
-                    id="sync-script"
-                    // biome-ignore lint/security/noDangerouslySetInnerHtml: This happens on the server side, so it is secure.
-                    dangerouslySetInnerHTML={{ __html: syncThemeScriptHtml }}
-                />
+                {/* biome-ignore lint/security/noDangerouslySetInnerHtml: This happens on the server side, so it is secure. */}
+                <script dangerouslySetInnerHTML={{ __html: syncThemeScriptHtml }} />
             </head>
             <body className={css.container}>
                 <ScrollbarWrapper className={css.wrapper}>
