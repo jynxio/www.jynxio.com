@@ -118,7 +118,9 @@ async function Page() {
   }
 ```
 
-> 为什么不用 Next.js 官方的 [`@next/mdx`](https://nextjs.org/docs/pages/building-your-application/configuring/mdx#nextmdx)？因为我根据官方文档的介绍来使用它时，发现无论如何都没办法处理 JSX，我已经彻底失去耐心了。😅
+> 为什么不用 Next.js 官方的 [`@next/mdx`](https://nextjs.org/docs/pages/building-your-application/configuring/mdx#nextmdx)？因为在我写作的时候，它还有很多问题，比如官方文档中关于处理 JSX 的部份是行之无效的😅。
+>
+> 但现在不一样了，因为文档健全多了，我推荐你尝试一下它。
 
 然后我用 [`water.css`](https://github.com/kognise/water.css) 来给页面添加样式，它是一整套预定义好的 CSS，非常适合用在这里来做原型演示。
 
