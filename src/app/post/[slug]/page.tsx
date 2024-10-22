@@ -10,13 +10,14 @@ import { reqPost, reqList } from "@/helper/post";
 import { APP_URL } from "@/constant";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
-type Props = {
-    params: { slug: string };
-    searchParams: { [key: string]: string | string[] | undefined };
-};
+type Props = Readonly<{
+    params: Promise<{ slug: string }>;
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}>;
 
-async function Page(props: Props) {
-    const { content, title } = await reqPost(props.params.slug);
+async function Page({ params }: Props) {
+    const { slug } = await params;
+    const { content, title } = await reqPost(slug);
 
     return (
         <article className={css.container}>
@@ -35,7 +36,7 @@ async function Page(props: Props) {
 
                         if (!imgName) return <></>;
 
-                        const url = path.join("/image-hosting", props.params.slug, imgName);
+                        const url = path.join("/image-hosting", slug, imgName);
 
                         return <components.img {...args} src={url} />;
                     },
@@ -52,8 +53,9 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const { title, hero, abstract } = await reqPost(params.slug);
-    const ogRelativeUrl = path.join("image-hosting", params.slug, hero);
+    const { slug } = await params;
+    const { title, hero, abstract } = await reqPost(slug);
+    const ogRelativeUrl = path.join("image-hosting", slug, hero);
     const ogSecureUrl = new URL(ogRelativeUrl, APP_URL);
     const ogImgUrl = process.env.NODE_ENV === "production" ? ogSecureUrl : ogRelativeUrl;
     const ogTitle = `${title} | Jynxio`;

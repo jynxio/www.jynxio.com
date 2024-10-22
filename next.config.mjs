@@ -2,10 +2,8 @@
 const nextConfig = {
     output: "export",
     reactStrictMode: true,
-    experimental: {
-        outputFileTracingIncludes: {
-            "/*": ["./post/**/*"],
-        },
+    outputFileTracingIncludes: {
+        "/*": ["./post/**/*"],
     },
 };
 
