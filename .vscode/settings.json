@@ -37,5 +37,7 @@
     "css.validate": false,
     "less.validate": false,
     "scss.validate": false,
-    "stylelint.validate": ["css", "scss", "sass", "less", "postcss"]
+    "stylelint.validate": ["css", "scss", "sass", "less", "postcss"],
+
+    "cSpell.words": ["overlayscrollbars", "maath", "biomejs", "csstools", "predev", "drei", "shiki"]
 }
