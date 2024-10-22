@@ -14,21 +14,21 @@ const Nav = React.forwardRef<HTMLHeadElement, Props>(({ className, ...rest }, re
             <nav>
                 <section className={css.page}>
                     <Link href="/" className={css.link}>
-                        <Icon label="Home" width={19}>
+                        <Icon label="Home" width={16}>
                             <Tent />
                         </Icon>
                         Home
                     </Link>
 
                     <Link href="/post" className={css.link}>
-                        <Icon label="Post" width={19}>
+                        <Icon label="Post" width={16}>
                             <Library />
                         </Icon>
                         Post
                     </Link>
 
-                    <Link href="/inder" className={css.link}>
-                        <Icon label="Idea" width={19}>
+                    <Link href="/idea" className={css.link}>
+                        <Icon label="Idea" width={16}>
                             <DraftingCompass />
                         </Icon>
                         Idea
@@ -37,7 +37,7 @@ const Nav = React.forwardRef<HTMLHeadElement, Props>(({ className, ...rest }, re
 
                 <section className={css.function}>
                     <Link href="https://github.com/jynxio" target="_blank" className={css.link}>
-                        <Icon label="Home" width={19}>
+                        <Icon label="Home" width={16}>
                             <Github />
                         </Icon>
                     </Link>

@@ -24,23 +24,23 @@ function Theme() {
     return (
         <Toggle.Root aria-label="Toggle theme" className={css.container} onClick={handleClick}>
             <section>
-                <Icon width={19} />
+                <Icon width={16} />
             </section>
 
             <section className={css.icon} style={styles[0]}>
-                <Icon label="Auto theme" width={19}>
+                <Icon label="Auto theme" width={16}>
                     <Bot />
                 </Icon>
             </section>
 
             <section className={css.icon} style={styles[1]}>
-                <Icon label="Dark theme" width={19}>
+                <Icon label="Dark theme" width={16}>
                     <MoonStar />
                 </Icon>
             </section>
 
             <section className={css.icon} style={styles[2]}>
-                <Icon label="Light theme" width={19}>
+                <Icon label="Light theme" width={16}>
                     <Sparkles />
                 </Icon>
             </section>
@@ -61,7 +61,7 @@ function Theme() {
 function Spin() {
     return (
         <div className={css.spin}>
-            <Icon label="Loading" width={19}>
+            <Icon label="Loading" width={16}>
                 <Loader />
             </Icon>
         </div>
