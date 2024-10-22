@@ -10,6 +10,7 @@
         justify-content: center;
         margin-block-end: 0.625rem;
         color: var(--color-text-secondary);
+        font-size: 80%;
         font-style: normal;
         font-family: '霞鹜文楷等宽', monospace;
         line-height: 1;
