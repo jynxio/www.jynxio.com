@@ -1,15 +1,7 @@
 .container {
-    position: absolute;
-    z-index: 1;
-    inset: 20% 0 auto;
-    margin-inline: auto;
+    position: fixed;
+    inset: 0;
+    block-size: fit-content;
     inline-size: fit-content;
-    color: transparent;
-    font-size: 4rem;
-    font-weight: 700;
-    text-align: center;
-    line-height: 1.5;
-    align-items: center;
-    background-clip: text;
-    background-image: linear-gradient(to bottom, var(--color-text-primary), #000);
+    margin: auto;
 }
