@@ -1,22 +1,23 @@
-import a from "./A";
-import blockquote from "./Blockquote";
-import br from "./Br";
-import code from "./Code";
-import em from "./Em";
-import h1 from "./H1";
-import h2 from "./H2";
-import h3 from "./H3";
-import h4 from "./H4";
-import h5 from "./H5";
-import h6 from "./H6";
-import hr from "./Hr";
-import img from "./Img";
-import li from "./Li";
-import ol from "./Ol";
-import p from "./P";
-import pre from "./Pre";
-import strong from "./Strong";
-import ul from "./Ul";
+import a from "./component/A";
+import blockquote from "./component/Blockquote";
+import br from "./component/Br";
+import code from "./component/Code";
+import em from "./component/Em";
+import h1 from "./component/H1";
+import h2 from "./component/H2";
+import h3 from "./component/H3";
+import h4 from "./component/H4";
+import h5 from "./component/H5";
+import h6 from "./component/H6";
+import hr from "./component/Hr";
+import img from "./component/Img";
+import li from "./component/Li";
+import ol from "./component/Ol";
+import p from "./component/P";
+import pre from "./component/Pre";
+import strong from "./component/Strong";
+import ul from "./component/Ul";
+import table from "./component/Table";
 
 export { a, blockquote, br, code, em, h1, h2, h3, h4, h5, h6, hr, img, li, ol, p, pre, strong, ul };
 export default {
@@ -38,5 +39,6 @@ export default {
     p,
     pre,
     strong,
+    table,
     ul,
 };

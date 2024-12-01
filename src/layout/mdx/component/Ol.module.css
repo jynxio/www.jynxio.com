@@ -1,0 +1,16 @@
+.container {
+    list-style: none;
+    counter-reset: item;
+
+    & li::before {
+        counter-increment: item;
+        content: counter(item) '.';
+        font-size: 1rem;
+        font-family: '霞鹜文楷等宽', monospace;
+        margin-inline-end: 0.25rem;
+    }
+}
+
+li > .container {
+    margin-inline-start: 1.25rem;
+}

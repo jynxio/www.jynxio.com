@@ -1,0 +1,13 @@
+:root[data-theme='dark'] {
+    .container {
+        filter: invert(100%);
+    }
+}
+
+:root[data-theme='auto'] {
+    @media (prefers-color-scheme: dark) {
+        .container {
+            filter: invert(100%);
+        }
+    }
+}
