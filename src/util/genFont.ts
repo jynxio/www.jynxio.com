@@ -72,13 +72,13 @@ await split(LXGWWENKAIMONO_BOLD_700_INPUT_PATH, LXGWWENKAIMONO_BOLD_700_OUTPUT_P
  */
 async function split(inputPath: string, outputPath: string, cssProps: object) {
     await fontSplit({
-        FontPath: inputPath,
-        destFold: outputPath,
+        input: inputPath,
+        outDir: outputPath,
         targetType: "woff2",
         chunkSize: 50 * 1024, // 70kb
         testHTML: false,
         reporter: false,
-        threads: {}, // 开启多线程
+        threads: {}, // Enable multi-threading support
         css: cssProps,
         cssFileName: "index.css",
     });
