@@ -6,6 +6,7 @@ import components from "@/layout/mdx";
 import CodeSnippet from "@/component/code-snippet";
 import NativeJsx from "$/post/build-an-interactive-blog-with-mdx/component/native-jsx";
 import CustomJsx from "$/post/build-an-interactive-blog-with-mdx/component/custom-jsx";
+import remarkGfm from "remark-gfm";
 import { reqPost, reqList } from "@/helper/post";
 import { APP_URL } from "@/constant";
 import { MDXRemote } from "next-mdx-remote/rsc";
@@ -18,32 +19,39 @@ type Props = Readonly<{
 async function Page({ params }: Props) {
     const { slug } = await params;
     const { content, title } = await reqPost(slug);
+    const comps = { ...components, NativeJsx, CustomJsx, img: Img, pre: CodeSnippet };
 
     return (
         <article className={css.container}>
             <components.h1>{title}</components.h1>
             <MDXRemote
                 source={content}
-                components={{
-                    ...components,
-                    pre: CodeSnippet,
-                    NativeJsx,
-                    CustomJsx,
-                    img: (args) => {
-                        if (!args.src) return <></>;
-
-                        const imgName = args.src.split("/").at(-1);
-
-                        if (!imgName) return <></>;
-
-                        const url = path.join("/image-hosting", slug, imgName);
-
-                        return <components.img {...args} src={url} />;
-                    },
-                }}
+                components={comps}
+                options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
             />
         </article>
     );
+
+    function Img(props: React.ComponentProps<(typeof components)["img"]>) {
+        if (!props.src) return;
+
+        const imgName = props.src.split("/").at(-1);
+
+        if (!imgName) return;
+
+        type ImgCtx = {
+            src: string;
+            width: number;
+            height: number;
+            blurDataURL: string;
+            blueHeight: number;
+            blurWidth: number;
+        };
+
+        const { src } = require(`$/post/${slug}/img/${imgName}`).default as ImgCtx;
+
+        return <components.img {...props} src={src} />;
+    }
 }
 
 export async function generateStaticParams() {
