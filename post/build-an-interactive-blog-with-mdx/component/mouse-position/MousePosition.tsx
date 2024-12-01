@@ -7,7 +7,7 @@ import { useMouseHovered } from "react-use";
 
 function MousePosition() {
     //
-    const ref = React.useRef(null);
+    const ref = React.useRef<HTMLDivElement>(null as unknown as HTMLDivElement);
     const { elX, elY, elW, elH } = useMouseHovered(ref, { bound: true, whenHovered: false });
 
     // Derived State
