@@ -7,13 +7,13 @@ import clsx from "clsx";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 
 const Root = React.forwardRef<
-    React.ElementRef<typeof AvatarPrimitive.Root>,
+    React.ComponentRef<typeof AvatarPrimitive.Root>,
     React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>
 >(({ className, ...props }, ref) => (
     <AvatarPrimitive.Root ref={ref} className={className} {...props} />
 ));
 const Image = React.forwardRef<
-    React.ElementRef<typeof AvatarPrimitive.Image>,
+    React.ComponentRef<typeof AvatarPrimitive.Image>,
     React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image> &
         React.ComponentPropsWithoutRef<typeof NextImage>
 >(({ className, ...props }, ref) => (
@@ -22,7 +22,7 @@ const Image = React.forwardRef<
     </AvatarPrimitive.Image>
 ));
 const Fallback = React.forwardRef<
-    React.ElementRef<typeof AvatarPrimitive.Fallback>,
+    React.ComponentRef<typeof AvatarPrimitive.Fallback>,
     React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback>
 >(({ className, ...props }, ref) => (
     <AvatarPrimitive.Fallback ref={ref} className={className} {...props} />
