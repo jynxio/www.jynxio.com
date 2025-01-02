@@ -63,7 +63,7 @@ p {
 }
 
 /* stylelint-disable-next-line selector-id-pattern */
-#root,
-#__next {
+#__next,
+#root {
     isolation: isolate;
 }
