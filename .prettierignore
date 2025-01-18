@@ -1,5 +1,6 @@
 # Development
 **/.next
+**/pnpm-lock.yaml
 
 # Production
 **/out

@@ -72,3 +72,4 @@ src/asset/temporary
 post-deprecated
 post-temporary
 post-wip
+.vercel

@@ -1,2 +1,2 @@
-export * from "./CodeSnippet";
-export { default } from "./CodeSnippet";
+export * from './code-snippet';
+export { default } from './code-snippet';

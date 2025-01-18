@@ -1,5 +1,5 @@
-import css from "./Pre.module.css";
-import clsx from "clsx";
+import clsx from 'clsx';
+import css from './pre.module.css';
 
 type Props = React.DetailedHTMLProps<React.HTMLAttributes<HTMLPreElement>, HTMLPreElement>;
 

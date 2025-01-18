@@ -1,0 +1,64 @@
+.copyBtn,
+.expandBtn {
+    block-size: 1rem;
+    aspect-ratio: 1 / 1;
+    color: var(--color-text-secondary);
+    backdrop-filter: blur(1px);
+
+    & > svg {
+        block-size: 100%;
+    }
+}
+
+.expandBtn:hover {
+    color: var(--color-text-secondary-accent);
+}
+
+.copyBtn {
+    position: relative;
+    cursor: not-allowed;
+
+    & > svg {
+        position: absolute;
+        inset: 0;
+        scale: 0;
+        transform-origin: center;
+        transition: scale 200ms cubic-bezier(0, 0, 0.2, 1);
+    }
+
+    & > svg.active {
+        scale: 1;
+    }
+
+    & > svg.idle:hover {
+        color: var(--color-text-secondary-accent);
+        cursor: copy;
+    }
+
+    & > svg.loading {
+        color: var(--color-text-secondary-accent);
+        animation: rotate 2s linear infinite;
+
+        &:hover {
+            cursor: wait;
+        }
+    }
+
+    & > svg.success {
+        color: #63ca5e !important;
+    }
+
+    & > svg.failure {
+        color: #c52922 !important;
+    }
+}
+
+@keyframes rotate {
+    from {
+        rotate: 0deg;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}

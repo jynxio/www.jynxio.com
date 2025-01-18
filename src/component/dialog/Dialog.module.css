@@ -1,9 +1,0 @@
-.overlay {
-    display: block;
-    position: fixed;
-    inset: 0;
-    z-index: 1;
-    block-size: auto;
-    inline-size: auto;
-    background-color: rgba(0 0 0 / 80%);
-}

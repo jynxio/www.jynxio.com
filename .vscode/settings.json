@@ -53,5 +53,6 @@
     "css.validate": false,
     "less.validate": false,
     "scss.validate": false,
-    "stylelint.validate": ["css", "scss", "sass", "less", "postcss"]
+    "stylelint.validate": ["css", "scss", "sass", "less", "postcss"],
+    "typescript.tsdk": "node_modules/typescript/lib"
 }

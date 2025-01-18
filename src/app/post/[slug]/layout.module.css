@@ -1,0 +1,16 @@
+.nav {
+    position: fixed;
+    inset: 20px 20px auto auto;
+}
+
+.link {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    &:hover,
+    &:active,
+    &:focus-visible {
+        color: var(--color-text-primary-accent);
+    }
+}

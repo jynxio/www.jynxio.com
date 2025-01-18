@@ -1,19 +1,17 @@
-import css from "./Link.module.css";
-import React from "react";
-import NextLink from "next/link";
-import clsx from "clsx";
+import clsx from 'clsx';
+import PrimitiveLink from 'next/link';
+import React from 'react';
+import css from './link.module.css';
 
-type Props = React.ComponentProps<typeof NextLink>;
+type Props = React.ComponentProps<typeof PrimitiveLink>;
 
-const Link = React.forwardRef<HTMLAnchorElement, Props>(
-    ({ children, className, ...rest }: Props, ref) => {
-        return (
-            <NextLink ref={ref} className={clsx(css.container, className)} {...rest}>
-                {children}
-            </NextLink>
-        );
-    },
-);
+function Link({ children, className, ref, ...rest }: Props) {
+    return (
+        <PrimitiveLink ref={ref} className={clsx(css.container, className)} {...rest}>
+            {children}
+        </PrimitiveLink>
+    );
+}
 
 export { Link };
 export default Link;

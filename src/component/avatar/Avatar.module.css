@@ -1,6 +1,0 @@
-.img {
-    box-sizing: content-box;
-    border-radius: 999rem;
-    overflow: clip;
-    border: 1px solid var(--color-border-primary-accent);
-}

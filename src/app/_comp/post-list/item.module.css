@@ -1,0 +1,60 @@
+.container {
+    position: relative;
+}
+
+.link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    padding: 1ch;
+
+    > .title {
+        margin-block-end: 1.5rem;
+        font-size: 1.75rem;
+    }
+
+    > .des {
+        color: var(--color-text-secondary);
+    }
+
+    > .entry {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        inline-size: fit-content;
+        margin-block-start: 1.5rem;
+    }
+
+    &.loading {
+        opacity: 0.3;
+        cursor: wait;
+    }
+
+    &:not(.loading):hover,
+    &:not(.loading):active,
+    &:not(.loading):focus-visible {
+        & .title,
+        & .entry {
+            color: var(--color-text-primary-accent);
+        }
+    }
+}
+
+.spin {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    animation: rotate 2s linear infinite;
+    user-select: none;
+    cursor: wait;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

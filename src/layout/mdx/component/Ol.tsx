@@ -1,5 +1,5 @@
-import css from "./Ol.module.css";
-import clsx from "clsx";
+import clsx from 'clsx';
+import css from './ol.module.css';
 
 type Props = React.DetailedHTMLProps<React.OlHTMLAttributes<HTMLOListElement>, HTMLOListElement>;
 

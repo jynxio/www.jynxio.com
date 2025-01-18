@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2ch;
+
+    & > section {
+        flex: 1 0 0;
+        padding: 2ch;
+        border: 1px dashed var(--color-border-primary);
+        border-radius: var(--rounded-base);
+        background-color: var(--color-bg-tertiary);
+        transition: border ease 150ms;
+    }
+
+    & > section > h2 {
+        margin-block-end: 1rem;
+    }
+
+    &:hover > section {
+        border-color: var(--color-border-primary-accent);
+    }
+}

@@ -1,70 +1,50 @@
-import path from "node:path";
-import { fontSplit } from "cn-font-split";
+import { fontSplit } from 'cn-font-split';
+import path from 'node:path';
 
 /**
  *
  */
-const [LXGWWENKAI_LIGHT_200_INPUT_PATH, LXGWWENKAI_LIGHT_200_OUTPUT_PATH] =
-    createPath("LXGWWenKai-Light");
+const [LXGWWENKAI_REGULAR_INPUT_PATH, LXGWWENKAI_REGULAR_OUTPUT_PATH] =
+    createPath('LXGWWenKai-Regular');
 
-const [LXGWWENKAI_REGULAR_400_INPUT_PATH, LXGWWENKAI_REGULAR_400_OUTPUT_PATH] =
-    createPath("LXGWWenKai-Regular");
+const [LXGWWENKAI_MEDIUM_INPUT_PATH, LXGWWENKAI_MEDIUM_OUTPUT_PATH] =
+    createPath('LXGWWenKai-Medium');
 
-const [LXGWWENKAI_BOLD_700_INPUT_PATH, LXGWWENKAI_BOLD_700_OUTPUT_PATH] =
-    createPath("LXGWWenKai-Bold");
+const [LXGWWENKAIMONO_REGULAR_INPUT_PATH, LXGWWENKAIMONO_REGULAR_OUTPUT_PATH] =
+    createPath('LXGWWenKaiMono-Regular');
 
-const [LXGWWENKAIMONO_LIGHT_200_INPUT_PATH, LXGWWENKAIMONO_LIGHT_200_OUTPUT_PATH] =
-    createPath("LXGWWenKaiMono-Light");
-
-const [LXGWWENKAIMONO_REGULAR_400_INPUT_PATH, LXGWWENKAIMONO_REGULAR_400_OUTPUT_PATH] =
-    createPath("LXGWWenKaiMono-Regular");
-
-const [LXGWWENKAIMONO_BOLD_700_INPUT_PATH, LXGWWENKAIMONO_BOLD_700_OUTPUT_PATH] =
-    createPath("LXGWWenKaiMono-Bold");
+const [LXGWWENKAIMONO_MEDIUM_INPUT_PATH, LXGWWENKAIMONO_MEDIUM_OUTPUT_PATH] =
+    createPath('LXGWWenKaiMono-Medium');
 
 /**
  *
  */
-await split(LXGWWENKAI_LIGHT_200_INPUT_PATH, LXGWWENKAI_LIGHT_200_OUTPUT_PATH, {
-    fontFamily: "霞鹜文楷",
-    fontStyle: "normal",
-    fontWeight: 200,
-    fontDisplay: "swap",
+await split(LXGWWENKAI_REGULAR_INPUT_PATH, LXGWWENKAI_REGULAR_OUTPUT_PATH, {
+    fontFamily: '霞鹜文楷',
+    fontStyle: 'normal',
+    fontWeight: '400',
+    fontDisplay: 'swap',
 });
 
-await split(LXGWWENKAI_REGULAR_400_INPUT_PATH, LXGWWENKAI_REGULAR_400_OUTPUT_PATH, {
-    fontFamily: "霞鹜文楷",
-    fontStyle: "normal",
-    fontWeight: 400,
-    fontDisplay: "swap",
+await split(LXGWWENKAI_MEDIUM_INPUT_PATH, LXGWWENKAI_MEDIUM_OUTPUT_PATH, {
+    fontFamily: '霞鹜文楷',
+    fontStyle: 'normal',
+    fontWeight: '500',
+    fontDisplay: 'swap',
 });
 
-await split(LXGWWENKAI_BOLD_700_INPUT_PATH, LXGWWENKAI_BOLD_700_OUTPUT_PATH, {
-    fontFamily: "霞鹜文楷",
-    fontStyle: "normal",
-    fontWeight: 700,
-    fontDisplay: "swap",
+await split(LXGWWENKAIMONO_REGULAR_INPUT_PATH, LXGWWENKAIMONO_REGULAR_OUTPUT_PATH, {
+    fontFamily: '霞鹜文楷等宽',
+    fontStyle: 'normal',
+    fontWeight: '400',
+    fontDisplay: 'swap',
 });
 
-await split(LXGWWENKAIMONO_LIGHT_200_INPUT_PATH, LXGWWENKAIMONO_LIGHT_200_OUTPUT_PATH, {
-    fontFamily: "霞鹜文楷等宽",
-    fontStyle: "normal",
-    fontWeight: 200,
-    fontDisplay: "swap",
-});
-
-await split(LXGWWENKAIMONO_REGULAR_400_INPUT_PATH, LXGWWENKAIMONO_REGULAR_400_OUTPUT_PATH, {
-    fontFamily: "霞鹜文楷等宽",
-    fontStyle: "normal",
-    fontWeight: 400,
-    fontDisplay: "swap",
-});
-
-await split(LXGWWENKAIMONO_BOLD_700_INPUT_PATH, LXGWWENKAIMONO_BOLD_700_OUTPUT_PATH, {
-    fontFamily: "霞鹜文楷等宽",
-    fontStyle: "normal",
-    fontWeight: 700,
-    fontDisplay: "swap",
+await split(LXGWWENKAIMONO_MEDIUM_INPUT_PATH, LXGWWENKAIMONO_MEDIUM_OUTPUT_PATH, {
+    fontFamily: '霞鹜文楷等宽',
+    fontStyle: 'normal',
+    fontWeight: '500',
+    fontDisplay: 'swap',
 });
 
 /**
@@ -74,13 +54,11 @@ async function split(inputPath: string, outputPath: string, cssProps: object) {
     await fontSplit({
         input: inputPath,
         outDir: outputPath,
-        targetType: "woff2",
+        targetType: 'woff2',
         chunkSize: 50 * 1024, // 70kb
-        testHTML: false,
         reporter: false,
-        threads: {}, // Enable multi-threading support
+        testHtml: false,
         css: cssProps,
-        cssFileName: "index.css",
     });
 }
 
@@ -88,8 +66,8 @@ async function split(inputPath: string, outputPath: string, cssProps: object) {
  *
  */
 function createPath(name: string) {
-    const inputPath = path.join(process.cwd(), "src/asset", `${name}.ttf`); // File
-    const outputPath = path.join(process.cwd(), "src/asset/temporary", name); // Directory
+    const inputPath = path.join(process.cwd(), 'src/asset', `${name}.ttf`); // File
+    const outputPath = path.join(process.cwd(), 'src/asset/temporary', name); // Directory
 
-    return [inputPath, outputPath];
+    return [inputPath, outputPath] as const;
 }

@@ -1,5 +1,5 @@
-import css from "./Blockquote.module.css";
-import clsx from "clsx";
+import clsx from 'clsx';
+import css from './blockquote.module.css';
 
 type Props = React.DetailedHTMLProps<
     React.BlockquoteHTMLAttributes<HTMLQuoteElement>,

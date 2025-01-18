@@ -1,0 +1,26 @@
+.container {
+    position: relative;
+    padding: 1ch;
+    margin-block: 1rem;
+    border: 1px solid var(--color-bg-secondary);
+    border-radius: var(--rounded-xl);
+}
+
+.scroll {
+    padding: 1ch;
+    max-block-size: 38ch;
+}
+
+.pre {
+    font-size: 1rem;
+    font-family: '霞鹜文楷等宽', monospace;
+}
+
+.control {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    position: absolute;
+    inset: 2ch 2ch auto auto;
+    margin: 0.25rem;
+}

@@ -2,13 +2,24 @@
     table-layout: auto;
     inline-size: 100%;
     margin-block: 1rem;
+    font-size: 0.9rem;
 
-    & th,
-    & td {
-        background-color: var(--color-bg-secondary);
-        border-radius: var(--border-radius-base);
-        padding-inline: 1rem;
-        padding-block: 0.5rem;
-        text-align: left;
+    & td,
+    & th {
+        background-color: var(--color-bg-tertiary);
+        border-radius: var(--rounded-base);
+        padding-inline: 2ch;
+        padding-block: 1ch;
+        text-align: center !important;
+    }
+
+    & td:first-child,
+    & th:first-child {
+        text-align: left !important;
+    }
+
+    & td:last-child,
+    & th:last-child {
+        text-align: right !important;
     }
 }

@@ -1,6 +1,16 @@
 .container {
-    display: flow-root;
-    inline-size: calc(800 / 16 * 1rem);
-    margin-block: calc(80 / 16 * 1rem);
+    inline-size: 72ch;
     margin-inline: auto;
+    margin-block: 6rem 10rem;
+    font-size: 1.1rem;
+}
+
+.title {
+    text-align: center;
+}
+
+.date {
+    margin-block-end: 3rem;
+    font-size: 0.8rem;
+    text-align: center;
 }

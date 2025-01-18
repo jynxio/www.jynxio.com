@@ -1,0 +1,46 @@
+.container {
+    isolation: isolate;
+    position: relative;
+    aspect-ratio: 2 / 1;
+    inline-size: 100%;
+    max-block-size: 150px;
+    border-radius: 4px;
+    border: 1px dashed transparent;
+    background-color: var(--color-bg-primary);
+    cursor: crosshair;
+    transition: border ease 150ms;
+
+    &:hover {
+        border: 1px dashed var(--color-border-primary);
+    }
+
+    &::before {
+        content: 'Hover Me';
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        block-size: fit-content;
+        inline-size: fit-content;
+        opacity: 0.3;
+        transition: opacity ease 150ms;
+    }
+
+    &:hover::before {
+        opacity: 0.1;
+    }
+}
+
+.follower {
+    position: absolute;
+    inset: 0 auto auto 0;
+    padding-inline: 1ch;
+    font-family: '霞鹜文楷等宽', monospace;
+    border-radius: var(--rounded-xs);
+    color: var(--color-bg-primary);
+    background-color: var(--color-text-primary);
+    transition: opacity ease 150ms;
+
+    &.hidden {
+        opacity: 0;
+    }
+}

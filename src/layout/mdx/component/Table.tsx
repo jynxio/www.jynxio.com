@@ -1,5 +1,5 @@
-import css from "./Table.module.css";
-import clsx from "clsx";
+import clsx from 'clsx';
+import css from './table.module.css';
 
 type Props = React.DetailedHTMLProps<React.HTMLAttributes<HTMLTableElement>, HTMLTableElement>;
 

@@ -5,10 +5,10 @@
  */
 
 // The base URL of your app upon deployment to the server.
-const APP_URL = "https://www.jynxio.com";
+const APP_URL = 'https://www.jynxio.com';
 
-const POST_PATH = "post";
-const IMAGE_HOSTING_PATH = "public/image-hosting";
+const POST_PATH = 'post';
+const IMAGE_HOSTING_PATH = 'public/image-hosting';
 
-export { POST_PATH, IMAGE_HOSTING_PATH, APP_URL };
+export { APP_URL, IMAGE_HOSTING_PATH, POST_PATH };
 export default { POST_PATH, IMAGE_HOSTING_PATH, APP_URL };

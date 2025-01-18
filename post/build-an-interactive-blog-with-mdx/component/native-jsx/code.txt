@@ -1,4 +1,0 @@
-## Native JSX in Markdown
-
-- Pi: { Math.PI.toFixed(10) }
-- Button: <button>No Action</button>

@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
 function twoPassRender(Comp: React.ComponentType, Fallback?: React.ComponentType) {
     const WrapperComp = () => {

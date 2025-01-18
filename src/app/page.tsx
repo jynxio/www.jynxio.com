@@ -1,12 +1,9 @@
-import css from "./page.module.css";
-import Hero from "@/layout/hero";
+import { reqList } from '@/helper/post';
 
-function Page() {
-    return (
-        <main className={css.container}>
-            <Hero />
-        </main>
-    );
+import List from './_comp/post-list';
+
+async function Blog() {
+    return <List list={await reqList()} />;
 }
 
-export default Page;
+export default Blog;

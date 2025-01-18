@@ -1,7 +1,0 @@
-.container {
-    position: fixed;
-    inset: 0;
-    block-size: fit-content;
-    inline-size: fit-content;
-    margin: auto;
-}

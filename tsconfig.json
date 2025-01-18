@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "ES2015",
+        "target": "ES2017",
         "module": "ESNext",
         "lib": ["ESNext", "DOM", "DOM.Iterable"],
 
@@ -32,5 +32,13 @@
     },
 
     "exclude": ["node_modules"],
-    "include": ["src", "next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "post"]
+    "include": [
+        "src",
+        "next-env.d.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        ".next/types/**/*.ts",
+        "post",
+        "eslint.config.mjs"
+    ]
 }

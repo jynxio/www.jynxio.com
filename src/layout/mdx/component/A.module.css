@@ -1,4 +1,11 @@
 .container {
-    color: var(--color-text-primary-accent);
-    text-decoration: none;
+    text-decoration: 1.5px wavy underline var(--color-text-primary-accent);
+    text-underline-offset: 0.2em;
+    cursor: alias;
+
+    &:hover,
+    &:active,
+    &:focus-visible {
+        color: var(--color-text-primary-accent);
+    }
 }

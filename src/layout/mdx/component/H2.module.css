@@ -1,13 +1,11 @@
 .container {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-block-end: 2rem;
+    font-size: 1.35rem;
+    font-weight: 1000;
+    margin-block: 6rem 2rem;
+}
 
-    &::before {
-        content: '/ / /';
-        display: block;
-        margin-block: 2rem;
-        font-size: 1rem;
-        text-align: center;
-    }
+.link:hover,
+.link:active,
+.link:focus-visible {
+    color: var(--color-text-primary-accent);
 }

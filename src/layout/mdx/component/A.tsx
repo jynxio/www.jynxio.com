@@ -1,16 +1,14 @@
-import css from "./A.module.css";
-import clsx from "clsx";
+import Link from '@/component/link';
+import clsx from 'clsx';
+import css from './a.module.css';
 
-type Props = React.DetailedHTMLProps<
-    React.AnchorHTMLAttributes<HTMLAnchorElement>,
-    HTMLAnchorElement
->;
+type Props = React.ComponentProps<typeof Link>;
 
-function A({ children, className, ...rest }: Props) {
+function A({ children, className, href, ...rest }: Props): React.ReactElement {
     return (
-        <a className={clsx(css.container, className)} {...rest}>
+        <Link href={href} className={clsx(css.container, className)} target="_blank" {...rest}>
             {children}
-        </a>
+        </Link>
     );
 }
 

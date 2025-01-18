@@ -1,7 +1,7 @@
 .container {
-    background-color: var(--color-bg-secondary);
-    padding-inline: calc(0.65em);
-    border: 1px solid var(--color-bg-secondary-accent);
-    border-radius: var(--border-radius-xs);
+    padding-inline: 1ch;
+    border: 1px solid var(--color-bg-secondary);
+    border-radius: var(--rounded-xs);
     font-family: '霞鹜文楷等宽', monospace;
+    background-color: var(--color-bg-tertiary);
 }

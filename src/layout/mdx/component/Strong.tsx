@@ -1,5 +1,5 @@
-import css from "./Strong.module.css";
-import clsx from "clsx";
+import clsx from 'clsx';
+import css from './strong.module.css';
 
 type Props = React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
 

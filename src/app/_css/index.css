@@ -1,0 +1,25 @@
+@import url('./reset.css');
+@import url('./variable.css');
+
+/* Font */
+@import url('@/asset/temporary/LXGWWenKai-Medium/result.css');
+@import url('@/asset/temporary/LXGWWenKai-Regular/result.css');
+
+/* Font (Mono) */
+@import url('@/asset/temporary/LXGWWenKaiMono-Medium/result.css');
+@import url('@/asset/temporary/LXGWWenKaiMono-Regular/result.css');
+
+html,
+body {
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-primary);
+}
+
+::selection {
+    color: #fff;
+    background-color: #0157e4;
+}
+
+*:focus-visible {
+    outline: 1px dashed var(--color-text-primary-accent);
+}

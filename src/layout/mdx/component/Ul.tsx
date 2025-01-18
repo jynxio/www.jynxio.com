@@ -1,5 +1,5 @@
-import css from "./Ul.module.css";
-import clsx from "clsx";
+import clsx from 'clsx';
+import css from './ul.module.css';
 
 type Props = React.DetailedHTMLProps<React.HTMLAttributes<HTMLUListElement>, HTMLUListElement>;
 

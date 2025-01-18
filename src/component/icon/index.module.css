@@ -1,0 +1,8 @@
+.container > div {
+    block-size: 100%;
+}
+
+.container > div > svg {
+    block-size: 100%;
+    inline-size: 100%;
+}
