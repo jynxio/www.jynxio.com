@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 
-import buildBlogWithNextJs from '$/post/build-an-interactive-blog-with-mdx/component/mdx-demo';
+import buildBlogWithNextJs from '$/post/build-an-interactive-blog-with-mdx/component/mdx-demo'; // TODO: wrong path
+import eliminatingTextVerticalOffset from '$/post/eliminating-text-vertical-offset/component';
+
 import CodeSnippet from '@/component/code-snippet';
 import { APP_URL } from '@/constant';
 import { reqList, reqPost } from '@/helper/post';
@@ -19,7 +21,13 @@ async function Page({ params }: Props) {
     const { slug } = await params;
     const { content, title, updatedDate } = await reqPost(slug);
     const prettierDate = new Date(updatedDate).toLocaleDateString();
-    const newComp = { ...component, buildBlogWithNextJs, img: createImg, pre: CodeSnippet };
+    const newComp = {
+        ...component,
+        buildBlogWithNextJs,
+        eliminatingTextVerticalOffset,
+        img: createImg,
+        pre: CodeSnippet,
+    };
 
     return (
         <article className={css.container}>

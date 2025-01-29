@@ -1,0 +1,65 @@
+@font-face {
+    font-family: zapfino-subset;
+    src: url('./zapfino-subset.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.container {
+    display: grid;
+    gap: 10px;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: max-content 1fr;
+    font-size: 90%;
+    font-family: '霞鹜文楷等宽', monospace;
+    padding: 10px;
+    border-radius: var(--rounded-base);
+    background-color: var(--color-bg-tertiary);
+}
+
+.select {
+    display: flex;
+    flex-direction: column;
+    gap: 1ch;
+
+    & > label {
+        display: flex;
+        gap: 1ch;
+        justify-content: space-between;
+        align-items: center;
+
+        & > *:last-child {
+            inline-size: 20ch;
+        }
+    }
+}
+
+.syntax {
+    /* outline: 1px solid blue; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-block-start: 1px dashed var(--color-border-primary);
+}
+
+.effect {
+    grid-row: 1 / 3;
+    grid-column: 2 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    block-size: 12rem;
+    border-inline-start: 1px dashed var(--color-border-primary);
+    cursor: default;
+    user-select: none;
+
+    & > span {
+        display: block;
+        font-size: 3rem;
+        /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+        font-family: zapfino-subset;
+        line-height: normal;
+        background-color: var(--color-text-primary-accent);
+    }
+}
