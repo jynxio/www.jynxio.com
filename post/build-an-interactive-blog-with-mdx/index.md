@@ -142,7 +142,7 @@ async function CodeSnippet(props: Props) {
 
 只要为 Markdown 解析器配置对应的 JSX 组件，那么就可以在 Markdown 中使用 JSX 了。
 
-<buildBlogWithNextJs.MdxDemo />
+<buildBlogWithNextJs.Mdx />
 
 怎么做？首先在 Markdown 中引用这个自定义组件。
 

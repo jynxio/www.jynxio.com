@@ -1,7 +1,7 @@
-import css from './mdx-demo.module.css';
+import css from './index.module.css';
 import MousePosition from './mouse-position';
 
-function CustomJsx() {
+function Mdx() {
     return (
         <div className={css.container}>
             <section>
@@ -17,5 +17,5 @@ function CustomJsx() {
     );
 }
 
-export { CustomJsx };
-export default CustomJsx;
+export { Mdx };
+export default Mdx;

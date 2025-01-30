@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import buildBlogWithNextJs from '$/post/build-an-interactive-blog-with-mdx/component/mdx-demo'; // TODO: wrong path
+import buildBlogWithNextJs from '$/post/build-an-interactive-blog-with-mdx/component';
 import eliminatingTextVerticalOffset from '$/post/eliminating-text-vertical-offset/component';
 
 import CodeSnippet from '@/component/code-snippet';

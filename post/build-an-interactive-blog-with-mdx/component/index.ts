@@ -1,6 +1,6 @@
-import MdxDemo from './mdx-demo';
+import Mdx from './mdx';
 
-Comp.MdxDemo = MdxDemo;
+Comp.Mdx = Mdx;
 
 function Comp() {
     return null;
