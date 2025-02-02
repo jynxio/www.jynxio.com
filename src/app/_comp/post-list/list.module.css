@@ -14,5 +14,5 @@
 
 .divider {
     text-align: center;
-    margin-block-start: 3rem;
+    user-select: none;
 }
