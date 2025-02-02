@@ -4,6 +4,10 @@
     --os-handle-bg-active: var(--color-border-primary-accent);
 }
 
-.os-scrollbar-handle {
+.os-scrollbar-vertical .os-scrollbar-handle {
     cursor: ns-resize;
+}
+
+.os-scrollbar-horizontal .os-scrollbar-handle {
+    cursor: ew-resize;
 }
