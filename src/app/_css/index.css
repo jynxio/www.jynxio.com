@@ -1,17 +1,26 @@
-@import url('./reset.css');
-@import url('./variable.css');
+@import './reset.css';
+@import './variable.css';
 
 /* Font */
-@import url('@/asset/temporary/LXGWWenKai-Medium/result.css');
-@import url('@/asset/temporary/LXGWWenKai-Regular/result.css');
+@import '@/asset/temporary/LXGWWenKai-Medium/result.css';
+@import '@/asset/temporary/LXGWWenKai-Regular/result.css';
 
 /* Font (Mono) */
-@import url('@/asset/temporary/LXGWWenKaiMono-Medium/result.css');
-@import url('@/asset/temporary/LXGWWenKaiMono-Regular/result.css');
+@import '@/asset/temporary/LXGWWenKaiMono-Medium/result.css';
+@import '@/asset/temporary/LXGWWenKaiMono-Regular/result.css';
+
+html {
+    /* [iPhone 13, iPad Min] */
+    font-size: clamp(0.9rem, 0.452vw + 0.7898rem, 1rem);
+    font-family: '霞鹜文楷', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-primary);
+}
 
 html,
 body {
-    color: var(--color-text-primary);
     background-color: var(--color-bg-primary);
 }
 

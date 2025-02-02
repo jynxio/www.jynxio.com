@@ -10,7 +10,7 @@ const metadata = createMetadata();
 
 function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
-        <html lang="en" className={css.font}>
+        <html lang="en">
             <body className={css.container}>
                 <Scroll className={css.wrapper}>{children}</Scroll>
 
