@@ -1,5 +1,4 @@
 import { reqList } from '@/helper/post';
-
 import List from './_comp/post-list';
 
 async function Blog() {
