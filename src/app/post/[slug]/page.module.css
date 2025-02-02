@@ -3,6 +3,7 @@
     margin-inline: auto;
     margin-block: 6rem 10rem;
     font-size: 1.1rem;
+    container-type: inline-size;
 }
 
 .title {
