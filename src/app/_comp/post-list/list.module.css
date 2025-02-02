@@ -1,16 +1,14 @@
 .list {
     display: flex;
+    gap: 5ch;
     flex-direction: column;
-    gap: 5ch 10ch;
-    inline-size: fit-content;
     padding-block: 4rem;
-    padding-inline: 2rem;
+    inline-size: min(100%, 60ch);
     margin-inline: auto;
 }
 
 .item {
     flex: 1 1 0;
-    max-inline-size: 60ch;
     list-style: none;
 }
 
