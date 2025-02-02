@@ -9,7 +9,7 @@ import React from 'react';
 
 type Props = React.ComponentProps<typeof OverlayScrollbarsComponent>;
 
-function Scrollbar({ defer, options: option, element, children, ...rest }: Props) {
+function Scroll({ defer, options: option, element, children, ...rest }: Props) {
     const presetElement: Props['element'] = 'div';
     const settledElement = element ?? presetElement;
 
@@ -38,5 +38,5 @@ function Scrollbar({ defer, options: option, element, children, ...rest }: Props
     );
 }
 
-export { Scrollbar };
-export default Scrollbar;
+export { Scroll };
+export default Scroll;
