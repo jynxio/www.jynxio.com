@@ -12,7 +12,9 @@ function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="en">
             <body className={css.container}>
-                <Scroll className={css.wrapper}>{children}</Scroll>
+                <Scroll className={css.wrapper}>
+                    <div className={css.gap}>{children}</div>
+                </Scroll>
 
                 {process.env.NODE_ENV === 'production' && <GoogleAnalytics />}
             </body>
