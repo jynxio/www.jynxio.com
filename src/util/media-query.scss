@@ -1,0 +1,28 @@
+// iPhone
+$w-iphone-13: 390px;
+$w-iphone-16: 393px;
+$w-iphone-16-pro: 402px;
+$w-iphone-16-plus: 430px;
+$w-iphone-16-pro-max: 440px;
+
+// iPad
+$w-ipad-min: 744px;
+$w-ipad-air-11inch: 825px;
+$w-ipad-air-13inch: 1024px;
+$w-ipad-pro-11inch: 834px;
+$w-ipad-pro-13inch: 1032px;
+
+// Breakpoints
+$ipad: $w-ipad-min;
+
+@mixin screen($i) {
+    @if $i == 'ipad:' {
+        @media (width >= $ipad) {
+            @content;
+        }
+    } @else if $i == 'max-ipad:' {
+        @media (width < $ipad) {
+            @content;
+        }
+    }
+}

@@ -1,5 +1,5 @@
 {
-    "extends": ["stylelint-config-standard"],
+    "extends": ["stylelint-config-standard", "stylelint-config-standard-scss"],
     "rules": {
         "property-no-unknown": [
             true,
@@ -13,6 +13,12 @@
                 "ignorePseudoClasses": ["global", "local"]
             }
         ],
-        "selector-class-pattern": "^[a-z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*$|^[a-z][a-zA-Z0-9]*$"
+        "selector-class-pattern": "^[a-z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*$|^[a-z][a-zA-Z0-9]*$",
+        "at-rule-no-unknown": [
+            true,
+            {
+                "ignoreAtRules": ["mixin", "if", "else", "else if", "forward", "include", "use"]
+            }
+        ]
     }
 }
