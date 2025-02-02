@@ -1,19 +1,21 @@
 .container {
     display: flex;
     flex-wrap: wrap;
-    gap: 2ch;
+    gap: 1ch;
+    font-size: 0.9rem;
+    white-space: nowrap;
 
     & > section {
-        flex: 1 0 0;
+        flex: 1 0 max-content;
         padding: 2ch;
         border: 1px dashed var(--color-border-primary);
-        border-radius: var(--rounded-base);
+        border-radius: var(--rounded-xs);
         background-color: var(--color-bg-tertiary);
         transition: border ease 150ms;
     }
 
     & > section > h2 {
-        margin-block-end: 1rem;
+        margin-block-end: 1ch;
     }
 
     &:hover > section {
