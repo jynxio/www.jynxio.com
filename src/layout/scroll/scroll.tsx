@@ -21,7 +21,6 @@ function Scroll({ defer, options: option, element, children, ...rest }: Props) {
         scrollbars: {
             autoHide: 'move',
             autoHideDelay: 200,
-            theme: 'os-theme-light',
         },
     };
     const settledOption = merge({}, presetOption, option);
