@@ -4,7 +4,7 @@
     & li::before {
         content: '✻';
         font-size: 1rem;
-        font-family: '霞鹜文楷等宽', monospace;
+        font-family: var(--mono);
         margin-inline-end: 0.25rem;
     }
 }

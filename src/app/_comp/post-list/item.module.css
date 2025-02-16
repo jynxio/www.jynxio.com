@@ -13,7 +13,7 @@
     }
 
     > .des {
-        color: var(--color-text-secondary);
+        opacity: 0.7;
     }
 
     > .entry {
@@ -34,7 +34,7 @@
     &:not(.loading):focus-visible {
         & .title,
         & .entry {
-            color: var(--color-text-primary-accent);
+            color: var(--color-blue);
         }
     }
 }

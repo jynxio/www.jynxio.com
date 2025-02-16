@@ -2,16 +2,11 @@
 .expandBtn {
     block-size: 1rem;
     aspect-ratio: 1 / 1;
-    color: var(--color-text-secondary);
     backdrop-filter: blur(1px);
 
     & > svg {
         block-size: 100%;
     }
-}
-
-.expandBtn:hover {
-    color: var(--color-text-secondary-accent);
 }
 
 .copyBtn {
@@ -31,12 +26,10 @@
     }
 
     & > svg.idle:hover {
-        color: var(--color-text-secondary-accent);
         cursor: copy;
     }
 
     & > svg.loading {
-        color: var(--color-text-secondary-accent);
         animation: rotate 2s linear infinite;
 
         &:hover {

@@ -14,10 +14,10 @@
     grid-template-rows: auto 1fr;
     grid-template-columns: max-content 1fr;
     font-size: 0.9rem;
-    font-family: '霞鹜文楷等宽', monospace;
+    font-family: var(--mono);
     padding: var(--gap);
-    border-radius: var(--rounded-base);
-    border: 1px solid var(--color-border-primary);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-silver);
 }
 
 .select {
@@ -43,7 +43,7 @@
     align-items: center;
     justify-content: center;
     padding-block-start: var(--gap);
-    border-block-start: 1px dashed var(--color-border-primary);
+    border-block-start: 1px dashed var(--color-silver);
 }
 
 .effect {
@@ -54,17 +54,17 @@
     justify-content: center;
     block-size: 12rem;
     padding-inline-start: var(--gap);
-    border-inline-start: 1px dashed var(--color-border-primary);
+    border-inline-start: 1px dashed var(--color-silver);
     cursor: default;
     user-select: none;
     background-size: 10px 10px;
     background-clip: content-box;
     background-image: repeating-linear-gradient(
         315deg,
-        var(--color-bg-secondary) 0,
-        var(--color-bg-secondary) 1px,
-        rgba(0 0 0 / 0%) 0,
-        rgba(0 0 0 / 0%) 50%
+        var(--color-gray) 0,
+        var(--color-gray) 1px,
+        transparent 0,
+        transparent 50%
     );
 
     & > span {
@@ -74,7 +74,7 @@
         /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
         font-family: zapfino-subset;
         line-height: normal;
-        background-color: var(--color-text-primary-accent);
+        background-color: var(--color-blue);
     }
 }
 
@@ -88,6 +88,6 @@
         grid-row: unset;
         grid-column: unset;
         border: unset;
-        border-block-start: 1px dashed var(--color-border-primary);
+        border-block-start: 1px dashed var(--color-silver);
     }
 }

@@ -6,12 +6,12 @@
     max-block-size: 150px;
     border-radius: 4px;
     border: 1px dashed transparent;
-    background-color: var(--color-bg-primary);
+    background-color: var(--color-black);
     cursor: crosshair;
     transition: border ease 150ms;
 
     &:hover {
-        border: 1px dashed var(--color-border-primary);
+        border: 1px dashed var(--color-silver);
     }
 
     &::before {
@@ -34,10 +34,10 @@
     position: absolute;
     inset: 0 auto auto 0;
     padding-inline: 1ch;
-    font-family: '霞鹜文楷等宽', monospace;
-    border-radius: var(--rounded-xs);
-    color: var(--color-bg-primary);
-    background-color: var(--color-text-primary);
+    font-family: var(--mono);
+    border-radius: var(--radius-xs);
+    color: var(--color-black);
+    background-color: var(--color-white);
     transition: opacity ease 150ms;
 
     &.hidden {

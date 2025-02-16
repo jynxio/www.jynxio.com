@@ -2,8 +2,17 @@
     position: relative;
     padding: 1ch;
     margin-block: 1rem;
-    border: 1px solid var(--color-bg-secondary);
-    border-radius: var(--rounded-xl);
+    border: 1px solid var(--color-silver);
+    border-radius: var(--radius-sm);
+    background-size: 10px 10px;
+    background-clip: content-box;
+    background-image: repeating-linear-gradient(
+        315deg,
+        var(--color-gray) 0,
+        var(--color-gray) 1px,
+        transparent 0,
+        transparent 50%
+    );
 }
 
 .scroll {
@@ -13,7 +22,12 @@
 
 .pre {
     font-size: 1rem;
-    font-family: '霞鹜文楷等宽', monospace;
+    font-family: var(--mono);
+    text-shadow:
+        -1px 1px 2px black,
+        -1px -1px 2px black,
+        1px 1px 2px black,
+        1px -1px 2px black;
 }
 
 .control {

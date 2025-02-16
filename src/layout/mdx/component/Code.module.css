@@ -1,7 +1,14 @@
 .container {
-    padding-inline: 1ch;
-    border: 1px solid var(--color-bg-secondary);
-    border-radius: var(--rounded-xs);
-    font-family: '霞鹜文楷等宽', monospace;
-    background-color: var(--color-bg-tertiary);
+    border-radius: var(--radius-xs);
+    font-family: var(--mono);
+
+    &::before {
+        content: '{{ ';
+        opacity: 0.3;
+    }
+
+    &::after {
+        content: ' }}';
+        opacity: 0.3;
+    }
 }

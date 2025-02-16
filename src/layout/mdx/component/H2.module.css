@@ -7,5 +7,5 @@
 .link:hover,
 .link:active,
 .link:focus-visible {
-    color: var(--color-text-primary-accent);
+    color: var(--color-blue);
 }

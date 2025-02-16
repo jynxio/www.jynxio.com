@@ -1,35 +1,18 @@
 :root {
     color-scheme: dark;
 
-    /* 字体尺寸 */
-    --font-size-sx: calc(12 / 16 * 1rem);
-    --font-size-sm: calc(14 / 16 * 1rem);
-    --font-size-base: calc(16 / 16 * 1rem);
-    --font-size-lg: calc(18 / 16 * 1rem);
-    --font-size-xl: calc(20 / 16 * 1rem);
+    /* Font */
+    --sans: '霞鹜文楷';
+    --mono: '霞鹜文楷等宽';
 
-    /* 字体颜色 */
-    --color-text-primary: #ededed;
-    --color-text-primary-accent: #276df5;
-    --color-text-secondary: #a1a1a1;
-    --color-text-secondary-accent: var(--color-text-primary);
+    /* Color */
+    --color-blue: #0157e4;
+    --color-white: #ededed;
+    --color-black: #000;
+    --color-silver: #333;
+    --color-gray: #131313;
 
-    /* 背景颜色 */
-    --color-bg-primary: #000;
-    --color-bg-primary-accent: var(--color-text-primary);
-    --color-bg-secondary: #131313;
-    --color-bg-secondary-accent: #1f1f1f;
-    --color-bg-tertiary: #0a0a0a;
-
-    /* 边框颜色 */
-    --color-border-primary: #333;
-    --color-border-primary-accent: var(--color-text-primary);
-
-    /* 其他 */
-    --icon-size: calc(18 / 16 * 1rem);
-    --rounded-xs: calc(3 / 16 * 1rem);
-    --rounded-base: calc(4 / 16 * 1rem);
-    --rounded-md: calc(6 / 16 * 1rem);
-    --rounded-lg: calc(8 / 16 * 1rem);
-    --rounded-xl: calc(10 / 16 * 1rem);
+    /* Radius */
+    --radius-xs: calc(2 / 16 * 1rem);
+    --radius-sm: calc(4 / 16 * 1rem);
 }
