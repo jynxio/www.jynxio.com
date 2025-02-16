@@ -1,14 +1,15 @@
 .container {
     border-radius: var(--radius-xs);
     font-family: var(--mono);
+    cursor: copy;
 
     &::before {
         content: '{{ ';
-        opacity: 0.3;
+        color: var(--color-silver);
     }
 
     &::after {
         content: ' }}';
-        opacity: 0.3;
+        color: var(--color-silver);
     }
 }
