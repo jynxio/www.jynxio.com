@@ -10,7 +10,6 @@ import img from './component/img';
 import li from './component/li';
 import ol from './component/ol';
 import p from './component/p';
-import pre from './component/pre';
 import strong from './component/strong';
 import table from './component/table';
 import ul from './component/ul';
@@ -32,7 +31,6 @@ const comp = {
     li,
     ol,
     p,
-    pre,
     strong,
     table,
     ul,

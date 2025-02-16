@@ -1,7 +1,0 @@
-.container {
-    margin-block: 1rem;
-    padding: 1ch;
-    border-radius: var(--border-radius-base);
-    background-color: var(--color-bg-secondary) !important;
-    font-family: '霞鹜文楷等宽', monospace;
-}
