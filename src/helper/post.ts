@@ -18,8 +18,8 @@ type List = Item[];
 
 async function reqList(): Promise<List> {
     const dir = await readDir(POST_PATH);
-    const filteredDir = dir.filter(item => item.isDirectory());
-    const promises = filteredDir.map(async item => {
+    const subDir = dir.filter(item => item.isDirectory());
+    const promises = subDir.map(async item => {
         const slug = item.name;
         const mdPath = path.join(POST_PATH, slug, 'index.md');
         const rawMdContent = await readFile(mdPath);
@@ -57,13 +57,16 @@ async function reqPost(slug: string): Promise<Post> {
     return post;
 }
 
-function readDir(targetPath: string) {
-    return fs.readdir(path.join(process.cwd(), targetPath), { withFileTypes: true });
+async function readDir(targetPath: string) {
+    const dir = await fs.readdir(path.join(process.cwd(), targetPath), { withFileTypes: true });
+    const filteredDir = dir.filter(item => !item.name.startsWith('.'));
+
+    return filteredDir;
 }
 
 function readFile(targetPath: string) {
     return fs.readFile(path.join(process.cwd(), targetPath), 'utf8');
 }
 
-export { readDir, readFile, reqList, reqPost };
-export default { reqList, reqPost, readFile, readDir };
+export { reqList, reqPost };
+export default { reqList, reqPost };

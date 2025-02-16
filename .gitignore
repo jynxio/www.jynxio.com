@@ -69,6 +69,7 @@ src/asset/temporary
 **/*.woff
 **/*.woff2
 **/GoogleAnalytics.tsx
+**/.obsidian
 post-deprecated
 post-temporary
 post-wip
