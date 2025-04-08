@@ -1,0 +1,35 @@
+.container {
+    z-index: 1;
+    position: fixed;
+    inset: 0 0 auto auto;
+    inline-size: 100%;
+    border-block-start: 0.35rem solid transparent;
+    text-align: center;
+    background-color: var(--color-blue);
+    transition:
+        opacity 400ms cubic-bezier(0, 0.55, 0.45, 1),
+        display 400ms cubic-bezier(0, 0.55, 0.45, 1);
+    transition-behavior: allow-discrete;
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 100% 0 auto auto;
+        block-size: 40px;
+        inline-size: 100%;
+        background-repeat: repeat-x;
+        background-image: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" viewBox="17 31 17 40" preserveAspectRatio="meet" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style=" fill-rule: evenodd;clip-rule: evenodd;stroke-linejoin: round;stroke-miterlimit: 2;fill: rgba(1, 87, 228, 1);" > <g transform="matrix(1,0,0,1,0.00216511,0)"> <g transform="matrix(0.997444,0,0,1.0,-367.767,-282)"> <path d="M402.739,321.467L402.787,321.467C407.047,321.467 407.047,317.467 411.307,317.467C415.567,317.467 415.567,321.467 419.827,321.467L419.827,287.378C415.567,287.378 415.567,283.378 411.307,283.378C407.064,283.378 407.047,287.347 402.837,287.378L402.787,287.378C400.724,287.378 399.66,286.44 398.627,285.472L398.427,285.285C397.395,284.317 396.331,283.378 394.267,283.378C392.204,283.378 391.14,284.317 390.107,285.285L389.907,285.472C388.875,286.44 387.811,287.378 385.747,287.378C381.487,287.378 381.487,283.378 377.227,283.378C372.967,283.378 372.967,287.378 368.707,287.378L368.707,321.467C372.967,321.467 372.967,317.467 377.227,317.467C381.47,317.467 381.487,321.436 385.697,321.467L385.747,321.467C390.007,321.467 390.007,317.467 394.267,317.467C396.331,317.467 397.395,318.406 398.427,319.374L398.627,319.561C399.651,320.521 400.707,321.453 402.739,321.467Z" style="fill: rgba(1, 87, 228, 1);fill-rule: nonzero" /> </g> </g> </svg>');
+    }
+}
+
+.btn {
+    position: absolute;
+    inset: 50% 1rem auto auto;
+    inline-size: 1rem;
+    block-size: 1rem;
+    translate: 0 -50%;
+
+    & > svg {
+        block-size: 100%;
+    }
+}
