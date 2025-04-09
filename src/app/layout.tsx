@@ -2,6 +2,7 @@ import './_css/index.css';
 
 import Scroll from '@/layout/scroll';
 import type React from 'react';
+import { Banner } from './_comp/banner';
 import { GoogleAnalytics } from './_comp/google-analytics';
 import createMetadata from './_helper/create-metadata';
 import css from './layout.module.css';
@@ -12,6 +13,8 @@ function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="en">
             <body className={css.container}>
+                <Banner />
+
                 <Scroll className={css.wrapper}>
                     <div className={css.gap}>{children}</div>
                 </Scroll>

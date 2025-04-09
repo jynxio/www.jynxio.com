@@ -1,5 +1,4 @@
 import { reqList } from '@/helper/post';
-import { Banner } from './_comp/banner';
 import List from './_comp/post-list';
 
 async function Blog() {
@@ -11,12 +10,7 @@ async function Blog() {
         return timestampB - timestampA;
     });
 
-    return (
-        <>
-            <Banner />
-            <List list={orderedList} />
-        </>
-    );
+    return <List list={orderedList} />;
 }
 
 export default Blog;

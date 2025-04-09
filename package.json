@@ -27,6 +27,7 @@
         "clsx": "^2.1.1",
         "lodash-es": "^4.17.21",
         "lucide-react": "^0.487.0",
+        "motion": "^12.6.3",
         "next": "15.2.4",
         "overlayscrollbars": "^2.11.1",
         "overlayscrollbars-react": "^0.5.6",
