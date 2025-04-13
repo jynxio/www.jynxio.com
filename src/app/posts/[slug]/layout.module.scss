@@ -1,0 +1,23 @@
+@use '@/utils/media-query' as query;
+
+.nav {
+    position: fixed;
+    z-index: 1;
+    inset: 20px 20px auto auto;
+
+    @include query.screen('max-ipad:') {
+        inset: auto 20px 20px auto;
+    }
+}
+
+.link {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    &:hover,
+    &:active,
+    &:focus-visible {
+        color: var(--color-blue);
+    }
+}

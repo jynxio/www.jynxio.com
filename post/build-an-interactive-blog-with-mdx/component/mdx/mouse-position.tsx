@@ -1,13 +1,13 @@
 'use client';
 
 import clsx from 'clsx';
-import React from 'react';
+import { useRef } from 'react';
 import { useMouseHovered } from 'react-use';
 import css from './mouse-position.module.css';
 
 function MousePosition() {
     //
-    const ref = React.useRef<HTMLDivElement>(null as unknown as HTMLDivElement);
+    const ref = useRef<HTMLDivElement>(null as unknown as HTMLDivElement);
     const { elX, elY, elW, elH } = useMouseHovered(ref, { bound: true, whenHovered: false });
 
     // Derived State
@@ -25,4 +25,3 @@ function MousePosition() {
 }
 
 export { MousePosition };
-export default MousePosition;

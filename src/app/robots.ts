@@ -1,8 +1,8 @@
-import { APP_URL } from '@/constant';
+import { APP_URL } from '@/consts';
 import type { MetadataRoute } from 'next';
 
-export const dynamic = 'force-static';
-export default function robots(): MetadataRoute.Robots {
+const dynamic = 'force-static';
+function robots(): MetadataRoute.Robots {
     return {
         rules: [
             {
@@ -13,3 +13,6 @@ export default function robots(): MetadataRoute.Robots {
         sitemap: new URL('sitemap.xml', APP_URL).toString(),
     };
 }
+
+export { dynamic };
+export default robots;

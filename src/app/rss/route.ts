@@ -1,8 +1,8 @@
-import { reqList } from '@/helper/post';
+import { reqList } from '@/helpers/posts';
 import RSS from 'rss';
 
-export const dynamic = 'force-static';
-export async function GET() {
+const dynamic = 'force-static';
+async function GET() {
     const list = await reqList();
     const feed = new RSS({
         title: `Jynxio's Blog`,
@@ -27,3 +27,5 @@ export async function GET() {
         headers: { 'Content-Type': 'application/xml' },
     });
 }
+
+export { dynamic, GET };

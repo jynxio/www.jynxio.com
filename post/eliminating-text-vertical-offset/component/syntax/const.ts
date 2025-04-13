@@ -14,4 +14,4 @@ const dict = {
     },
 } as const;
 
-export default dict;
+export { dict };

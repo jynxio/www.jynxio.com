@@ -60,7 +60,7 @@ next-env.d.ts
 # My
 temp-post
 public/image-hosting
-src/asset/temporary
+src/assets/temp
 **/*.png
 **/*.jpg
 **/*.jpeg
@@ -71,6 +71,6 @@ src/asset/temporary
 **/GoogleAnalytics.tsx
 **/.obsidian
 post-deprecated
-post-temporary
+post-temp
 post-wip
 .vercel

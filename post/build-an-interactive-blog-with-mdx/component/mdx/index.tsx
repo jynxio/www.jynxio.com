@@ -1,5 +1,5 @@
 import css from './index.module.css';
-import MousePosition from './mouse-position';
+import { MousePosition } from './mouse-position';
 
 function Mdx() {
     return (
@@ -22,4 +22,3 @@ function Mdx() {
 }
 
 export { Mdx };
-export default Mdx;

@@ -1,9 +1,9 @@
-import { APP_URL } from '@/constant';
-import { reqList } from '@/helper/post';
+import { APP_URL } from '@/consts';
+import { reqList } from '@/helpers/posts';
 import path from 'node:path';
 
-export const dynamic = 'force-static';
-export default async function sitemap() {
+const dynamic = 'force-static';
+async function sitemap() {
     const list = await reqList();
     const blogs = list.map(item => ({
         url: new URL(path.join('blog', item.slug), APP_URL),
@@ -17,3 +17,6 @@ export default async function sitemap() {
 
     return [...routes, ...blogs];
 }
+
+export { dynamic };
+export default sitemap;

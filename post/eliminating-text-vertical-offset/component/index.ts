@@ -1,4 +1,4 @@
-import Syntax from './syntax';
+import { Syntax } from './syntax';
 
 Comp.Syntax = Syntax;
 
@@ -6,4 +6,4 @@ function Comp() {
     return null;
 }
 
-export default Comp;
+export { Comp };

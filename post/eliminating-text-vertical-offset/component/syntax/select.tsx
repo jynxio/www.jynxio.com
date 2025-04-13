@@ -34,4 +34,3 @@ function Select<A extends readonly string[]>({
 }
 
 export { Select };
-export default Select;

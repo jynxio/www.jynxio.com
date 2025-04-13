@@ -1,21 +1,20 @@
 'use client';
 
-import React from 'react';
-
-import dict from './const';
+import { useState, type CSSProperties } from 'react';
+import { dict } from './const';
 import css from './index.module.css';
-import Select from './select';
+import { Select } from './select';
 
-type CssPropsWithTextBox = React.CSSProperties & { textBox?: string };
+type CssPropsWithTextBox = CSSProperties & { textBox?: string };
 
 function Syntax() {
     type Trim = (typeof dict)['textBoxTrim']['availableValues'][number];
     type EdgeTop = (typeof dict)['textBoxEdge']['top']['availableValues'][number];
     type EdgeBottom = (typeof dict)['textBoxEdge']['bottom']['availableValues'][number];
 
-    const [trim, setTrim] = React.useState<Trim>('trim-both');
-    const [edgeTop, setEdgeTop] = React.useState<EdgeTop>('ex');
-    const [edgeBottom, setEdgeBottom] = React.useState<EdgeBottom>('alphabetic');
+    const [trim, setTrim] = useState<Trim>('trim-both');
+    const [edgeTop, setEdgeTop] = useState<EdgeTop>('ex');
+    const [edgeBottom, setEdgeBottom] = useState<EdgeBottom>('alphabetic');
 
     const isEdgeTopDisabled = trim === 'none';
     const isEdgeBottomDisabled = trim === 'none';
@@ -68,4 +67,3 @@ function Syntax() {
 }
 
 export { Syntax };
-export default Syntax;

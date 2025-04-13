@@ -2,12 +2,12 @@
 @import './variable.css';
 
 /* Font */
-@import '@/asset/temporary/LXGWWenKai-Medium/result.css';
-@import '@/asset/temporary/LXGWWenKai-Regular/result.css';
+@import '@/assets/temp/LXGWWenKai-Medium/result.css';
+@import '@/assets/temp/LXGWWenKai-Regular/result.css';
 
 /* Font (Mono) */
-@import '@/asset/temporary/LXGWWenKaiMono-Medium/result.css';
-@import '@/asset/temporary/LXGWWenKaiMono-Regular/result.css';
+@import '@/assets/temp/LXGWWenKaiMono-Medium/result.css';
+@import '@/assets/temp/LXGWWenKaiMono-Regular/result.css';
 
 html {
     /* [iPhone 13, iPad Min] */

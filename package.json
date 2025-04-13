@@ -14,7 +14,7 @@
         "deploy": "vercel build && vercel deploy --prebuilt && vercel --prod",
         "lintstaged": "lint-staged",
         "commitlint": "commitlint --edit",
-        "build:font": "deno ./src/util/genFont.ts",
+        "build:font": "deno ./src/tasks/gen-font.ts",
         "lint:style": "prettier --write .",
         "lint:ts": "tsc --build --noEmit",
         "lint:js": "eslint \"**/*.{js,mjs,cjs,ts,jsx,tsx}\" --fix",
