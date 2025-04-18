@@ -1,0 +1,21 @@
+.container {
+    inline-size: min(100%, 74ch);
+    margin: 6rem auto 10rem;
+}
+
+.header {
+    margin-block-end: 4rem;
+    text-align: center;
+    color: var(--color-silver);
+}
+
+.list {
+    gap: 4rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1rem;
+
+    & > li {
+        list-style: none;
+    }
+}
