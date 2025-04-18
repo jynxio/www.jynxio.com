@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 
 import { Comp as buildBlogWithNextJs } from '$/post/build-an-interactive-blog-with-mdx/component';
 import { Comp as eliminatingTextVerticalOffset } from '$/post/eliminating-text-vertical-offset/component';
-
 import { CodeSnippet } from '@/comps/code-snippet';
 import { mdx } from '@/comps/mdx';
 import { APP_URL } from '@/consts';
