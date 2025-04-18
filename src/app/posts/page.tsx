@@ -1,7 +1,7 @@
 import { List } from '@/app/posts/list';
 import { reqList } from '@/helpers/posts';
 
-async function Blog() {
+async function Post() {
     const list = await reqList();
     const orderedList = list.toSorted((a, b) => {
         const timestampA = Number(new Date(a.publishedDate));
@@ -13,4 +13,4 @@ async function Blog() {
     return <List list={orderedList} />;
 }
 
-export default Blog;
+export default Post;
