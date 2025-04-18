@@ -9,9 +9,11 @@ import { useState } from 'react';
 import css from './index.module.css';
 
 function Banner() {
-    const isRoot = usePathname() === '/';
+    const pathname = usePathname();
+    const isShortsPage = usePathname() === '/shorts';
+    const isInPostCategoryPage = pathname === '/posts';
     const [isShown, setIsShown] = useState(true);
-    const isEnabled = isRoot && isShown;
+    const isEnabled = (isShortsPage || isInPostCategoryPage) && isShown;
 
     return (
         <AnimatePresence initial>
