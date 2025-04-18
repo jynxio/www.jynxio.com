@@ -9,8 +9,9 @@
     ],
     "scripts": {
         "dev": "next dev --turbopack",
-        "build": "next build",
+        "build": "next build --turbopack",
         "prepare": "husky",
+        "test": "vitest",
         "deploy": "vercel build && vercel deploy --prebuilt && vercel --prod",
         "lintstaged": "lint-staged",
         "commitlint": "commitlint --edit",
@@ -34,14 +35,16 @@
         "powerglitch": "^2.4.0",
         "react": "19.1.0",
         "react-dom": "19.1.0",
-        "react-use": "^17.6.0"
+        "react-intersection-observer": "^9.16.0",
+        "react-use": "^17.6.0",
+        "zod": "4.0.0-beta.20250414T061543"
     },
     "devDependencies": {
         "@commitlint/cli": "^19.8.0",
         "@commitlint/config-conventional": "^19.8.0",
         "@csstools/postcss-light-dark-function": "^2.0.7",
-        "@eslint/eslintrc": "^3.3.1",
         "@eslint/js": "^9.24.0",
+        "@next/eslint-plugin-next": "^15.3.0",
         "@types/fs-extra": "^11.0.4",
         "@types/lodash-es": "^4.17.12",
         "@types/node": "^22.14.1",
@@ -59,6 +62,7 @@
         "eslint-plugin-react": "^7.37.5",
         "eslint-plugin-react-compiler": "19.0.0-beta-e993439-20250405",
         "eslint-plugin-react-hooks": "^5.2.0",
+        "eslint-plugin-react-refresh": "^0.4.19",
         "fs-extra": "^11.3.0",
         "globals": "^16.0.0",
         "gray-matter": "^4.0.3",
