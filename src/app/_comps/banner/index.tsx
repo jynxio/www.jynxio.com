@@ -10,10 +10,9 @@ import css from './index.module.css';
 
 function Banner() {
     const pathname = usePathname();
-    const isShortsPage = usePathname() === '/shorts';
     const isInPostCategoryPage = pathname === '/posts';
     const [isShown, setIsShown] = useState(true);
-    const isEnabled = (isShortsPage || isInPostCategoryPage) && isShown;
+    const isEnabled = isInPostCategoryPage && isShown;
 
     return (
         <AnimatePresence initial>
