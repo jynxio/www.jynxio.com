@@ -9,7 +9,7 @@
     ],
     "scripts": {
         "dev": "next dev --turbopack",
-        "build": "next build --turbopack",
+        "build": "next build",
         "prepare": "husky",
         "test": "vitest",
         "deploy": "vercel build && vercel deploy --prebuilt && vercel --prod",
