@@ -6,8 +6,8 @@ type Props = React.DetailedHTMLProps<React.HTMLAttributes<HTMLTableElement>, HTM
 
 function Table({ children, className, ...rest }: Props) {
     return (
-        <Scroll>
-            <table className={clsx(css.container, className)} {...rest}>
+        <Scroll className={css.container}>
+            <table className={clsx(css.table, className)} {...rest}>
                 {children}
             </table>
         </Scroll>

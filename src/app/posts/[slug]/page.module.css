@@ -1,7 +1,7 @@
 .container {
     inline-size: min(100%, 74ch);
     margin-inline: auto;
-    margin-block: 6rem 10rem;
+    margin-block: var(--post-margin-block);
     font-size: 1.1rem;
     container-type: inline-size;
 }
@@ -11,7 +11,7 @@
 }
 
 .date {
-    margin-block-end: 3rem;
+    margin-block-end: var(--post-title-margin-block-end);
     font-size: 0.8rem;
     text-align: center;
 }

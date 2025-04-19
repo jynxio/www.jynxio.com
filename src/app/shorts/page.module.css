@@ -1,6 +1,7 @@
 .container {
     inline-size: min(100%, 74ch);
-    margin: 6rem auto 10rem;
+    margin-inline: auto;
+    margin-block: var(--post-margin-block);
 }
 
 .header {

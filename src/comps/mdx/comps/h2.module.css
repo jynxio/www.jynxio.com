@@ -1,7 +1,6 @@
 .container {
-    font-size: 1.35rem;
-    font-weight: 1000;
-    margin-block: 6rem 2rem;
+    font-size: var(--post-subtitle-font-size);
+    margin-block: 7.5rem 1.5rem;
 }
 
 .link:hover,

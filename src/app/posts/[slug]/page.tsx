@@ -6,6 +6,7 @@ import { CodeSnippet } from '@/comps/code-snippet';
 import { mdx } from '@/comps/mdx';
 import { APP_URL } from '@/consts';
 import { reqList, reqPost } from '@/helpers/posts';
+import { formatDate } from '@/utils/format-date';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import path from 'node:path';
 import remarkGfm from 'remark-gfm';
@@ -19,7 +20,7 @@ type Props = Readonly<{
 async function Page({ params }: Props) {
     const { slug } = await params;
     const { content, title, updatedDate } = await reqPost(slug);
-    const prettierDate = new Date(updatedDate).toLocaleDateString();
+    const date = formatDate(updatedDate);
     const newComp = {
         ...mdx,
         buildBlogWithNextJs,
@@ -32,7 +33,7 @@ async function Page({ params }: Props) {
         <article className={css.container}>
             <mdx.h1 className={css.title}>{title}</mdx.h1>
             <blockquote className={css.date}>
-                Last updated: <time dateTime={updatedDate}>{prettierDate}</time>
+                Last updated: <time dateTime={updatedDate}>{date}</time>
             </blockquote>
 
             <MDXRemote

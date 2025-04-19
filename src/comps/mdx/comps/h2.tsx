@@ -11,7 +11,7 @@ function H2({ children, className, ...rest }: Props) {
     return (
         <h2 id={id} className={clsx(css.container, className)} {...rest}>
             <Link href={anchor} className={css.link}>
-                {children}
+                # {children}
             </Link>
         </h2>
     );

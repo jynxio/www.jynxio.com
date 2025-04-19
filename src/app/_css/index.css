@@ -1,5 +1,5 @@
 @import './reset.css';
-@import './variable.css';
+@import './variable.scss';
 
 /* Font */
 @import '@/assets/temp/LXGWWenKai-Medium/result.css';

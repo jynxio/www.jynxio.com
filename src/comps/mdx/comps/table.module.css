@@ -1,7 +1,10 @@
 .container {
+    margin-block: 1.5rem;
+}
+
+.table {
     table-layout: auto;
     inline-size: 100%;
-    margin-block: 1rem;
     font-size: 0.9rem;
     border-spacing: 5px;
 
