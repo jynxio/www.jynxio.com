@@ -1,13 +1,13 @@
 'use client';
 
-import { Scroll as PrimitiveScroll } from '@/comps/scroll';
+import { Scroll } from '@/comps/scroll';
 import { useState, type ComponentProps } from 'react';
 import css from './box.module.css';
 import { Copy } from './copy-btn';
 import { ExpandBtn } from './expand-btn';
 
 type Props = Readonly<{ html: string; code: string }>;
-type Event = ComponentProps<typeof PrimitiveScroll>['events'];
+type Event = ComponentProps<typeof Scroll>['events'];
 
 function Box({ html, code }: Props) {
     const [isExpandable, setIsExpandable] = useState(false);
@@ -17,9 +17,9 @@ function Box({ html, code }: Props) {
 
     return (
         <div className={css.container}>
-            <PrimitiveScroll className={css.scroll} events={event}>
+            <Scroll className={css.scroll} events={event}>
                 <div dangerouslySetInnerHTML={{ __html: html }} />
-            </PrimitiveScroll>
+            </Scroll>
 
             <aside className={css.control}>
                 {isExpandable && banExpandBtn() && <ExpandBtn />}
