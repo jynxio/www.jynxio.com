@@ -1,5 +1,9 @@
 /**
  * Formats an ISO date string into a human-readable date string in the local time zone.
+ *
+ * @example
+ * formatDate('2024-03-15T12:34:56Z');                                                 // 'March 15, 2024'
+ * formatDate('2024-03-15T12:34:56Z', { locale: 'de-DE', timeZone: 'Europe/Berlin' }); // '15. März 2024'
  */
 function formatDate(
     /** The ISO format date string to format */
