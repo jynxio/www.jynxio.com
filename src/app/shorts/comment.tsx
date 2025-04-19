@@ -50,7 +50,7 @@ function Card({ children, date, mode }: Props) {
     return (
         <div className={css.outer}>
             <div className={css.inner}>
-                <article>{children}</article>
+                <article className={css.article}>{children}</article>
                 <time className={css.date} dateTime={date} style={style}>
                     {date}
                 </time>

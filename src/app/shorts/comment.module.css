@@ -17,6 +17,11 @@
     background-image: radial-gradient(var(--color-gray) 1px, var(--color-black) 0);
 }
 
+.article > p {
+    margin-block: unset;
+    font-size: 1rem;
+}
+
 .date {
     position: absolute;
     top: 100%;
