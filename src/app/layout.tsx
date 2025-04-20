@@ -1,4 +1,4 @@
-import './_css/index.css';
+import './_css/index.scss';
 
 import type { ReactNode } from 'react';
 
