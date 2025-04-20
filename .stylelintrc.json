@@ -19,7 +19,6 @@
             {
                 "ignoreAtRules": ["mixin", "if", "else", "else if", "forward", "include", "use"]
             }
-        ],
-        "scss/load-partial-extension": null
+        ]
     }
 }
