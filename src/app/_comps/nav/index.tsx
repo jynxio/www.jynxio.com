@@ -1,21 +1,38 @@
+'use client';
+
 import type { PropsWithChildren } from 'react';
 
 import { Link } from '@/comps/link';
-import css from './index.module.css';
+import { AnimatePresence, motion } from 'motion/react';
+import { usePathname } from 'next/navigation';
+import css from './index.module.scss';
 
 function Nav() {
+    const pathname = usePathname();
+    const isInShortsPage = pathname === '/shorts';
+    const isInPostCategoryPage = pathname === '/posts';
+    const isShown = isInShortsPage || isInPostCategoryPage;
+
     return (
-        <nav className={css.container}>
-            <Link href="/posts">Posts</Link>
-            <i>·</i>
-            <Link href="/shorts">Shorts</Link>
+        <AnimatePresence initial>
+            {isShown && (
+                <motion.nav
+                    key="navigation"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className={css.container}
+                >
+                    <Link href="/posts">Posts</Link>
+                    <i>·</i>
+                    <Link href="/shorts">Shorts</Link>
 
-            <i>|</i>
+                    <i>|</i>
 
-            <ExternalLink href="https://github.com/jynxio">GitHub</ExternalLink>
-            <i>·</i>
-            <ExternalLink href="https://x.com/jyn_xio">Twitter</ExternalLink>
-        </nav>
+                    <ExternalLink href="https://github.com/jynxio">GitHub</ExternalLink>
+                </motion.nav>
+            )}
+        </AnimatePresence>
     );
 }
 
