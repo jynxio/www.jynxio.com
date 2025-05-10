@@ -1,11 +1,15 @@
 ---
-title: 手写符合 Promises/A+ Spec 的 Promise
-abstract: 我一直都想知道 Promise 是怎么工作的，于是我去阅读了 Promises/A+ Spec，并实现了一个通过测试的 Polyfill，这让我很受益。
-publishedDate: 2022-07-29T00:00:00+08:00
-updatedDate: 2022-07-29T00:00:00+08:00
-tags:
-  - JavaScript
-hero: hero.png
+title: "手写符合 Promises/A+ Spec 的 Promise"
+
+abstract: "我一直都想知道 Promise 是怎么工作的，于是我去阅读了 Promises/A+ Spec，并实现了一个通过测试的 Polyfill，这让我很受益。"
+
+publishedDate: "2022-07-29T00:00:00+08:00"
+
+updatedDate: "2022-07-29T00:00:00+08:00"
+
+tags: ["JavaScript"]
+
+hero: "hero.png"
 ---
 
 我一直想知道 Promise 究竟是怎么工作的，于是我去阅读了 [Promises/A+ Spec](https://github.com/promises-aplus/promises-spec)，并实现了一个通过 [Promises/A+ Tests](https://github.com/promises-aplus/promises-tests) 的 Polyfill —— [Inshin](https://github.com/jynxio/inshin)。
