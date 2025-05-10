@@ -1,15 +1,16 @@
 ---
-title: 如何将 Antd 集成进 Tailwind CSS？
-abstract: 我想在 Tailwind CSS@4 的类名中使用 Antd@5 的 Design Token，就像 <div class="colorPrimary"> 这样，这里就有一个方案。
-publishedDate: 2025-04-08T00:00:00+08:00
-updatedDate: 2025-04-08T00:00:00+08:00
-tags:
-  - Antd
-  - Tailwind CSS
-hero: hero.png
----
+title: "如何将 Antd 集成进 Tailwind CSS？"
 
-我在 tw@4 中使用 Antd@5 的样式，阅读源码后发现 Antd 不可能在符合 SemVer 的前提下办到这件事情，而我有一种 hack 的方案。
+abstract: '我想在 Tailwind CSS@4 的类名中使用 Antd@5 的 Design Token，就像 <div class="colorPrimary"> 这样，这里就有一个方案。'
+
+publishedDate: "2025-04-08T00:00:00+08:00"
+
+updatedDate: "2025-04-08T00:00:00+08:00"
+
+tags: ["Antd", "Tailwind CSS"]
+
+hero: "hero.png"
+---
 
 我的项目同时使用了 Antd@5 和 Tailwind CSS@4（简称 tw），我希望能在 tw 类名中直接引用 Antd 的 Design Token（简称 Token），实现如下效果：
 
