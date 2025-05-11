@@ -4,7 +4,6 @@ import type { ReactNode } from 'react';
 
 import { Scroll } from '@/comps/scroll';
 import { Banner } from './_comps/banner';
-import { GoogleAnalytics } from './_comps/google-analytics';
 import { Nav } from './_comps/nav';
 import { createMetadata } from './_helpers/create-metadata';
 import css from './layout.module.css';
@@ -30,8 +29,6 @@ function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
                 <Scroll className={css.wrapper}>
                     <div className={css.gap}>{children}</div>
                 </Scroll>
-
-                {process.env.NODE_ENV === 'production' && <GoogleAnalytics />}
             </body>
         </html>
     );
