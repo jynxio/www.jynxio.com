@@ -1,7 +1,10 @@
 import css from './page.module.css';
 
+import type { Metadata } from 'next';
+
 import { CodeSnippet } from '@/comps/code-snippet';
 import { mdx } from '@/comps/mdx';
+import { APP_URL } from '@/consts';
 import { formatDate } from '@/utils/format-date';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { Comment } from './comment';
@@ -37,6 +40,13 @@ async function List() {
             })}
         </ul>
     );
+}
+
+export function generateMetadata(): Metadata {
+    return {
+        title: 'Shorts',
+        alternates: { canonical: new URL(`/shorts`, APP_URL).toString() },
+    };
 }
 
 export default Page;
