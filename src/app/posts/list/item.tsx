@@ -1,39 +1,44 @@
-import type { MouseEvent } from 'react';
+'use client';
+
+import { useTransition, type MouseEvent } from 'react';
 
 import { Icon } from '@/comps/icon';
 import clsx from 'clsx';
 import { Forward, Loader } from 'lucide-react';
 import NextLink from 'next/link';
+import { useRouter } from 'next/navigation';
 import css from './item.module.css';
 
 type Props = Readonly<{
     title: string;
     abstract: string;
-    isLoading: boolean;
-    navigate: () => void;
+    href: string;
 }>;
 
-function Item({ title, abstract, isLoading, navigate }: Props) {
+function Item({ title, abstract, href }: Props) {
+    const router = useRouter();
+    const [isPending, startTransition] = useTransition();
+
     return (
         <div className={css.container}>
             <NextLink
                 href=""
-                onClick={onClick}
-                className={clsx(css.link, isLoading && css.loading)}
-                tabIndex={isLoading ? -1 : undefined}
+                onClick={handleClick}
+                className={clsx(css.link, isPending && css.loading)}
+                tabIndex={isPending ? -1 : undefined}
             >
                 <h3 className={css.title}>{title}</h3>
                 <p className={css.des}>{abstract}</p>
                 <Entry />
             </NextLink>
 
-            {isLoading && <Spin />}
+            {isPending && <Spin />}
         </div>
     );
 
-    function onClick(e: MouseEvent) {
+    function handleClick(e: MouseEvent) {
         e.preventDefault();
-        isLoading || navigate();
+        isPending || startTransition(() => router.push(href));
     }
 }
 
