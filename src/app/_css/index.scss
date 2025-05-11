@@ -1,14 +1,6 @@
 @use './reset';
 @use './variable' as *;
 
-/* Font */
-@import '@/assets/temp/LXGWWenKai-Medium/result.css';
-@import '@/assets/temp/LXGWWenKai-Regular/result.css';
-
-/* Font (Mono) */
-@import '@/assets/temp/LXGWWenKaiMono-Medium/result.css';
-@import '@/assets/temp/LXGWWenKaiMono-Regular/result.css';
-
 html {
     /* [iPhone 13, iPad Min] */
     font-size: clamp(0.9rem, 0.452vw + 0.7898rem, 1rem);
