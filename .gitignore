@@ -74,3 +74,4 @@ post-deprecated
 post-temp
 post-wip
 .vercel
+src/app/_css/google-fonts.css
