@@ -6,12 +6,3 @@
     inline-size: 100vw;
     inline-size: 100dvw;
 }
-
-.wrapper {
-    block-size: 100%;
-    inline-size: 100%;
-}
-
-.gap {
-    padding-inline: 1ch;
-}

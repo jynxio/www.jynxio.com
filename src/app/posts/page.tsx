@@ -1,4 +1,6 @@
 import { List } from '@/app/posts/list';
+import { Scroll } from '@/comps/scroll';
+import layoutScrollCss from '@/helpers/layout-scroll.module.css';
 import { reqList } from '@/helpers/posts';
 
 async function Post() {
@@ -10,7 +12,11 @@ async function Post() {
         return timestampB - timestampA;
     });
 
-    return <List list={orderedList} />;
+    return (
+        <Scroll className={layoutScrollCss.style}>
+            <List list={orderedList} />
+        </Scroll>
+    );
 }
 
 export default Post;

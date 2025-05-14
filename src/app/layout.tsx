@@ -2,7 +2,6 @@ import './_css/index.scss';
 
 import type { ReactNode } from 'react';
 
-import { Scroll } from '@/comps/scroll';
 import { Banner } from './_comps/banner';
 import { Nav } from './_comps/nav';
 import { createMetadata } from './_helpers/create-metadata';
@@ -21,10 +20,7 @@ function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
             <body className={css.container}>
                 <Nav />
                 <Banner />
-
-                <Scroll className={css.wrapper}>
-                    <div className={css.gap}>{children}</div>
-                </Scroll>
+                {children}
             </body>
         </html>
     );

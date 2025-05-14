@@ -1,21 +1,24 @@
-import css from './page.module.css';
-
 import type { Metadata } from 'next';
 
 import { CodeSnippet } from '@/comps/code-snippet';
 import { mdx } from '@/comps/mdx';
+import { Scroll } from '@/comps/scroll';
 import { APP_URL } from '@/consts';
+import layoutScrollCss from '@/helpers/layout-scroll.module.css';
 import { formatDate } from '@/utils/format-date';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { Comment } from './comment';
 import { getDiscussion } from './fetch';
+import css from './page.module.css';
 
 async function Page() {
     return (
-        <div className={css.container}>
-            <header className={css.header}>{'/* 我把简短的想法写在这里 */'}</header>
-            <List />
-        </div>
+        <Scroll className={layoutScrollCss.style}>
+            <div className={css.container}>
+                <header className={css.header}>{'/* 我把简短的想法写在这里 */'}</header>
+                <List />
+            </div>
+        </Scroll>
     );
 }
 
