@@ -51,8 +51,8 @@ importers:
         specifier: 17.6.0
         version: 17.6.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       zod:
-        specifier: 4.0.0-beta.20250414T061543
-        version: 4.0.0-beta.20250414T061543
+        specifier: 3.25.36
+        version: 3.25.36
     devDependencies:
       '@commitlint/cli':
         specifier: 19.8.1
@@ -1590,9 +1590,6 @@ packages:
 
   '@xobotyi/scrollbar-width@1.9.5':
     resolution: {integrity: sha512-N8tkAACJx2ww8vFMneJmaAgmjAG1tnVBZJRLRcx061tmsLRZHSEZSLuGWnwPtunsSLvSqXQ2wfp7Mgqg1I+2dQ==}
-
-  '@zod/core@0.5.0':
-    resolution: {integrity: sha512-9EW5fOng5558DM68WmVtecPzHuROdB5AcBVOBVqtPIup1quYRxxzwzT9+BPNX5Pr+so0wP/Hxv8+pCrBbjKQeg==}
 
   JSONStream@1.3.5:
     resolution: {integrity: sha512-E+iruNOY8VV9s4JEbe1aNEm6MiszPRr/UfcHMz0TQh1BXSxHK+ASV1R6W4HpjBhSeS+54PIsAMCBmwD06LLsqQ==}
@@ -4544,11 +4541,8 @@ packages:
     peerDependencies:
       zod: ^3.24.4
 
-  zod@3.24.4:
-    resolution: {integrity: sha512-OdqJE9UDRPwWsrHjLN2F8bPxvwJBK22EHLWtanu0LSYr5YqzsaaW3RMgmjwr8Rypg5k+meEJdSPXJZXE/yqOMg==}
-
-  zod@4.0.0-beta.20250414T061543:
-    resolution: {integrity: sha512-1X7/cVHAWBt9jEIIg2Q2GFEApZy1VYe+YBxsjwVMmDZfMvn09CylsKLGZtfjZ/cwYrJha0OIWOh+MouaOj3Zdg==}
+  zod@3.25.36:
+    resolution: {integrity: sha512-eRFS3i8T0IrpGdL8HQyqFAugGOn7jOjyGgGdtv5NY4Wkhi7lJDk732bNZ609YMIGFbLoaj6J69O1Mura23gfIw==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -5371,8 +5365,8 @@ snapshots:
       express-rate-limit: 7.5.0(express@5.1.0)
       pkce-challenge: 5.0.0
       raw-body: 3.0.0
-      zod: 3.24.4
-      zod-to-json-schema: 3.24.5(zod@3.24.4)
+      zod: 3.25.36
+      zod-to-json-schema: 3.24.5(zod@3.25.36)
     transitivePeerDependencies:
       - supports-color
 
@@ -5895,8 +5889,6 @@ snapshots:
       tinyrainbow: 2.0.0
 
   '@xobotyi/scrollbar-width@1.9.5': {}
-
-  '@zod/core@0.5.0': {}
 
   JSONStream@1.3.5:
     dependencies:
@@ -6679,8 +6671,8 @@ snapshots:
       '@babel/plugin-proposal-private-methods': 7.18.6(@babel/core@7.27.1)
       eslint: 9.26.0(jiti@2.4.2)
       hermes-parser: 0.25.1
-      zod: 3.24.4
-      zod-validation-error: 3.4.1(zod@3.24.4)
+      zod: 3.25.36
+      zod-validation-error: 3.4.1(zod@3.25.36)
     transitivePeerDependencies:
       - supports-color
 
@@ -6761,7 +6753,7 @@ snapshots:
       minimatch: 3.1.2
       natural-compare: 1.4.0
       optionator: 0.9.4
-      zod: 3.24.4
+      zod: 3.25.36
     optionalDependencies:
       jiti: 2.4.2
     transitivePeerDependencies:
@@ -9633,18 +9625,14 @@ snapshots:
 
   yocto-queue@1.2.1: {}
 
-  zod-to-json-schema@3.24.5(zod@3.24.4):
+  zod-to-json-schema@3.24.5(zod@3.25.36):
     dependencies:
-      zod: 3.24.4
+      zod: 3.25.36
 
-  zod-validation-error@3.4.1(zod@3.24.4):
+  zod-validation-error@3.4.1(zod@3.25.36):
     dependencies:
-      zod: 3.24.4
+      zod: 3.25.36
 
-  zod@3.24.4: {}
-
-  zod@4.0.0-beta.20250414T061543:
-    dependencies:
-      '@zod/core': 0.5.0
+  zod@3.25.36: {}
 
   zwitch@2.0.4: {}
