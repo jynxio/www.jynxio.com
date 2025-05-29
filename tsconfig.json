@@ -26,6 +26,7 @@
         "noUncheckedIndexedAccess": true,
         "noFallthroughCasesInSwitch": true,
         "noUncheckedSideEffectImports": true,
+        "erasableSyntaxOnly": true,
 
         "incremental": true,
         "plugins": [{ "name": "next" }]
