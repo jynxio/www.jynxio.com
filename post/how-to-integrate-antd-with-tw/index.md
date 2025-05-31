@@ -28,22 +28,7 @@ hero: "hero.png"
 
 关于设计方案的自适应，我从一开始就将 Token 注册进了 Figma（作为 Figma Variable）和 tw（作为 Theme Variable），如果我更新了 Token 的配方，那么只要更新相应的 Figma Variable 和 Theme Variable，设计稿和网页就会自动更新，无需重构设计稿或样式代码。这是它的示意图：
 
-```
-                            +----------------+
-                            |   Antd Token   |
-                            +--------+-------+
-                                     |
-                                     | Register
-          +--------------+           |           +--------------+
-          |     Figma    | <---------+---------> |   Tailwind   |
-          +------+-------+                       +-------+------+
-                 |                                       |
-                 | CSS Code                              | TW Code
-                 v                                       v
-+---------------------------------+     +---------------------------------+
-| padding: var(--paddingSM, 12px) | --> | <div className="p-paddingSM" /> |
-+---------------------------------+     +---------------------------------+
-```
+![Offset character](./img/chapter-why.png)
 
 ## 怎么做？
 
@@ -338,37 +323,7 @@ Utility 的工作原理大致是：`@utility border-lineType { border-style: var
 
 其原理是：在元素身上注册与 Theme Variable 同名的 CSS 变量，那么 tw 的样式规则就会使用我们注册的同名变量，然后再将同名变量指向 Antd 的 CSS 变量，那么 tw 的样式规则就会使用 Antd 的 CSS 变量了。下面是示意图。
 
-```
-+------------------------------------------------ JSX --+
-|  <App>                                                |
-|    <i class="text-colorPrimary" />                    |
-|  </App>        |                                      |
-+----------------+--------------------------------------+
-                 |
-                 | Apply class style
-                 v
-+------------------------------------------------ CSS --+
-|  .text-colorPrimary {                                 |
-|    color: var(--color-colorPrimary);                  |
-|  }                    |                               |
-+-----------------------+-------------------------------+
-                        |
-                        | Look up --color-colorPrimary
-                        v
-+------------------------------------------------ CSS --+
-|  * {                                                  |
-|    --color-colorPrimary: var(--ant-color-primary);    |
-|  }                        |                           |
-+---------------------------+---------------------------+
-                            |
-                            | Look up --ant-color-primary
-                            v
-+------------------------------------------------ CSS --+
-|  .css-var-R2a { /* Used by App element */             |
-|    --ant-color-primary: '#1677ff';                    |
-|  }                                                    |
-+-------------------------------------------------------+
-```
+![Offset character](./img/chapter-register-css-variable.png)
 
 ## 为什么不直接用 Token？
 
