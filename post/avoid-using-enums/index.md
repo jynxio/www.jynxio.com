@@ -14,7 +14,7 @@ hero: "hero.png"
 
 TypeScript 的 Enums 是复杂的和不协调的，这种混乱时常让我感到烧脑，直至某天，我停了下来，然后开始怀疑「Enums 是不是不良特性」。
 
-是的，Enums 是不良特性，因为 Enums 做的事，别的特性也能做，但 Enums 却额外的让人感到混乱。
+是的，Enums 是不良特性，因为 Enums 做的事，别的特性也能做，但 Enums 有许多额外的负担。
 
 ## Enums 的混乱
 
