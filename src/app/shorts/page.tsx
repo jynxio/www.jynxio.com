@@ -7,8 +7,8 @@ import { APP_URL } from '@/consts';
 import layoutScrollCss from '@/helpers/layout-scroll.module.css';
 import { formatDate } from '@/utils/format-date';
 import { MDXRemote } from 'next-mdx-remote/rsc';
+import { reqDiscussion } from './_req-discussion';
 import { Comment } from './comment';
-import { getDiscussion } from './fetch';
 import css from './page.module.css';
 
 async function Page() {
@@ -23,7 +23,7 @@ async function Page() {
 }
 
 async function List() {
-    const data = await getDiscussion();
+    const data = await reqDiscussion();
     const comps = { ...mdx, pre: CodeSnippet };
 
     return (
