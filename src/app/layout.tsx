@@ -1,9 +1,7 @@
 import './_css/index.scss';
 
 import type { ReactNode } from 'react';
-
 import { Banner } from './_comps/banner';
-import { Nav } from './_comps/nav';
 import { createMetadata } from './_helpers/create-metadata';
 import css from './layout.module.css';
 
@@ -18,7 +16,6 @@ function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
             </head>
 
             <body className={css.container}>
-                <Nav />
                 <Banner />
                 {children}
             </body>
