@@ -1,4 +1,4 @@
-import { List } from '@/app/posts/list';
+import { List } from '@/app/posts/_list';
 import { Scroll } from '@/comps/scroll';
 import layoutScrollCss from '@/helpers/layout-scroll.module.css';
 import { reqList } from '@/helpers/posts';
