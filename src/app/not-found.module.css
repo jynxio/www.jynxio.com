@@ -1,7 +1,17 @@
 .container {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
     position: fixed;
     inset: 0;
     block-size: fit-content;
     inline-size: fit-content;
     margin: auto;
+    line-height: 1;
+
+    &:hover,
+    &:active,
+    &:focus-visible {
+        color: var(--color-blue);
+    }
 }
