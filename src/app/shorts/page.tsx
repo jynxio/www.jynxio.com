@@ -1,47 +1,18 @@
 import type { Metadata } from 'next';
 
-import { CodeSnippet } from '@/comps/code-snippet';
-import { mdx } from '@/comps/mdx';
-import { Scroll } from '@/comps/scroll';
+import { Icon } from '@/comps/icon';
+import { Link } from '@/comps/link';
 import { APP_URL } from '@/consts';
-import layoutScrollCss from '@/helpers/layout-scroll.module.css';
-import { formatDate } from '@/utils/format-date';
-import { MDXRemote } from 'next-mdx-remote/rsc';
-import { reqDiscussion } from './_req-discussion';
-import { Comment } from './comment';
+import { Undo2 } from 'lucide-react';
+
 import css from './page.module.css';
 
-async function Page() {
+function Page() {
     return (
-        <Scroll className={layoutScrollCss.style}>
-            <div className={css.container}>
-                <header className={css.header}>{'/* 我把简短的想法写在这里 */'}</header>
-                <List />
-            </div>
-        </Scroll>
-    );
-}
-
-async function List() {
-    const data = await reqDiscussion();
-    const comps = { ...mdx, pre: CodeSnippet };
-
-    return (
-        <ul className={css.list}>
-            {data.map((item, idx) => {
-                const { content, createdAt } = item;
-                const mode = idx % 2 === 0 ? 'left' : 'right';
-                const alignSelf = mode === 'left' ? 'start' : 'end';
-
-                return (
-                    <li key={createdAt} style={{ alignSelf }}>
-                        <Comment mode={mode} date={formatDate(createdAt)}>
-                            <MDXRemote source={content} components={comps} />
-                        </Comment>
-                    </li>
-                );
-            })}
-        </ul>
+        <Link className={css.container} tabIndex={1} href="/">
+            <Icon label="Back to Homepage" fontSize="1rem" icon={<Undo2 />} />
+            <h1>{`"Yup, I've taken it down."`}</h1>
+        </Link>
     );
 }
 

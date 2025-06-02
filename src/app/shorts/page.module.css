@@ -1,22 +1,17 @@
 .container {
-    inline-size: min(100%, 74ch);
-    margin-inline: auto;
-    margin-block: var(--post-margin-block);
-}
-
-.header {
-    margin-block-end: 4rem;
-    text-align: center;
-    color: var(--color-silver);
-}
-
-.list {
-    gap: 4rem;
     display: flex;
-    flex-direction: column;
-    font-size: 1.1rem;
+    gap: 0.5rem;
+    align-items: center;
+    position: fixed;
+    inset: 0;
+    block-size: fit-content;
+    inline-size: fit-content;
+    margin: auto;
+    line-height: 1;
 
-    & > li {
-        list-style: none;
+    &:hover,
+    &:active,
+    &:focus-visible {
+        color: var(--color-blue);
     }
 }
