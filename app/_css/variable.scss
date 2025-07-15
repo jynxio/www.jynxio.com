@@ -1,0 +1,33 @@
+@use '@/_utils/media-query' as query;
+
+:root {
+    color-scheme: dark;
+
+    /* Font */
+    --sans: 'LXGW WenKai TC', 'Noto Color Emoji', cursive;
+    --mono: 'LXGW WenKai Mono TC', 'Noto Color Emoji', monospace;
+
+    /* Color */
+    --color-blue: #0157e4;
+    --color-white: #ededed;
+    --color-black: #000;
+    --color-silver: #333;
+    --color-gray: #131313;
+
+    /* Radius */
+    --radius-xs: calc(2 / 16 * 1rem);
+    --radius-sm: calc(4 / 16 * 1rem);
+
+    /* Posts */
+    --post-margin-block: 7.5rem;
+    --post-title-margin-block-end: 7.5rem;
+    --post-title-font-size: 2.5rem;
+    --post-subtitle-font-size: 1.75rem;
+
+    @include query.screen('max-ipad:') {
+        --post-margin-block: 3rem;
+        --post-title-margin-block-end: 3rem;
+        --post-title-font-size: 1.75rem;
+        --post-subtitle-font-size: 1.75rem;
+    }
+}

@@ -66,11 +66,14 @@ importers:
       '@eslint/js':
         specifier: 9.26.0
         version: 9.26.0
+      '@jynxio/eslint-plugin':
+        specifier: 1.0.0
+        version: 1.0.0(eslint@9.26.0(jiti@2.4.2))
       '@next/eslint-plugin-next':
         specifier: 15.3.2
         version: 15.3.2
       '@total-typescript/ts-reset':
-        specifier: ^0.6.1
+        specifier: 0.6.1
         version: 0.6.1
       '@types/fs-extra':
         specifier: 11.0.4
@@ -967,6 +970,12 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
+
+  '@jynxio/eslint-plugin@1.0.0':
+    resolution: {integrity: sha512-jk1QSf5qDnVXOxtAY87PQgUCtfGYAOZ+J+uJQkZqUuD6z+SEzCurHw7yhRzcHxfkgesxW28OfMG1mabi6Wk/pA==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    peerDependencies:
+      eslint: '>=9.0.0'
 
   '@keyv/serialize@1.0.3':
     resolution: {integrity: sha512-qnEovoOp5Np2JDGonIDL6Ayihw0RhnRh6vxPuHo4RDn1UOzwEo4AeIfpL6UGIrsceWrCMiVPgwRjbHu4vYFc3g==}
@@ -5320,6 +5329,10 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
+
+  '@jynxio/eslint-plugin@1.0.0(eslint@9.26.0(jiti@2.4.2))':
+    dependencies:
+      eslint: 9.26.0(jiti@2.4.2)
 
   '@keyv/serialize@1.0.3':
     dependencies:

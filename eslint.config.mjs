@@ -1,11 +1,14 @@
 import pluginVanilla from '@eslint/js';
+import pluginJynxio from '@jynxio/eslint-plugin';
 import { flatConfig as pluginNext } from '@next/eslint-plugin-next';
 import pluginPrettier from 'eslint-config-prettier';
 import pluginReact from 'eslint-plugin-react';
 import pluginReactCompiler from 'eslint-plugin-react-compiler';
 import pluginReactHooks from 'eslint-plugin-react-hooks';
 import pluginReactRefresh from 'eslint-plugin-react-refresh';
+import { defineConfig } from 'eslint/config';
 import globals from 'globals';
+import path from 'node:path';
 import pluginTypescript from 'typescript-eslint';
 
 const pluginReactWrapper = {
@@ -22,7 +25,7 @@ const pluginReactCompilerWrapper = {
     rules: { 'react-compiler/react-compiler': 'error' },
 };
 
-const eslintConfig = [
+export default defineConfig([
     /**
      * Base
      */
@@ -60,6 +63,18 @@ const eslintConfig = [
             'react-refresh/only-export-components': 'off',
         },
     },
-];
-
-export default eslintConfig;
+    {
+        plugins: {
+            jynxio: pluginJynxio,
+        },
+        rules: {
+            'jynxio/underscore-file-pattern': [
+                'error',
+                {
+                    '$': path.resolve('./'),
+                    '@': path.resolve('./app'),
+                },
+            ],
+        },
+    },
+]);
