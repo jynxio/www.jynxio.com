@@ -17,7 +17,7 @@
         "commitlint": "commitlint --edit",
         "lint:style": "prettier --write .",
         "lint:ts": "tsc --build --noEmit",
-        "lint:js": "eslint \"**/*.{js,mjs,cjs,ts,jsx,tsx}\" --fix",
+        "lint:js": "eslint --fix",
         "lint:css": "stylelint \"**/*.{css,scss,sass,less,postcss}\" --fix",
         "lint:all": "pnpm lint:js && pnpm lint:ts && pnpm lint:css && pnpm lint:style"
     },

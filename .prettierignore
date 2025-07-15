@@ -1,5 +1,6 @@
 # Development
 **/.next
+**/.vercel
 **/pnpm-lock.yaml
 
 # Production
@@ -7,12 +8,6 @@
 **/dist
 **/build
 
-# Vercel
-**/.vercel
-
 # Markdown
 **/*.md
 **/*.mdx
-
-# Temporary
-**/temp

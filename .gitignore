@@ -4,62 +4,23 @@
 .AppleDouble
 .LSOverride
 
-# Editor directories and files
-.idea
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-# Testing
-**/coverage
-
-# Debug
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# Env files
-.env*
-
 # Development
+.env*
+**/.next
+**/.vercel
 **/node_modules
-**/.pnp
-.pnp
-.pnp.*
-.pnp.js
-.yarn/*
-*.local
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
+.pnpm-debug.log*
 package-lock.json
 
+*.tsbuildinfo
+next-env.d.ts
+
 # Production
-**/build
 **/out
 **/dist
 **/build
 
-# TypeScript
-*.tsbuildinfo
-next-env.d.ts
-
-# Next.js
-**/out/
-**/.next/
-
-# Vercel
-**/.vercel
-
-# My
-temp-post
-public/image-hosting
+# Mine
 **/*.png
 **/*.jpg
 **/*.jpeg
@@ -67,10 +28,15 @@ public/image-hosting
 **/*.ttf
 **/*.woff
 **/*.woff2
-**/GoogleAnalytics.tsx
+
 **/.obsidian
-post-deprecated
-post-temp
-post-wip
-.vercel
+
+**/GoogleAnalytics.tsx
+
 app/_css/google-fonts.css
+
+post-wip
+post-temp
+post-deprecated
+
+public/image-hosting

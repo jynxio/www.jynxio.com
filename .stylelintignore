@@ -1,15 +1,9 @@
 # Development
-**/.git
 **/.next
+**/.vercel
 **/node_modules
 
 # Production
 **/out
 **/dist
 **/build
-
-# Vercel
-**/.vercel
-
-# Temporary
-**/temp
