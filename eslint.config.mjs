@@ -1,6 +1,6 @@
 import vanilla from '@eslint/js';
 import jynxio from '@jynxio/eslint-plugin';
-import { flatConfig as next } from '@next/eslint-plugin-next';
+import next from '@next/eslint-plugin-next';
 import prettier from 'eslint-config-prettier';
 import react from 'eslint-plugin-react';
 import reactCompiler from 'eslint-plugin-react-compiler';
@@ -49,6 +49,13 @@ export default defineConfig([
     },
     reactRefresh.configs.recommended,
     {
+        /**
+         * @see https://stackoverflow.com/a/79119910/13692902
+         */
+        plugins: { '@next/next': next },
+        rules: { ...next.configs.recommended.rules },
+    },
+    {
         files: ['**/page.tsx', '**/layout.tsx'],
         rules: {
             'react-refresh/only-export-components': 'off',
@@ -59,11 +66,6 @@ export default defineConfig([
             'react/react-in-jsx-scope': 'off',
         },
     },
-
-    /**
-     * Next
-     */
-    next.coreWebVitals, // Refer to https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/src/index.ts
 
     /**
      * Jynxio
