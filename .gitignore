@@ -60,7 +60,6 @@ next-env.d.ts
 # My
 temp-post
 public/image-hosting
-src/assets/temp
 **/*.png
 **/*.jpg
 **/*.jpeg
@@ -74,4 +73,4 @@ post-deprecated
 post-temp
 post-wip
 .vercel
-src/app/_css/google-fonts.css
+app/_css/google-fonts.css
