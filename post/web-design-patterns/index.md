@@ -7,7 +7,7 @@ publishedDate: "2022-10-31T00:00:00+08:00"
 
 updatedDate: "2025-05-10T00:00:00+08:00"
 
-tags: ["JavaScript", "React"]
+tags: ["JavaScript", "React", "Design Pattern"]
 
 hero: "hero.png"
 ---
