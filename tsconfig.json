@@ -30,6 +30,7 @@
         "noFallthroughCasesInSwitch": true,
         "noUncheckedSideEffectImports": true,
         "erasableSyntaxOnly": true,
+        "forceConsistentCasingInFileNames": true,
 
         "incremental": true,
         "plugins": [{ "name": "next" }]
