@@ -38,7 +38,7 @@ Next.js 的 SSG 很适合用来创建内容型站点，因为它可以在打包�
 接下来，你要把 build-blog-with-wdx 加载到网页中去。怎么做？直接用 Node.js 读取它，然后注入到网页中去，就像下面这样。
 
 ```tsx
-// 📃 src/app/page.tsx
+// 📄 src/app/page.tsx
 import { reqPost } from "@/helper/post";
 
 async function Page() {
@@ -69,7 +69,7 @@ Here's the main content...
 我使用 Hashicorp 的 [`next-mdx-remote`](https://github.com/hashicorp/next-mdx-remote) 来做转译工作，这个第三方库简单、靠谱、还支持 RSC。
 
 ```diff
-  // 📃 src/app/page.tsx
+  // 📄 src/app/page.tsx
   import { reqPost } from "@/helper/post";
 + import { MDXRemote } from "next-mdx-remote/rsc";
 
@@ -86,7 +86,7 @@ Here's the main content...
 为了更好的演示，我添加了 [`water.css`](https://github.com/kognise/water.css)，它是一套预定义好的全局样式。
 
 ```diff
-  // 📃 src/app/layout.tsx
+  // 📄 src/app/layout.tsx
   <head>
 +   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css" />
   </head>
@@ -101,7 +101,7 @@ Here's the main content...
 我将代码高亮的工作封装为 `CodeSnippet`。
 
 ```tsx
-// 📃 src/component/code-snippet/CodeSnippet.tsx
+// 📄 src/component/code-snippet/CodeSnippet.tsx
 import { codeToHtml } from "shiki";
 
 type Props = React.DetailedHTMLProps<React.HTMLAttributes<HTMLPreElement>, HTMLPreElement> & { children?: any };
@@ -123,7 +123,7 @@ async function CodeSnippet(props: Props) {
 然后将 `CodeSnippet` 传递给 `<MDXRemote />`，它会接管 `<MDXRemote />` 对代码块的处理工序。
 
 ```diff
-  // 📃 src/app/page.tsx
+  // 📄 src/app/page.tsx
   import { reqPost } from "@/helper/post";
   import { MDXRemote } from "next-mdx-remote/rsc";
 + import CodeSnippet from "@/component/code-snippet";
@@ -147,7 +147,7 @@ async function CodeSnippet(props: Props) {
 怎么做？首先在 Markdown 中引用这个自定义组件。
 
 ```diff
-  // 📃 post/build-interative-blog/index.md
+  // 📄 post/build-interative-blog/index.md
   ...
 + <MousePosition />
   ...
@@ -156,7 +156,7 @@ async function CodeSnippet(props: Props) {
 然后将 `<MousePosition>` 组件传递给解析器（`<MDXRemote>`），如此一来，就完成了。
 
 ```diff
-  // 📃 src/app/page.tsx
+  // 📄 src/app/page.tsx
   import CodeSnippet from "@/component/code-snippet";
 + import MousePosition from "$/post/build-interative-blog/component/mouse-position";
 
