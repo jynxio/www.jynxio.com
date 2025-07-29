@@ -5,7 +5,7 @@ abstract: "设计模式是编程的公式，我将那些学到的东西写在这
 
 publishedDate: "2022-10-31T00:00:00+08:00"
 
-updatedDate: "2025-05-10T00:00:00+08:00"
+updatedDate: "2025-07-29T00:00:00+08:00"
 
 tags: ["JavaScript", "React", "Design Pattern"]
 
@@ -411,6 +411,8 @@ function decorate(Comp) {
 `Modal` 的内部可能是这样实现的：
 
 ```jsx
+const Ctx = createContext();
+
 function Modal({ children }) {
   const state = useState(false);
 
@@ -418,16 +420,16 @@ function Modal({ children }) {
 }
 
 function ModalTrigger({ children }) {
-  const [, setAvailable] = use(Ctx);
-  const fn = () => setAvailable(true);
+  const [, setIsOpen] = use(Ctx);
+  const open = () => setIsOpen(true);
 
-  return <div onClick={fn}>{children}</div>;
+  return <div onClick={open}>{children}</div>;
 }
 
 function ModalContent({ children }) {
-  const [available] = use(ModalContent);
+  const [isOpen] = use(Ctx);
 
-  return available ? children : undefined;
+  return isOpen && children;
 }
 ```
 
@@ -471,38 +473,96 @@ function Comp() {
 
 ## ⚛️ 内容提升
 
-请查看下述示例，如果提升组件 `<Flag />` 的位置，那么就可以避免入参 `region` 的 Prop Drilling，这种技巧就叫做内容提升（Lifting Content Up）。
+如下所示，提升 `Profile` 的位置，就可以：
+
+- 避免 `user` 的 Prop Drilling；
+- Modal 只需关心弹窗逻辑；
+
+这就是内容提升（Lifting Content Up），它还有一个更流行的名字——组合模式（Component Composition），其代表通过组合的方式来构建组件的关系。
 
 ```jsx
 // Before
-<ul>
-  {userList.map(({ uuid, name, region }) => (
-    <User key={uuid} name={name} region={region} />
-  ))}
-</ul>
+const App = () => <Modal user={{ name: 'Jynxio' }} />;
 
-const User = ({ name, region }) => (
+const Modal = ({ user }) => (
   <div>
-    <span>{name}</span>
-    <Flag region={region} />
+    <Profile user={user} />
   </div>
 );
 
+const Profile = ({ user }) => <div>{user.name}</div>;
+```
+
+```jsx
 // After
-<ul>
-  {userList.map(({ uuid, name, region }) => (
-    <User key={uuid} name={name}>
-      <Flag region={region} />
-    </User>
-  ))}
-</ul>;
+const App = () => (
+  <Modal>
+    <Profile user={{ name: 'Jynxio' }} />
+  </Modal>
+);
 
-const User = ({ name, children }) => (
+const Modal = ({ children }) => <div>{children}</div>
+
+const Profile = ({ user }) => <div>{user.name}</div>;
+```
+
+## ⚛️ 插槽模式
+
+插槽模式（Slot Pattern）是组合模式的扩展，它有更多的插槽，且插槽都是具名的。
+
+```jsx
+const App = () => (
+  <Post title="..." sidebar="...">
+    Write something here...
+  </Post>
+);
+
+const Post = ({ title, chapter, children }) => (
   <div>
-    <span>{name}</span>
-    {children}
+    <h2>{ title }</h2>
+    <aside>{ chapter }</aside>
+    <article>{ children }</article>
   </div>
 );
+```
+
+## ⚛️ 渲染属性模式
+
+渲染属性模式（Render Props Pattern）的核心思想是：组件本身不负责 UI 的渲染，而是接收一个负责渲染的函数，通过调用这个函数（并向其传递内部状态）来生成 UI，即将渲染的控制权放在组件的外部。
+
+这个渲染函数通常会被设计成 Props `children` 或 `render`。
+
+这个渲染函数既可以访问组件内部的代码上下文，也可以访问组件外部的代码上下文，就像下面这样。
+
+```jsx
+function App() {
+  const list = useList();
+
+  return (
+    <VirtualizedList totalCount={10000} rowHeight={30}>
+      {({ idx, style }) => <div style={style}>{list[idx]}</div>}
+    </VirtualizedList>
+  );
+}
+```
+
+## ⚛️ Children Hacking
+
+这是一种著名的反模式，许多 UI 库都采用了它。
+
+它通过克隆元素来隐式的注入属性，以极大的简化 API，代价则是耦合、脆弱和不透明。
+
+```jsx
+<Form>
+  <input placeholder="I will be controlled magically" />
+</Form>;
+
+function Form({ children }) {
+  const [value, setValue] = useState('');
+  const onChange = e => setValue(e.target.value);
+
+  return Children.map(children, child => cloneElement(child, { value, onChange }));
+}
 ```
 
 ## ⚛️ 草稿模式
