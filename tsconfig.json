@@ -17,6 +17,8 @@
         "allowImportingTsExtensions": true,
 
         "jsx": "preserve",
+
+        "baseUrl": ".",
         "paths": {
             "$/*": ["./*"],
             "@/*": ["./app/*"]
