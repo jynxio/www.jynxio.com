@@ -1,11 +1,12 @@
 .container {
     list-style: none;
+    margin-block: 1.5rem;
 
     & li::before {
         content: '✻';
         font-size: 1rem;
         font-family: var(--mono);
-        margin-inline-end: 0.25rem;
+        margin-inline-end: 0.65rem;
     }
 }
 

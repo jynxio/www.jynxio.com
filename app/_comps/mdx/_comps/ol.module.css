@@ -1,6 +1,7 @@
 .container {
     list-style: none;
     counter-reset: item;
+    margin-block: 1.5rem;
 
     & li::before {
         counter-increment: item;
