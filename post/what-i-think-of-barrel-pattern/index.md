@@ -5,7 +5,7 @@ abstract: "起初，我为了美化导入语句而使用 Barrel Pattern，直到
 
 publishedDate: "2025-07-19T00:00:00+08:00"
 
-updatedDate:  "2025-07-19T00:00:00+08:00"
+updatedDate:  "2025-08-12T00:00:00+08:00"
 
 tags: ["Module Pattern"]
 
