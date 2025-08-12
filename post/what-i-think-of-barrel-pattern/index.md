@@ -128,7 +128,7 @@ import Smile from 'lucide-react/dist/esm/icons/smile.js';
 
 它是 Barrel Pattern 的上位替代，既提供文件访问控制，又克服了后者的问题，它的使用规则只有一条：下划线开头的文件只对同目录下的其他文件可见。
 
-如下图所示，暗蓝区域内的文件都可以访问 `_comps` 和 `_hooks`，但只有亮蓝区域内的文件才可以访问 `_input.ts` 和 `_button.ts`（或 `_use-query.ts` 和 `_use-cookie.ts`）。
+如下图所示，`_helpers.ts` 的可见范围是暗蓝色区域（即该区域内的文件都可以访问它），`_input.ts | _button.ts` 的可见范围是亮蓝色区域（即该区域内的文件都可以访问它们）。
 
 ![Underscore Pattern rules](./img/underscore-pattern-rule.png)
 
