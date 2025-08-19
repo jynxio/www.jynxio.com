@@ -33,8 +33,6 @@ next-env.d.ts
 
 **/GoogleAnalytics.tsx
 
-app/_css/google-fonts.css
-
 post-wip
 post-temp
 post-deprecated
