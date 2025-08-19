@@ -12,7 +12,7 @@
         "build": "next build --turbopack",
         "prepare": "husky",
         "test": "vitest",
-        "deploy": "vercel build && vercel deploy --prebuilt && vercel --prod",
+        "release": "vercel build && vercel deploy --prebuilt && vercel --prod",
         "lintstaged": "lint-staged",
         "commitlint": "commitlint --edit",
         "lint:style": "prettier --write .",
