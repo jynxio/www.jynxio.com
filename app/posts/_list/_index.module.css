@@ -3,7 +3,7 @@
     gap: 5ch;
     flex-direction: column;
     padding-block: 4rem;
-    inline-size: min(100%, 72rch);
+    inline-size: min(100%, 72ch);
     margin-inline: auto;
 }
 
