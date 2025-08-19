@@ -1,12 +1,11 @@
 @use './reset';
 @use './variable' as *;
-@import './google-fonts.css';
 
 html {
     /* [iPhone 13, iPad Min] */
     font-size: clamp(0.9rem, 0.452vw + 0.7898rem, 1rem);
-    font-family: var(--sans);
-    font-weight: 400;
+    font-family: var(--mono);
+    font-weight: var(--thin);
     font-style: normal;
     color: var(--color-white);
     background-color: var(--color-black);
