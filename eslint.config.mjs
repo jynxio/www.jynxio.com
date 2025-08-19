@@ -53,7 +53,16 @@ export default defineConfig([
          * @see https://stackoverflow.com/a/79119910/13692902
          */
         plugins: { '@next/next': next },
-        rules: { ...next.configs.recommended.rules },
+        rules: {
+            ...next.configs.recommended.rules,
+            /**
+             * Disable @next/next/no-page-custom-font.
+             * Legacy rule for Pages Router (_document.js), not applicable to App Router.
+             * Docs were removed from Next.js, archived reference:
+             * @link https://oxc.rs/docs/guide/usage/linter/rules/nextjs/no-page-custom-font
+             */
+            '@next/next/no-page-custom-font': 'off',
+        },
     },
     {
         files: ['**/page.tsx', '**/layout.tsx'],
