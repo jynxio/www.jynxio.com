@@ -1,5 +1,5 @@
 .container {
-    inline-size: min(100%, 74ch);
+    inline-size: min(100%, 98rch);
     margin-inline: auto;
     margin-block: var(--post-margin-block);
     font-size: 1.1rem;
