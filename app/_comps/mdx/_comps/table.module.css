@@ -27,14 +27,4 @@
             );
         }
     }
-
-    & td:first-child,
-    & th:first-child {
-        text-align: left !important;
-    }
-
-    & td:last-child,
-    & th:last-child {
-        text-align: right !important;
-    }
 }
