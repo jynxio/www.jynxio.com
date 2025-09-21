@@ -11,6 +11,7 @@ tags: ["Module Pattern"]
 
 hero: "hero.png"
 ---
+
 Barrel Pattern 是一种文件的组织模式，简单来说就是通过 index.ts 来重导出那些你希望暴露给外界的模块，就像下面这样：
 
 ```ts

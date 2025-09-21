@@ -11,6 +11,7 @@ tags: ["Bundler"]
 
 hero: "hero.png"
 ---
+
 Today, Rspack v1.5 ships with a brand‑new experimental feature — [lazyBarrel](https://github.com/web-infra-dev/rspack/blob/864edbd373fda33c8f8ea611a840bef35ab6694c/website/docs/en/config/experiments.mdx?plain=1#L853).
 
 `lazyBarrel` is designed to optimize the build performance of barrel files, resulting in faster cold starts for the dev server and reduced bundle times. Compared with the approach in Next.js@15.5, Rspack’s implementation is superior. Here’s a quick comparison:

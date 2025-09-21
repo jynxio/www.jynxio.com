@@ -11,6 +11,7 @@ tags: ["Next.js", "MDX"]
 
 hero: "hero.png"
 ---
+
 Next.js 的 SSG 很适合用来创建内容型站点，因为它可以在打包时就将 markdown 编译成 HTML，这意味着站点的加载速度会很快。
 
 这篇文章教你怎么做。
