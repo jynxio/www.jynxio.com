@@ -3,9 +3,9 @@ title: 'Beware the "async support" in React 19's startTransition'
 
 abstract: "Starting with React 19, startTransition supports async functions, which sounds pretty good. But it has a hidden trap, and sometimes, it can be fatal."
 
-publishedDate: "2025-09-2T00:00:00+08:00"
+publishedDate: "2025-09-22T00:00:00+08:00"
 
-updatedDate:  "2025-09-2T00:00:00+08:00"
+updatedDate:  "2025-09-22T00:00:00+08:00"
 
 tags: ["React"]
 
