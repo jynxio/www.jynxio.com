@@ -12,6 +12,8 @@ tags: ["React"]
 hero: "hero.png"
 ---
 
+> 💡 本文基于 React 19.1.1。
+
 在 React 19 之前，startTransition 是不支持异步函数的，如果要在 `await` 之后更新状态，那么就必须再包裹上一个 startTransition，就像下面这样。
 
 ```ts

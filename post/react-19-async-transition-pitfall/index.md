@@ -12,6 +12,8 @@ tags: ["React"]
 hero: "hero.png"
 ---
 
+> 💡 This article is based on React 19.1.1.
+
 Before React 19, startTransition didn't support async functions. If you wanted to update state after an `await`, you had to wrap it in another startTransition, like this:
 
 ```ts
