@@ -20,15 +20,15 @@ function Icon(props: Base<{ width: string; height: string }>): ReactNode;
 function Icon(props: Props): ReactNode {
     const { icon, label, fontSize, width, height, color, ref, className, style, ...rest } = props;
     const presetStyle: CSSProperties = (() => {
-        if (fontSize === undefined) return { fontSize, width: '1em', height: '1em' };
-        if (width === undefined && height === undefined) return { width, height };
-        if (width === undefined) return { width, height: width };
-        if (height === undefined) return { width: height, height };
+        if (fontSize !== undefined) return { fontSize, width: '1em', height: '1em' };
+        if (width !== undefined && height !== undefined) return { width, height };
+        if (width !== undefined) return { width, height: width };
+        if (height !== undefined) return { width: height, height };
 
         return { width: '1em', height: '1rem' };
     })();
 
-    if (color === undefined) presetStyle.color = color;
+    if (color !== undefined) presetStyle.color = color;
 
     const settledStyle = { ...presetStyle, ...style };
 
