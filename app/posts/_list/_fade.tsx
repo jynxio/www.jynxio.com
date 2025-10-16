@@ -1,15 +1,15 @@
 'use client';
 
-import { range } from 'lodash-es';
 import { motion, useAnimate } from 'motion/react';
 import { useEffect, type PropsWithChildren } from 'react';
 import { useInView } from 'react-intersection-observer';
+import { range } from 'remeda';
 
 const initialMotion = { scale: 0.9, opacity: 0 } as const;
 
 function Fade({ children }: PropsWithChildren) {
     const [ref1, animate] = useAnimate<HTMLDivElement>();
-    const { ref: ref2, entry } = useInView({ threshold: range(101).map(item => item / 100) });
+    const { ref: ref2, entry } = useInView({ threshold: range(0, 101).map(item => item / 100) });
 
     useEffect(() => {
         ref2(ref1.current);

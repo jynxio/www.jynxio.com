@@ -4,9 +4,9 @@ import './_custom.css';
 
 import type { ComponentProps } from 'react';
 
-import { merge } from 'lodash-es';
 import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
 import 'overlayscrollbars/overlayscrollbars.css';
+import { mergeDeep } from 'remeda';
 
 type Props = ComponentProps<typeof OverlayScrollbarsComponent>;
 
@@ -17,14 +17,14 @@ function Scroll({ defer, options: option, element, children, ...rest }: Props) {
     const presetDefer = true;
     const settledDefer = defer ?? presetDefer;
 
-    const presetOption: Props['options'] = {
+    const presetOption = {
         paddingAbsolute: true,
         scrollbars: {
             autoHide: 'move',
             autoHideDelay: 200,
         },
-    };
-    const settledOption = merge({}, presetOption, option);
+    } as const satisfies Props['options'];
+    const settledOption = mergeDeep(mergeDeep({}, presetOption), option || {});
 
     return (
         <OverlayScrollbarsComponent
