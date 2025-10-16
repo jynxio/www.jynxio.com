@@ -4,6 +4,8 @@
     margin-block: 1.5rem;
     border: 1px solid var(--color-silver);
     border-radius: var(--radius-sm);
+    outline: none;
+    caret-color: var(--color-blue);
     background-size: 10px 10px;
     background-clip: content-box;
     background-image: repeating-linear-gradient(

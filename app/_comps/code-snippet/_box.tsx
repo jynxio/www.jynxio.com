@@ -9,6 +9,17 @@ import { ExpandBtn } from './_expand-btn';
 type Props = Readonly<{ html: string; code: string }>;
 type Event = ComponentProps<typeof Scroll>['events'];
 
+const allowedKeySet = new Set([
+    'Home',
+    'End',
+    'PageUp',
+    'PageDown',
+    'ArrowUp',
+    'ArrowDown',
+    'ArrowLeft',
+    'ArrowRight',
+]);
+
 function Box({ html, code }: Props) {
     const [isExpandable, setIsExpandable] = useState(false);
     const event: Event = {
@@ -18,7 +29,18 @@ function Box({ html, code }: Props) {
     return (
         <div className={css.container}>
             <Scroll className={css.scroll} events={event}>
-                <div dangerouslySetInnerHTML={{ __html: html }} />
+                <div
+                    contentEditable
+                    role="textbox"
+                    aria-readonly="true"
+                    aria-label="Code block"
+                    tabIndex={-1}
+                    dangerouslySetInnerHTML={{ __html: html }}
+                    onKeyDown={onKeyDown}
+                    onDrop={e => e.preventDefault()}
+                    onPaste={e => e.preventDefault()}
+                    onDragStart={e => e.preventDefault()}
+                />
             </Scroll>
 
             <aside className={css.control}>
@@ -31,6 +53,18 @@ function Box({ html, code }: Props) {
 
 function banExpandBtn() {
     return false;
+}
+
+function onKeyDown(e: React.KeyboardEvent<HTMLDivElement>) {
+    if (e.code === 'Escape') return e.currentTarget.blur();
+
+    const isAllowedKey = allowedKeySet.has(e.code);
+    if (isAllowedKey) return;
+
+    const isModifierKeyCombo = e.metaKey || e.ctrlKey || e.altKey;
+    if (isModifierKeyCombo) return;
+
+    e.preventDefault();
 }
 
 export { Box };
