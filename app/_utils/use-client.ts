@@ -1,11 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useSyncExternalStore } from 'react';
 
+/**
+ * Check if the component has hydrated on the client.
+ */
 function useClient() {
-    const [isHydrated, setIsHydrated] = useState(false);
-
-    useEffect(() => setIsHydrated(true), []);
-
-    return isHydrated;
+    return useSyncExternalStore(
+        () => () => {},
+        () => true,
+        () => false,
+    );
 }
 
 export { useClient };
