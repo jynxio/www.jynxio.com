@@ -1,6 +1,6 @@
 import { codeToHtml } from 'shiki';
 import { Box } from './_box';
-import css from './_box.module.css';
+import css from './_index.module.scss';
 import { pretty } from './_pretty';
 
 type Props = Readonly<{ children: { props: { className: string; children: string } } }>;

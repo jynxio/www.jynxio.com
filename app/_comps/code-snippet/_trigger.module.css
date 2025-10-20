@@ -1,5 +1,5 @@
-.copyBtn,
-.expandBtn {
+.copy,
+.modal {
     block-size: 1rem;
     aspect-ratio: 1 / 1;
     backdrop-filter: blur(1px);
@@ -9,7 +9,7 @@
     }
 }
 
-.copyBtn {
+.copy {
     position: relative;
     cursor: not-allowed;
 
