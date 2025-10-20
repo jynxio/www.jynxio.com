@@ -11,7 +11,10 @@
     line-height: calc(1em + 0.5rem);
 }
 
-body {
+html {
+    /* Switch to `replace` when widely supported */
+    text-autospace: normal;
+
     /* stylelint-disable-next-line value-keyword-case */
     text-rendering: optimizeSpeed;
     -webkit-font-smoothing: antialiased;
