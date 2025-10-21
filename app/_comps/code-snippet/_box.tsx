@@ -44,7 +44,7 @@ function Box({ html, code }: Props) {
                                     animate={{ opacity: 0.7 }}
                                     exit={{ opacity: 0 }}
                                     className={css.modalOverlay}
-                                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                                    transition={{ duration: 0.3, ease: 'easeOut' }}
                                 />
                             </Dialog.Overlay>
 
@@ -62,7 +62,7 @@ function Box({ html, code }: Props) {
                                     animate={keyframes?.[1]}
                                     exit={keyframes?.[0]}
                                     className={css.modalContent}
-                                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                                    transition={{ duration: 0.3, ease: 'easeOut' }}
                                 >
                                     <CodeBlock
                                         mode="dialog"
