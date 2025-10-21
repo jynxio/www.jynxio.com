@@ -2,7 +2,6 @@
 .modal {
     block-size: 1rem;
     aspect-ratio: 1 / 1;
-    backdrop-filter: blur(1px);
 
     & > svg {
         block-size: 100%;
