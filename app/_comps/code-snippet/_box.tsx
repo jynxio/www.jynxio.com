@@ -117,7 +117,7 @@ function createKeyframes(elem: HTMLElement): Keyframes {
     const [startW, startH] = [rect.width + 'px', rect.height + 'px'];
     const [startX, startY] = [rect.left + 'px', rect.top + 'px'];
 
-    const [endW, endH] = ['120ch', 'calc(100dvh - 10ch)'];
+    const [endW, endH] = [`min(calc(100dvw - 2ch), 120ch)`, `calc(100dvh - 2ch)`];
     const [endX, endY] = [`calc((100dvw - ${endW}) / 2)`, `calc((100dvh - ${endH}) / 2)`];
 
     return [
