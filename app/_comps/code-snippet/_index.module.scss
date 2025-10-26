@@ -1,3 +1,4 @@
+// Used by index.tsx
 .pre {
     font-size: 1rem;
     font-family: var(--mono);
@@ -6,4 +7,242 @@
         -1px -1px 2px black,
         1px 1px 2px black,
         1px -1px 2px black;
+}
+
+// Used by _code-box.tsx
+.dialogOverlay {
+    --dialog-fade-duration: 300ms;
+
+    z-index: 9999;
+    position: fixed;
+    inset: 0;
+    background-color: var(--color-black);
+    opacity: 0.7;
+
+    &[data-state='open'] {
+        animation: var(--dialog-fade-duration) cubic-bezier(0, 0, 0.2, 1) forwards overlay-fade-in;
+    }
+
+    &[data-state='closed'] {
+        animation: var(--dialog-fade-duration) cubic-bezier(0, 0, 0.2, 1) forwards overlay-fade-out;
+    }
+}
+
+.dialogContent {
+    --dialog-fade-duration: 300ms;
+
+    z-index: 9999;
+    position: fixed;
+    outline: none;
+    background-color: var(--color-black);
+
+    &[data-state='open'] {
+        animation: var(--dialog-fade-duration) cubic-bezier(0, 0, 0.2, 1) forwards content-fade-in;
+    }
+
+    &[data-state='closed'] {
+        animation: var(--dialog-fade-duration) cubic-bezier(0, 0, 0.2, 1) forwards content-fade-out;
+    }
+}
+
+// Used by _code-block.tsx
+.codeBlock {
+    position: relative;
+    padding: 1rch;
+    border: 1px solid var(--color-silver);
+    border-radius: var(--radius-sm);
+    outline: none;
+    font-size: 1rem;
+    caret-color: var(--color-blue);
+    background-size: 10px 10px;
+    background-clip: content-box;
+    background-image: repeating-linear-gradient(
+        315deg,
+        var(--color-gray) 0,
+        var(--color-gray) 1px,
+        transparent 0,
+        transparent 50%
+    );
+
+    &[data-state='compact'] > .scroll {
+        max-block-size: 30rch;
+        padding: 1rch;
+    }
+
+    &[data-state='expanded'] {
+        block-size: 100%;
+
+        & > .scroll {
+            block-size: 100%;
+            max-block-size: none;
+            padding: 1rch;
+        }
+    }
+}
+
+.control {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    position: absolute;
+    inset: 2rch 2rch auto auto;
+    margin: 0.25rem;
+}
+
+.expandBtn {
+    position: relative;
+    block-size: 1rem;
+    aspect-ratio: 1 / 1;
+
+    & > svg {
+        position: absolute;
+        block-size: 100%;
+        inset: 0;
+        scale: 0;
+        transform-origin: center;
+    }
+
+    & > svg.active {
+        scale: 1;
+    }
+}
+
+.dialogContent[data-state='open'] .expandBtn > .compact {
+    animation: var(--dialog-fade-duration) cubic-bezier(0, 0, 0.2, 1) forwards scalingUp;
+}
+
+.dialogContent[data-state='open'] .expandBtn > .expand {
+    animation: var(--dialog-fade-duration) cubic-bezier(0, 0, 0.2, 1) forwards scalingDown;
+}
+
+.dialogContent[data-state='closed'] .expandBtn > .compact {
+    animation: var(--dialog-fade-duration) cubic-bezier(0, 0, 0.2, 1) forwards scalingDown;
+}
+
+.dialogContent[data-state='closed'] .expandBtn > .expand {
+    animation: var(--dialog-fade-duration) cubic-bezier(0, 0, 0.2, 1) forwards scalingUp;
+}
+
+.copyBtn {
+    position: relative;
+    block-size: 1rem;
+    aspect-ratio: 1 / 1;
+
+    & > svg {
+        position: absolute;
+        block-size: 100%;
+        inset: 0;
+        scale: 0;
+        transform-origin: center;
+        transition: scale 300ms cubic-bezier(0, 0, 0.2, 1);
+    }
+
+    & > svg.active {
+        scale: 1;
+    }
+
+    // State: Idle
+    & > svg.idle:hover {
+        cursor: copy;
+    }
+
+    // State: Loading
+    & > svg.loading {
+        animation: rotate 2s linear infinite;
+    }
+
+    & > svg.loading:hover {
+        cursor: wait;
+    }
+
+    // State: Success
+    & > svg.success {
+        color: #63ca5e !important;
+    }
+
+    & > svg.success:hover {
+        cursor: not-allowed;
+    }
+
+    // State: Failure
+    & > svg.failure {
+        color: #c52922 !important;
+    }
+
+    & > svg.failure:hover {
+        cursor: not-allowed;
+    }
+}
+
+// Animations
+@keyframes overlay-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.7;
+    }
+}
+
+@keyframes overlay-fade-out {
+    from {
+        opacity: 0.7;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes content-fade-in {
+    // These css variables are set by _code-box.tsx
+    from {
+        inset: var(--compact-top) var(--compact-right) var(--compact-bottom) var(--compact-left);
+    }
+
+    to {
+        inset: var(--expanded-top) var(--expanded-right) var(--expanded-bottom) var(--expanded-left);
+    }
+}
+
+@keyframes content-fade-out {
+    // These css variables are set by _code-box.tsx
+    from {
+        inset: var(--expanded-top) var(--expanded-right) var(--expanded-bottom) var(--expanded-left);
+    }
+
+    to {
+        inset: var(--compact-top) var(--compact-right) var(--compact-bottom) var(--compact-left);
+    }
+}
+
+@keyframes scalingUp {
+    from {
+        scale: 0;
+    }
+
+    to {
+        scale: 1;
+    }
+}
+
+@keyframes scalingDown {
+    from {
+        scale: 1;
+    }
+
+    to {
+        scale: 0;
+    }
+}
+
+@keyframes rotate {
+    from {
+        rotate: 0deg;
+    }
+
+    to {
+        rotate: 360deg;
+    }
 }

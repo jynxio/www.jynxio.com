@@ -1,9 +1,9 @@
 import { codeToHtml } from 'shiki';
-import { Box } from './_box';
+import { CodeBox } from './_code-box';
 import css from './_index.module.scss';
 import { pretty } from './_pretty';
 
-type Props = Readonly<{ children: { props: { className: string; children: string } } }>;
+type Props = { children: { props: { className: string; children: string } } };
 
 async function CodeSnippet(props: Props) {
     const code = props.children.props.children;
@@ -16,7 +16,7 @@ async function CodeSnippet(props: Props) {
         transformers: [{ pre: elem => void (elem.properties = { class: css.pre }) }],
     });
 
-    return <Box html={html} code={prettierCode} />;
+    return <CodeBox html={html} code={prettierCode} />;
 }
 
 export { CodeSnippet };
