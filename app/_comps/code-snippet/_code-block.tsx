@@ -1,35 +1,32 @@
 'use client';
 
+import { Button } from '@/_comps/button';
 import { Scroll } from '@/_comps/scroll';
 import clsx from 'clsx';
+import { Check, Clipboard, Loader, Maximize, Minimize, X } from 'lucide-react';
 import React from 'react';
-import css from './_code-block.module.scss';
-import type { CopyTriggerProps, ModalTriggerProps } from './_trigger';
-import { CopyTrigger, ModalTrigger } from './_trigger';
+import css from './_index.module.scss';
 
 type Props = {
     html: string;
-    hidden?: boolean;
-    mode: 'inline' | 'dialog';
-    ref?: React.RefObject<null | HTMLDivElement>;
-
-    copyTriggerProps: CopyTriggerProps;
-    modalTriggerProps: ModalTriggerProps;
+    code: string;
+    expanded?: true;
+    expandBtnProps: ExpandBtnProps;
+    ref?: React.RefObject<HTMLDivElement | null>;
 };
 
-function CodeBlock({ ref, html, mode, hidden, copyTriggerProps, modalTriggerProps }: Props) {
+type ExpandBtnProps = { isExpand: boolean; onClick: () => void };
+
+function CodeBlock({ ref, html, code, expanded, expandBtnProps }: Props) {
     return (
-        <div
-            ref={ref}
-            style={{ visibility: hidden ? 'hidden' : 'visible' }}
-            className={clsx(css.container, mode === 'dialog' ? css.dialog : css.inline)}
-        >
+        <div ref={ref} data-state={expanded ? 'expanded' : 'compact'} className={css.codeBlock}>
             <Scroll className={css.scroll}>
                 <div
+                    aria-readonly
                     contentEditable
                     role="textbox"
-                    aria-readonly="true"
                     aria-label="Code block"
+                    inputMode="none"
                     tabIndex={-1}
                     style={{ outline: 'none' }}
                     onKeyDown={onKeyDown}
@@ -41,10 +38,46 @@ function CodeBlock({ ref, html, mode, hidden, copyTriggerProps, modalTriggerProp
             </Scroll>
 
             <aside className={css.control}>
-                <ModalTrigger {...modalTriggerProps} />
-                <CopyTrigger {...copyTriggerProps} />
+                <CopyBtn code={code} />
+                <ExpandBtn {...expandBtnProps} />
             </aside>
         </div>
+    );
+}
+
+function CopyBtn({ code }: { code: string }) {
+    const [state, setState] = React.useState<'idle' | 'loading' | 'success' | 'failure'>('idle');
+
+    return (
+        <Button label="copy" className={css.copyBtn} onClick={handleClick}>
+            <X className={clsx(css.failure, state === 'failure' && css.active)} />
+            <Check className={clsx(css.success, state === 'success' && css.active)} />
+            <Loader className={clsx(css.loading, state === 'loading' && css.active)} />
+            <Clipboard className={clsx(css.idle, state === 'idle' && css.active)} />
+        </Button>
+    );
+
+    async function handleClick() {
+        if (state !== 'idle') return;
+
+        try {
+            setState('loading');
+            await navigator.clipboard.writeText(code);
+            setState('success');
+        } catch {
+            setState('failure');
+        } finally {
+            setTimeout(() => setState('idle'), 1000);
+        }
+    }
+}
+
+function ExpandBtn({ isExpand, onClick }: { isExpand: boolean; onClick: () => void }) {
+    return (
+        <Button label="expand" className={css.expandBtn} onClick={onClick}>
+            <Minimize className={clsx(css.compact, isExpand && css.active)} />
+            <Maximize className={clsx(css.expand, isExpand || css.active)} />
+        </Button>
     );
 }
 
