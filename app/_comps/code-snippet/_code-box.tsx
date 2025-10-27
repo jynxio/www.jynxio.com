@@ -15,7 +15,7 @@ function CodeBox({ html, code }: Props) {
     const codeBlockProps = { html, code, expandBtnProps };
 
     return (
-        <>
+        <div className={css.codeBox}>
             <CodeBlock {...codeBlockProps} ref={layoutRef} />
 
             <Dialog.Root open={isExpand} onOpenChange={setIsExpand}>
@@ -27,7 +27,7 @@ function CodeBox({ html, code }: Props) {
                     </Dialog.Content>
                 </Dialog.Portal>
             </Dialog.Root>
-        </>
+        </div>
     );
 }
 
