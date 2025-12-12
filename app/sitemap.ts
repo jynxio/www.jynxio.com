@@ -2,7 +2,8 @@ import { APP_URL } from '@/_consts';
 import { reqList } from '@/_helpers/posts';
 import path from 'node:path';
 
-const dynamic = 'force-static';
+export const dynamic = 'force-static';
+
 async function sitemap() {
     const list = await reqList();
     const blogs = list.map(item => ({
@@ -18,5 +19,4 @@ async function sitemap() {
     return [...routes, ...blogs];
 }
 
-export { dynamic };
 export default sitemap;

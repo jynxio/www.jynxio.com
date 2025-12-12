@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation';
 
-const dynamic = 'force-static';
+export const dynamic = 'force-static';
 
 function Page() {
     redirect('/posts');
@@ -8,5 +8,4 @@ function Page() {
     return null;
 }
 
-export { dynamic };
 export default Page;

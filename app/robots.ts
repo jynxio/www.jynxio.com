@@ -1,7 +1,8 @@
 import { APP_URL } from '@/_consts';
 import type { MetadataRoute } from 'next';
 
-const dynamic = 'force-static';
+export const dynamic = 'force-static';
+
 function robots(): MetadataRoute.Robots {
     return {
         rules: [
@@ -14,5 +15,4 @@ function robots(): MetadataRoute.Robots {
     };
 }
 
-export { dynamic };
 export default robots;

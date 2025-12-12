@@ -2,10 +2,8 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
     output: 'export',
+    reactCompiler: true,
     reactStrictMode: true,
-    experimental: {
-        reactCompiler: true,
-    },
 };
 
 export default nextConfig;

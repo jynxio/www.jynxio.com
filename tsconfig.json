@@ -16,7 +16,7 @@
         "moduleResolution": "bundler",
         "allowImportingTsExtensions": true,
 
-        "jsx": "preserve",
+        "jsx": "react-jsx",
 
         "baseUrl": ".",
         "paths": {

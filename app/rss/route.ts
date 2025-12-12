@@ -1,7 +1,8 @@
 import { reqList } from '@/_helpers/posts';
 import RSS from 'rss';
 
-const dynamic = 'force-static';
+export const dynamic = 'force-static';
+
 async function GET() {
     const list = await reqList();
     const feed = new RSS({
@@ -28,4 +29,4 @@ async function GET() {
     });
 }
 
-export { dynamic, GET };
+export { GET };
