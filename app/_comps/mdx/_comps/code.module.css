@@ -1,15 +1,9 @@
 .container {
-    border-radius: var(--radius-xs);
+    padding-inline: 0.5em;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-silver);
     font-family: var(--mono);
+    line-height: 1.25;
+    background-color: var(--color-gray);
     cursor: copy;
-
-    &::before {
-        content: '{{ ';
-        color: var(--color-silver);
-    }
-
-    &::after {
-        content: ' }}';
-        color: var(--color-silver);
-    }
 }

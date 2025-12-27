@@ -1,6 +1,6 @@
 'use client';
 
-import type { DetailedHTMLProps, HTMLAttributes } from 'react';
+import type { DetailedHTMLProps, HTMLAttributes, MouseEvent } from 'react';
 
 import clsx from 'clsx';
 import { PowerGlitch } from 'powerglitch';
@@ -22,8 +22,10 @@ function Code({ children, className, ...rest }: Props) {
         </code>
     );
 
-    async function handleClick() {
-        await navigator.clipboard.writeText(children);
+    async function handleClick(event: MouseEvent<HTMLElement>) {
+        event.preventDefault();
+        event.stopPropagation();
+        navigator.clipboard.writeText(children);
     }
 
     function handleRef(dom: HTMLElement) {

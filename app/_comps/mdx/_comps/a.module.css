@@ -1,7 +1,7 @@
 .container {
-    text-decoration: 1.5px wavy underline var(--color-blue);
-    text-underline-offset: 0.2em;
+    display: inline;
     cursor: alias;
+    color: var(--color-blue);
 
     &:hover,
     &:active,
