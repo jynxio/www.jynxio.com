@@ -45,7 +45,7 @@ hero: "hero.png"
 <script async src="boo.js" onLoad={() => {}} />
 ```
 
-对于 Hoistable Scripts（会被提升到 Head 的 Scripts），[React 会用 `document.createElement` 来创建](https://github.com/facebook/react/blob/65eec428c40d542d4d5a9c1af5c3f406aecf3440/packages/react-dom-bindings/src/client/ReactFiberConfigDOM.js#L5504)。对于 Non-Hoistable Scripts，[React 则会用 `innerHTML`](https://github.com/facebook/react/blob/65eec428c40d542d4d5a9c1af5c3f406aecf3440/packages/react-dom-bindings/src/client/ReactFiberConfigDOM.js#L538)，而浏览器会故意忽略由 `innerHTML` 创建的 Scripts，这是 [HTML 规范的要求](https://html.spec.whatwg.org/multipage/parsing.html#parsing-main-inhead)。
+对于 Hoistable Scripts（会被提升到 Head 的 Scripts），React 会用 [`createElement`](https://github.com/facebook/react/blob/65eec428c40d542d4d5a9c1af5c3f406aecf3440/packages/react-dom-bindings/src/client/ReactFiberConfigDOM.js#L5504) 来创建。对于 Non-Hoistable Scripts，React 则会用 [`innerHTML`](https://github.com/facebook/react/blob/65eec428c40d542d4d5a9c1af5c3f406aecf3440/packages/react-dom-bindings/src/client/ReactFiberConfigDOM.js#L538)，而浏览器会 [故意忽略](https://html.spec.whatwg.org/multipage/parsing.html#parsing-main-inhead) 此类 Scripts。
 
 于是，Scripts 就失效了。
 
