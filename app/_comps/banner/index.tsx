@@ -25,7 +25,7 @@ function Banner() {
                     exit={{ opacity: 0 }}
                 >
                     原博客（
-                    <Link target="_blank" href="https://xio.kim/">
+                    <Link target="_blank" href="https://jynxio-archive.netlify.app/">
                         www.xio.kim
                     </Link>
                     ）正迁至此处
